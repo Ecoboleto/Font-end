@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar tarjeta</title>
+
+    <!-- Fontawesome local -->
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/registrar-tarjetas.css">
+</head>
+
+<body>
+    <!-- Inicio:  Header-->
+    <header>
+        <div id="cajon-superior" class="bg-verde-claro--fondo">
+            <nav class="d-flow-root">
+                <a href="#" class="blanco-a--tipografia t-centro f-derecha btn--error">Cerrar sesión</a>
+            </nav>
+        </div>
+
+        <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
+            <div class="logo d-linea-bloque f-izquierda">
+                <img src="../imgs/logo.svg" alt="Logo">
+            </div>
+
+            <div class="acomodo-c-inferior f-derecha">
+                <nav class="d-en-linea f-izquierda menu">
+                    <a href="#" class="blanco-a--tipografia">Inicio</a>
+                    <a href="#" class="blanco-a--tipografia">Eventos</a>
+                </nav>
+
+                <form class="f-izquierda">
+                    <div>
+                        <input type="search">
+                        <button class="btn gris-oscuro-a--tipografia">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div id="carrito">
+                    <a href="#carrito" class="blanco-a--tipografia">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Fin:  Header-->
+
+    <!-- Inicio:  Main-->
+    <main id="main">
+        <h1 class="verde-oscuro--tipografia t-centrado"> Registrar tarjetas</h1>
+
+        <form>
+            <div>
+                <label for="txt_nombre">Nombre de tarjeta</label>
+                <input type="text" id="txt_nombre">
+            </div>
+            <div>
+                <label for="txt_numero">Número de tarjeta</label>
+                <input type="number" id="txt_numero">
+            </div>
+            <div>
+                <label for="txt_fecha_expiracion">Fecha de expiración</label>
+                <input type="date" id="txt_fecha_expiracion">
+            </div>
+            <div>
+                <label for="txt_codigo">Código de seguridad</label>
+                <input type="text" id="txt_codigo">
+            </div>
+
+            <button type="button" class="btn btn--positivo blanco--tipografia">Registrar tarjeta</button>
+        </form>
+    </main>
+    <!-- Fin:  Main-->
+
+    <!-- Inicio:  Footer-->
+    <footer>
+        <div id="footer_inferior" class="bg-verde-oscuro--fondo">
+            <p class="blanco--tipografia t-centrado">
+                <small>
+                    <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
+                </small>
+            </p>
+        </div>
+    </footer>
+    <!-- Fin:  Footer-->
+
+    <!-- SweetAlet -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- Axios \\ Peticiones del front end al backend -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Ajustes generales -->
+    <script src="../js/ajustes.js"></script>
+
+    <!-- Registrar -->
+    <script src="js/registrar_tarjeta/registrar-tarjeta-controlador.js"></script>
+    <script src="js/registrar_tarjeta/registrar-tarjeta-servicio.js"></script>
+</body>
+
+</html>
