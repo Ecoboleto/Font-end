@@ -39,7 +39,9 @@
 /* Inicio: General - ajustes básicos */
 
     html {
+        min-height: 100%;
         font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
+        position: relative;
         font-size: 16px;
         line-height: 20px;
     }
@@ -103,6 +105,10 @@
 
     a{
         text-decoration: none;
+    }
+
+    button{
+        display: block;
     }
 
     .btn{
@@ -193,27 +199,63 @@
             color: #999;
         }
 
-            /* Inicio: Tipografías Hover */
-                .blanco--tipografia:hover {
-                    color: #A3DE83;
-                }
-            
-                .rojo--tipografia:hover {
-                    color: #FB6B79;
-                }
-            
-                .crema--tipografia:hover {
-                    color: #A3DE83;
-                }
-            
-                .verde-claro--tipografia:hover {
-                    color: #2EB872;
-                }
-            
-                .verde-oscuro--tipografia:hover {
-                    color: #A3DE83;
-                }
-            /*Fin: Tipografías Hover*/
+    /* Fin: Colores tipografía */
+
+    /* Inicio: Colores tipografía */
+
+    .blanco-a--tipografia{
+        color: #FFF;
+    }
+
+    .rojo-a--tipografia {
+        color: #FA4659;
+    }
+
+    .crema-a--tipografia {
+        color: #FEFFE4;
+    }
+
+    .verde-claro-a--tipografia {
+        color: #A3DE83;
+    }
+
+    .verde-oscuro-a--tipografia {
+        color: #2EB872;
+    }
+
+    .gris-oscuro-a--tipografia{
+        color: #333;
+    }
+
+    .gris-a--tipografia{
+        color: #666;
+    }
+
+    .gris-claro-a--tipografia{
+        color: #999;
+    }
+
+        /* Inicio: Tipografías Hover */
+            .blanco-a--tipografia:hover {
+                color: #A3DE83;
+            }
+        
+            .rojo-a--tipografia:hover {
+                color: #FB6B79;
+            }
+        
+            .crema-a--tipografia:hover {
+                color: #A3DE83;
+            }
+        
+            .verde-claro-a--tipografia:hover {
+                color: #2EB872;
+            }
+        
+            .verde-oscuro-a--tipografia:hover {
+                color: #A3DE83;
+            }
+        /*Fin: Tipografías Hover*/
 
     /* Fin: Colores tipografía */
 
@@ -277,6 +319,7 @@
 
             .btn--positivo:hover{
                 background: #A3DE83;
+                color: #333;
             }
 
             .btn-inactivo:hover{
