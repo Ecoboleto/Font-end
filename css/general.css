@@ -96,6 +96,10 @@
         font-size: small;
     }
 
+    a{
+        text-decoration: none;
+    }
+
     .btn{
         border: 0;
         border-radius: 20px;
@@ -103,16 +107,28 @@
 
     }
 
-    .d-flowroot{
+    .d-flow-root{
         display: flow-root;
     }
 
-    .f-left{
+    .f-izquierda{
         float: left;
     }
 
-    .f-right{
+    .f-derecha{
         float: right;
+    }
+
+    .t-izquierda{
+        text-align: left;
+    }
+
+    .t-derecha{
+        text-align: right;
+    }
+
+    .t-centro{
+        text-align: center;
     }
 
 /* Fin: General - ajustes básicos */
@@ -128,107 +144,129 @@
 
     /* Inicio: Colores tipografía */
 
-    .blanco--tipografia{
-        color: #FFF;
-    }
+        .blanco--tipografia{
+            color: #FFF;
+        }
 
-    .rojo--tipografia {
-        color: #FA4659;
-    }
+        .rojo--tipografia {
+            color: #FA4659;
+        }
 
-    .crema--tipografia {
-        color: #FEFFE4;
-    }
+        .crema--tipografia {
+            color: #FEFFE4;
+        }
 
-    .verde-claro--tipografia {
-        color: #A3DE83;
-    }
+        .verde-claro--tipografia {
+            color: #A3DE83;
+        }
 
-    .verde-oscuro--tipografia {
-        color: #2EB872;
-    }
+        .verde-oscuro--tipografia {
+            color: #2EB872;
+        }
 
-    .gris-oscuro--tipografia{
-        color: #333;
-    }
+        .gris-oscuro--tipografia{
+            color: #333;
+        }
 
-    .gris--tipografia{
-        color: #666;
-    }
+        .gris--tipografia{
+            color: #666;
+        }
 
-    .gris-claro--tipografia{
-        color: #999;
-    }
+        .gris-claro--tipografia{
+            color: #999;
+        }
+
+            /* Inicio: Tipografías Hover */
+                .blanco--tipografia:hover {
+                    color: #A3DE83;
+                }
+            
+                .rojo--tipografia:hover {
+                    color: #FB6B79;
+                }
+            
+                .crema--tipografia:hover {
+                    color: #A3DE83;
+                }
+            
+                .verde-claro--tipografia:hover {
+                    color: #2EB872;
+                }
+            
+                .verde-oscuro--tipografia:hover {
+                    color: #A3DE83;
+                }
+            /*Fin: Tipografías Hover*/
 
     /* Fin: Colores tipografía */
 
     /* Inicio :Fondos de color */
 
-    .bg-rojo--fondo {
-        background: #FA4659;
-    }
+        .bg-rojo--fondo {
+            background: #FA4659;
+        }
 
-    .bg-crema--fondo {
-        background: #FEFFE4;
-    }
+        .bg-crema--fondo {
+            background: #FEFFE4;
+        }
 
-    .bg-verde-claro--fondo {
-        background: #A3DE83;
-    }
+        .bg-verde-claro--fondo {
+            background: #A3DE83;
+        }
 
-    .bg-verde-oscuro--fondo {
-        background: #2EB872;
-    }
+        .bg-verde-oscuro--fondo {
+            background: #2EB872;
+        }
 
-    .bg-gris-oscuro--tipografia{
-        background: #333;
-    }
+        .bg-gris-oscuro--fondo{
+            background: #333;
+        }
 
-    .bg-gris--tipografia{
-        background: #666;
-    }
+        .bg-gris--fondo{
+            background: #666;
+        }
 
-    .bg-gris-claro--tipografia{
-        background: #999;
-    }
+        .bg-gris-claro--fondo{
+            background: #999;
+        }
 
     /* Fin :Fondos de color */
 
     /* Inicio: botones */
 
-    .btn-error{
-        background: #FA4659;
-    }
-
-    .btn-positivo{
-        background: #2EB872;
-    }
-
-    .btn-desabilitado{
-        background: transparent;
-        border: 1px solid #999;
-        color: #999;
-    }
-
-    .btn-inactivo{
-        background: #A3DE83;
-    }
-
-    /* Inicio: Hover botones */
-
-        .btn--error:hover{
-            background: #FB6B79;
+        .btn--error{
+            background: #FA4659;
         }
 
-        .btn--positivo:hover{
-            background: #A3DE83;
-        }
-    
-        .btn-inactivo:hover{
+        .btn--positivo{
             background: #2EB872;
         }
 
-    /* Fin: Hover botones */
+        .btn--desabilitado{
+            background: transparent;
+            border: 1px solid #999;
+            color: #999;
+        }
+
+        .btn--inactivo{
+            background: #A3DE83;
+        }
+
+        /* Inicio: Hover botones */
+
+            .btn--error:hover{
+                background: #FB6B79;
+            }
+
+            .btn--positivo:hover{
+                background: #A3DE83;
+            }
+
+            .btn-inactivo:hover{
+                background: #2EB872;
+            }
+
+        /* Fin: Hover botones */
 
     /* Fin: botones */
 
