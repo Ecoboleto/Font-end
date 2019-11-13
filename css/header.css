@@ -1,0 +1,48 @@
+header #cajon-superior a{
+    padding: 15px;
+}
+
+.blanco-a--tipografia:hover {
+    color: #333;
+}
+
+header #cajon-inferior{
+    padding: 20px 40px;
+}
+
+.logo{
+    width: 10%;
+}
+
+.acomodo-c-inferior{
+    padding: 50px 0;
+}
+
+.menu a{
+    margin-right: 50px;
+}
+
+header #cajon-inferior nav{
+    padding-top: 5px;
+}
+
+header #cajon-inferior form div{
+    position: relative;
+}
+
+header #cajon-inferior form div input{
+    padding: 4px;
+    margin-right: 50px;
+}
+
+header #cajon-inferior form div button{
+    position: absolute;
+    margin-top: -22px;
+    right: 60px;
+    background: transparent;
+}
+
+header #carrito{
+    font-size: 30px;
+    display: inline;
+}

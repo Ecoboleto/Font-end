@@ -53,7 +53,7 @@
     }
 
     main{
-        padding: 60px 0;
+        padding: 80px 0 200px 0;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -254,6 +254,10 @@
         
             .verde-oscuro-a--tipografia:hover {
                 color: #A3DE83;
+            }
+
+            .gris-oscuro-a--tipografia:hover{
+                color: #999;
             }
         /*Fin: Tipografías Hover*/
 

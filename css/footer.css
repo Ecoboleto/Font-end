@@ -1,0 +1,9 @@
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer_inferior{
+    padding: 15px 0;
+}
