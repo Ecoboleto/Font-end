@@ -1,0 +1,236 @@
+/* Inicio: Fuentes tipográficas */
+
+/* 
+    Para usarlas solo se coloca el nombre de la font escrito en font-family, pero debe ir entre comillas simples
+*/
+
+    @font-face {
+        font-family: Roboto;
+        src: url(../fonts/Roboto-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: Roboto-italica;
+        src: url(../fonts/Roboto-Italic.ttf);
+    }
+
+    @font-face {
+        font-family: Roboto-bold;
+        src: url(../fonts/Roboto-Bold.ttf);
+    }
+
+    @font-face {
+        font-family: Roboto-bold-italica;
+        src: url(../fonts/Roboto-BoldItalic.ttf);
+    }
+
+    @font-face {
+        font-family: Nurito;
+        src: url(../fonts/NunitoSans-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: Nurito-bold;
+        src: url(../fonts/NunitoSans-Bold.ttf);
+    }
+
+/* Fin: Fuentes tipográficas */
+
+/* Inicio: General - ajustes básicos */
+
+    html {
+        font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    body {
+        width: 100%;
+        color: #000;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Nurito-bold', 'Roboto', 'Helvetica', Arial, sans-serif;
+    }
+
+    h1{
+        font-size: 40px;
+        line-height: 44px;
+    }
+
+    h2{
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    h3{
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    h4{
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    h5{
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    h6{
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    b, strong{
+        font-weight: 700;
+    }
+
+    em, i, .italica{
+        font-style: italic;
+        font: 'Roboto-italica', 'Helvetica', Arial, sans-serif;
+    }
+
+    small{
+        font-size: small;
+    }
+
+    .btn{
+        border: 0;
+        border-radius: 20px;
+        cursor: pointer;
+
+    }
+
+    .d-flowroot{
+        display: flow-root;
+    }
+
+    .f-left{
+        float: left;
+    }
+
+    .f-right{
+        float: right;
+    }
+
+/* Fin: General - ajustes básicos */
+
+/* Inicio: Colores */
+
+    /****** Paleta de colores 
+        ROJO: #FA4659
+        CREMA: #FEFFE4
+        VERDE CLARO: #A3DE83
+        VERDE OSCURO: #2EB872
+    *************************/
+
+    /* Inicio: Colores tipografía */
+
+    .blanco--tipografia{
+        color: #FFF;
+    }
+
+    .rojo--tipografia {
+        color: #FA4659;
+    }
+
+    .crema--tipografia {
+        color: #FEFFE4;
+    }
+
+    .verde-claro--tipografia {
+        color: #A3DE83;
+    }
+
+    .verde-oscuro--tipografia {
+        color: #2EB872;
+    }
+
+    .gris-oscuro--tipografia{
+        color: #333;
+    }
+
+    .gris--tipografia{
+        color: #666;
+    }
+
+    .gris-claro--tipografia{
+        color: #999;
+    }
+
+    /* Fin: Colores tipografía */
+
+    /* Inicio :Fondos de color */
+
+    .bg-rojo--fondo {
+        background: #FA4659;
+    }
+
+    .bg-crema--fondo {
+        background: #FEFFE4;
+    }
+
+    .bg-verde-claro--fondo {
+        background: #A3DE83;
+    }
+
+    .bg-verde-oscuro--fondo {
+        background: #2EB872;
+    }
+
+    .bg-gris-oscuro--tipografia{
+        background: #333;
+    }
+
+    .bg-gris--tipografia{
+        background: #666;
+    }
+
+    .bg-gris-claro--tipografia{
+        background: #999;
+    }
+
+    /* Fin :Fondos de color */
+
+    /* Inicio: botones */
+
+    .btn-error{
+        background: #FA4659;
+    }
+
+    .btn-positivo{
+        background: #2EB872;
+    }
+
+    .btn-desabilitado{
+        background: transparent;
+        border: 1px solid #999;
+        color: #999;
+    }
+
+    .btn-inactivo{
+        background: #A3DE83;
+    }
+
+    /* Inicio: Hover botones */
+
+        .btn--error:hover{
+            background: #FB6B79;
+        }
+
+        .btn--positivo:hover{
+            background: #A3DE83;
+        }
+    
+        .btn-inactivo:hover{
+            background: #2EB872;
+        }
+
+    /* Fin: Hover botones */
+
+    /* Fin: botones */
+
+
+/* Fin: Colores */
