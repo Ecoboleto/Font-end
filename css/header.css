@@ -2,24 +2,26 @@ header #cajon-superior a{
     padding: 15px;
 }
 
-.blanco-a--tipografia:hover {
-    color: #333;
+#cajon-superior .blanco-a--tipografia:hover {
+    color: #FFF;
 }
 
 header #cajon-inferior{
-    padding: 20px 40px;
+    padding: 5px 40px;
 }
 
 .logo{
-    width: 200px;
+    width: 150px;
 }
 
 .acomodo-c-inferior{
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .menu a{
     margin-right: 50px;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 header #cajon-inferior nav{

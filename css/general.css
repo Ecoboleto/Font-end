@@ -57,7 +57,7 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Nurito-bold', 'Roboto', 'Helvetica', Arial, sans-serif;
+        font-family: 'Nurito-bold', 'Roboto-bold', 'Helvetica', Arial, sans-serif;
     }
 
     h1{
@@ -111,11 +111,24 @@
         display: block;
     }
 
+    button:active{
+        transform: translateY(1px);
+    }
+
+    input, select, button{
+        outline: none;
+    }
+
     .btn{
         border: 0;
         border-radius: 20px;
         cursor: pointer;
+    }
 
+    .btn--accion{
+        width: 40%;
+        padding: 12px 0;
+        margin: 0 auto;
     }
 
     .d-en-linea{
@@ -333,6 +346,14 @@
         /* Fin: Hover botones */
 
     /* Fin: botones */
+
+    /* Inicio: Errores & otros */
+
+        .input--error{
+            border: 1px solid #FA4659;
+        }
+
+    /* Fin: Errores & otros */
 
 
 /* Fin: Colores */
