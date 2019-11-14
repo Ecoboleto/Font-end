@@ -72,20 +72,41 @@
             </div>
             <div>
                 <label for="txt_fecha_expiracion">Fecha de expiración</label>
-                <input type="date" id="txt_fecha_expiracion">
+                <select name="mes" id="txt_mes"></select>
+                <select name="anno" id="txt_anno"></select>
             </div>
             <div>
                 <label for="txt_codigo">Código de seguridad</label>
                 <input type="text" id="txt_codigo">
             </div>
 
-            <button type="button" class="btn btn--positivo blanco--tipografia">Registrar tarjeta</button>
+            <button id="btn_registrar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Registrar tarjeta</button>
         </form>
     </main>
     <!-- Fin:  Main-->
 
     <!-- Inicio:  Footer-->
     <footer>
+        <div id="footer_superior" class="bg-verde-claro--fondo d-flow-root">
+            <div class="f-izquierda">
+                <nav class="t-centrado">
+                    <a href="#" class="crema-a--tipografia">Nosotros</a>
+                    <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a>
+                </nav>
+            </div>
+
+            <div class="f-izquierda crema--tipografia">
+                <h6 class="t-centrado">Contáctenos</h6>
+                <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@contacto.com">ecoboleto@contacto.com</a></p>
+                <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
+                <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
+            </div>
+
+            <div id="ubicacion" class="f-derecha">
+                
+            </div>
+        </div>
+
         <div id="footer_inferior" class="bg-verde-oscuro--fondo">
             <p class="blanco--tipografia t-centrado">
                 <small>
@@ -106,8 +127,8 @@
     <script src="../js/ajustes.js"></script>
 
     <!-- Registrar -->
-    <script src="js/registrar_tarjeta/registrar-tarjeta-controlador.js"></script>
-    <script src="js/registrar_tarjeta/registrar-tarjeta-servicio.js"></script>
+    <script src="../js/registrar_tarjeta/registrar-tarjeta-servicio.js"></script>
+    <script src="../js/registrar_tarjeta/registrar-tarjeta-controlador.js"></script>
 </body>
 
 </html>
