@@ -3,7 +3,7 @@
 }
 
 #main form{
-    width: 400px;
+    width: 450px;
     margin: 0 auto;
 }
 
@@ -32,10 +32,15 @@
 }
 
 #main form div:nth-child(3) select:last-child{
-    width: 20%;
+    width: 17%;
+}
+
+select option{
+    text-align: center;
 }
 
 #main form div:nth-child(4) input{
+    width: 12%;
     margin: 0 0 50px 30px;
 }
 

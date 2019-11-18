@@ -63,21 +63,21 @@
 
         <form>
             <div>
-                <label for="txt_nombre">Nombre de tarjeta</label>
-                <input type="text" id="txt_nombre">
+                <label for="txt_nombre">Nombre de tarjeta <span class="rojo--tipografia">*</span></label>
+                <input type="text" id="txt_nombre" placeholder="Como viene en la tarjeta">
             </div>
             <div>
-                <label for="txt_numero">Número de tarjeta</label>
+                <label for="txt_numero">Número de tarjeta <span class="rojo--tipografia">*</span></label>
                 <input type="number" id="txt_numero">
             </div>
             <div>
-                <label for="txt_fecha_expiracion">Fecha de expiración</label>
+                <label for="txt_fecha_expiracion">Fecha de expiración <span class="rojo--tipografia">*</span></label>
                 <select name="mes" id="txt_mes"></select>
                 <select name="anno" id="txt_anno"></select>
             </div>
             <div>
-                <label for="txt_codigo">Código de seguridad</label>
-                <input type="text" id="txt_codigo">
+                <label for="txt_codigo">Código de seguridad <span class="rojo--tipografia">*</span></label>
+                <input type="text" id="txt_codigo" placeholder="CVV">
             </div>
 
             <button id="btn_registrar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Registrar tarjeta</button>
