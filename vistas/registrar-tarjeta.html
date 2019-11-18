@@ -58,10 +58,10 @@
     <!-- Fin:  Header-->
 
     <!-- Inicio:  Main-->
-    <main id="main">
-        <h1 class="verde-oscuro--tipografia t-centrado"> Registrar tarjetas</h1>
+    <main id="main" class="d-flow-root">
+        <h1 class="verde-oscuro--tipografia t-centrado">Registrar tarjetas</h1>
 
-        <form>
+        <form class="f-izquierda">
             <div>
                 <label for="txt_nombre">Nombre de tarjeta <span class="rojo--tipografia">*</span></label>
                 <input type="text" id="txt_nombre" placeholder="Como viene en la tarjeta">
@@ -82,6 +82,10 @@
 
             <button id="btn_registrar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Registrar tarjeta</button>
         </form>
+
+        <div class="f-izquierda foto-tarjeta--cajon">
+            <output id="foto_tarjeta"></output>
+        </div>
     </main>
     <!-- Fin:  Main-->
 

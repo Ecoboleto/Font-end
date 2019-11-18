@@ -3,23 +3,24 @@
 // Variables de los input y botón de registrar
 const input_nombre = document.querySelector('#txt_nombre');
 const input_numero = document.querySelector('#txt_numero');
-const input_mes = document.querySelector('txt_mes');
-const input_anno = document.querySelector('txt_anno');
+const input_mes = document.querySelector('#txt_mes');
+const input_anno = document.querySelector('#txt_anno');
 const input_codigo = document.querySelector('#txt_codigo');
 const btn_registrar = document.querySelector('#btn_registrar');
 
-const validar = (pNombre, pNumero, pCodigo) => {
+const validar = (pNombre, pNumero, pCodigo, pMes, pAnno, pFecha) => {
     let error = false;
 
     let regex_solo_letras = /^[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]+$/;
-    let regex_solo_numeros = /^[0-9]$/;
+    let regex_solo_numeros = /^[0-9]+$/;
     let regex_letras_numeros = /^[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ0-9]+$/;
-
 
     //removemo la clase error  
     input_nombre.classList.remove('input--error');
     input_numero.classList.remove('input--error');
     input_codigo.classList.remove('input--error');
+    input_mes.classList.remove('input--error');
+    input_anno.classList.remove('input--error');
 
 
     if (regex_solo_letras.test(pNombre) == false || pNombre == '' || pNombre == undefined || pNombre == null) {
@@ -37,36 +38,37 @@ const validar = (pNombre, pNumero, pCodigo) => {
         input_codigo.classList.add('input--error');
     }
 
+    if (pAnno == pFecha[1]) {
+        if (pMes < pFecha[0]) {
+            error = true;
+            input_mes.classList.add('input--error');
+            input_anno.classList.add('input--error');
+        }
+    }
+
     return error;
 };
 
 // Función de registrar
-const registrar_tarjeta = () => {
+const obtener_datos = () => {
     let nombre = input_nombre.value;
-    let numero = input_numero.value;
+    let numero = Number(input_numero.value);
     let codigo = input_codigo.value;
+    let mes = input_mes.value;
+    let anno = input_anno.value;
+    let fecha = [new Date().getMonth(), new Date().getFullYear()];
 
-
-    /*
-        Amex Card: ^3[47][0-9]{13}$
-        Mastercard: ^5[1-5][0-9]{14}$
-        Visa Card: ^4[0-9]{12}(?:[0-9]{3})?$
-        Visa Master Card: ^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$
-    */
-
-    if (validar(nombre, numero, codigo)) {
-
+    if (validar(nombre, numero, codigo, mes, anno, fecha)) {
         Swal.fire({
             icon: 'warning',
             title: 'Algunos de los campos se encuentran con valores incorrectos',
             text: 'Por favor revise los campos en rojo',
             confirmButtonText: 'Entendido'
         });
-
     } else {
 
-
-
+        registrar_tarjeta(nombre, numero, codigo, mes, anno);
+        
         Swal.fire({
             icon: 'success',
             title: 'Algunos de los campos se encuentran incorrectos',
@@ -74,7 +76,6 @@ const registrar_tarjeta = () => {
             confirmButtonText: 'Entendido'
         });
     }
-
 };
 
 //Select meses
@@ -105,9 +106,12 @@ const colocar_anno = () => {
     };
 }
 
-//
+//Detectar tipo de tarjeta
+input_numero.addEventListener('keydown', detectar_tarjeta);
 
 // Acción al registro
-btn_registrar.addEventListener('click', registrar_tarjeta);
+btn_registrar.addEventListener('click', obtener_datos);
+
+//Automatización de datos en los desplegables
 colocar_meses();
 colocar_anno();
