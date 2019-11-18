@@ -3,7 +3,8 @@
 // Variables de los input y botón de registrar
 const input_nombre = document.querySelector('#txt_nombre');
 const input_numero = document.querySelector('#txt_numero');
-
+const input_mes = document.querySelector('txt_mes');
+const input_anno = document.querySelector('txt_anno');
 const input_codigo = document.querySelector('#txt_codigo');
 const btn_registrar = document.querySelector('#btn_registrar');
 
