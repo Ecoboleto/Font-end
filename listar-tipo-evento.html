@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listar tipo evento</title>
+
+    <!-- Fontawesome local -->
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/listar-tipo-evento.css">
+</head>
+
+<body>
+    <!-- Inicio:  Header-->
+    <header>
+        <div id="cajon-superior" class="bg-verde-claro--fondo">
+            <nav class="d-flow-root">
+                <a href="#" class="blanco-a--tipografia t-centro f-derecha btn--error">Cerrar sesión</a>
+            </nav>
+        </div>
+
+        <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
+            <div class="logo d-linea-bloque f-izquierda">
+                <img src="../imgs/logo.svg" alt="Logo">
+            </div>
+
+            <div class="acomodo-c-inferior f-izquierda">
+                <nav class="d-en-linea f-izquierda menu">
+                    <a href="#" class="blanco-a--tipografia">Panel de control</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Fin:  Header-->
+
+    <!-- Inicio:  Main-->
+    <main id="main">
+        <h1 class="verde-oscuro--tipografia t-centrado">Listar tipo evento</h1>
+
+        <section class="info">
+            <div class="filtro">
+                <label for="txt_filtro">Filtrar tipo evento por nombre:</label>
+                <input type="text" id="txt_filtro_tipo_evento">
+            </div>
+
+            <div class="tabla">
+                <table id="tbl_tipo_evento">
+                    <thead>
+                        <tr>
+                            <th>Nombre tipo evento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- Fin:  Main-->
+
+    <!-- Inicio:  Footer-->
+    <footer>
+        <div id="footer_inferior" class="bg-verde-oscuro--fondo">
+            <p class="blanco--tipografia t-centrado">
+                <small>
+                    <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
+                </small>
+            </p>
+        </div>
+    </footer>
+    <!-- Fin:  Footer-->
+
+    <!-- SweetAlet -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- Axios \\ Peticiones del front end al backend -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Ajustes generales -->
+    <script src="../js/ajustes.js"></script>
+
+    <!-- Registrar -->
+    <script src="../js/registrar_tipo_evento/tipo-evento-servicio.js"></script>
+    <script src="../js/registrar_tipo_evento/listar-tipo-evento-controlador.js"></script>
+</body>
+
+</html>

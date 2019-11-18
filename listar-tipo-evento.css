@@ -1,0 +1,52 @@
+#main{
+    min-height: 383px;
+}
+
+tr{
+    border: 1px solid #2f3640;
+    width: 200px;
+    text-align: center;
+}
+
+th{
+    border: 1px solid #2f3640;
+    width: 200px;
+    text-align: center;
+    background: #2EB872;
+    color: #fff;
+    font-size: 20px;
+}
+
+tbody{
+        border: 1px solid #2f3640;
+        width: 200px;
+        text-align: center;
+}
+
+td{
+        border: 1px solid #2f3640;
+        width: 200px;
+        text-align: center;
+}
+
+h1{
+    margin-bottom: 50px;
+}
+
+
+.info{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.filtro{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tabla{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
