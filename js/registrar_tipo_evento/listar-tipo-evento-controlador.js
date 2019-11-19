@@ -14,6 +14,7 @@ let llenarTabla = async () => {
             let fila = tbody.insertRow();
 
         fila.insertCell().innerHTML = lista_tipos_eventos[i]['tipo_evento'];
+        fila.insertCell().innerHTML = lista_tipos_eventos[i]['estado'];
         }
     };
 };
