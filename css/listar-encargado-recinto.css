@@ -1,0 +1,57 @@
+#main h1 {
+    margin-bottom: 50px;
+}
+
+#main form {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#main form>div {
+    margin: 10px;
+}
+
+#main form>div .input-texto {
+    width: 250px;
+}
+
+#main form>div>div {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 10px;
+}
+
+#main form #tbl-lista thead tr th {
+    padding: 10px;
+}
+
+#main form #tbl-lista {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#main form #tbl-lista td,
+#main form #tbl-lista th {
+    border: 1px solid #fffefe;
+    padding: 8px;
+}
+
+#main form #tbl-lista th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2EB872;
+    color: #ffffff;
+}
+
+#main form #tbl-lista tr:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#main form #tbl-lista tr:nth-child(even) {
+    background-color: #fffefe;
+}
+
