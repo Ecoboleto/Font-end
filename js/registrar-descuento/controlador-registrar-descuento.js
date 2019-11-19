@@ -1,0 +1,69 @@
+'use strict';
+
+let btnRegistrarImpuesto = document.querySelector("#btn-registrar");
+let banderaDefinitiva = true;
+
+
+let enviarAValidarParaEnviarARegistro = () => {
+    let banderaError = false;
+    let inptNombre = document.querySelector("#inpt-nombre").value;
+    let inptPorcentaje = document.querySelector("#inpt-monto").value;
+
+    
+
+    let regexcodigo = /^imp+[\d]{3,4}$/;
+    let regexnombreimpuesto = /^[a-zA-Z \d\.]{2,30}$/;
+    let regexporcentajeimpuesto = /^[-+]?[0-9]\d{0,2}(\.\d{1,2})?%?$/;
+    console.log(regexporcentajeimpuesto.test(inptPorcentaje));
+    console.log(regexporcentajeimpuesto.test(inptPorcentaje));
+
+
+    if (inptNombre == "" || regexnombreimpuesto.test(inptNombre) == false) {
+        banderaError = true;
+        document.querySelector("#inpt-nombre").classList.add("class-inpt-nombre");
+    } else {
+        document.querySelector("#inpt-nombre").classList.remove("class-inpt-nombre");
+    }
+    if (inptPorcentaje == "" || regexporcentajeimpuesto.test(inptPorcentaje) == false) {
+        banderaError = true;
+        document.querySelector("#inpt-monto").classList.add("class-inpt-porcentaje");
+    } else {
+        document.querySelector("#inpt-monto").classList.remove("class-inpt-porcentaje");
+    }
+    //El impuesto no se pudo registrar, ocurrio el siguiente error
+    if (banderaError == true) {
+        Swal.fire({
+            title: 'Ha ocurrido un pequeño error',
+            text: 'Al ingresar los datos',
+            icon: 'error',
+            confirmButtonText: 'ok!'
+        })
+    }
+
+
+    if (banderaError != true) {
+        consultar_ultimo_codigo(inptNombre, inptPorcentaje);
+    }
+};
+
+
+
+btnRegistrarImpuesto.addEventListener('click', enviarAValidarParaEnviarARegistro);
+
+/*
+ registrarDatosDeLosImpuestos(id_nuevo_asignado, inptNombre, Number(inptPorcentaje));
+                    Swal.fire({
+                        title: 'Datos registrados',
+                        text: 'en el sistema',
+                        icon: 'succes',
+                        confirmButtonText: 'ok!'
+                    })
+                                        registrarDatosDeLosImpuestos('1', inptNombre, Number(inptPorcentaje));
+                    Swal.fire({
+                        title: 'Datos registrados',
+                        text: 'en el sistema',
+                        icon: 'succes',
+                        confirmButtonText: 'ok!'
+                    })
+*/
+
