@@ -1,0 +1,50 @@
+.btn-registrarse-facebook {
+    margin-top: -50px;
+    padding: 15px 7px 15px 7px;
+    margin-left: 30px;
+    font-size: 16px;
+    background: #4267b2;
+    border: 1px solid #4267b2;
+    color: #FFF;
+    border-radius: 4px;
+}
+
+.formulario {
+    margin-top: 15%;
+    margin-left: 39%;
+}
+
+.formulario div {
+    margin-top: 2%;
+    font-size: 17px;
+}
+
+#btn-guardarImagen {
+    padding: 12px 8px 12px 8px;
+    margin-left: 15%;
+    margin-left: 13%;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #2EB872;
+    border: 1px solid #2EB872;
+    font-size: 16px;
+}
+
+#btn-guardar {
+    padding: 13px 8px 13px 8px;
+    margin-top: 30px;
+    margin-left: 10%;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #2EB872;
+    border: 1px solid #2EB872;
+    font-size: 16px;
+}
+
+#imgAvatar {
+    width: 170px;
+    height: 170px;
+    margin-left: 9%;
+    margin-top: -14%;
+    margin-bottom: 28px;
+}

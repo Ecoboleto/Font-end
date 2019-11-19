@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Panel de control || Encargado de recinto</title>
+    <title>Registrar Impuesto</title>
 
     <!-- Fontawesome local -->
     <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/panel-control.css">
+    <link rel="stylesheet" href="../css/registrar-impuesto.css">
 </head>
 
 <body>
@@ -32,10 +32,27 @@
                 <img src="../imgs/logo.svg" alt="Logo">
             </div>
 
-            <div class="acomodo-c-inferior f-izquierda">
+            <div class="acomodo-c-inferior f-derecha">
                 <nav class="d-en-linea f-izquierda menu">
-                    <a href="#" class="blanco-a--tipografia">Panel de control</a>
+                    <a href="#" class="blanco-b--tipografia">Panel de Control</a>
+                    <a href="#" class="blanco-a--tipografia">Eventos</a>
+                    <a href="#" class="blanco-a--tipografia">Inicio</a>
                 </nav>
+
+                <form class="f-izquierda">
+                    <div>
+                        <input type="search">
+                        <button class="btn gris-oscuro-a--tipografia">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div id="carrito">
+                    <a href="#carrito" class="blanco-a--tipografia">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -43,32 +60,19 @@
 
     <!-- Inicio:  Main-->
     <main id="main">
-        <section class="d-flow-root panel-central">
-            <a href="#" class="f-izquierda verde-oscuro-a--tipografia d-block t-centrado">
-                <div>
-                    <i class="fas fa-user-edit d-block"></i>
-                </div>
-                <div>
-                    Registrar recinto
-                </div>
-            </a>
-            <a href="#" class="f-izquierda verde-oscuro-a--tipografia d-block t-centrado">
-                <div>
-                    <i class="fas fa-table d-block"></i>
-                </div>
-                <div>
-                    Listar y filtrar mis recinto
-                </div>
-            </a>
-            <a href="#" class="f-izquierda verde-oscuro-a--tipografia d-block t-centrado">
-                <div>
-                    <i class="fas fa-user-edit d-block"></i>
-                </div>
-                <div>
-                    Registrar encargado de recinto
-                </div>
-            </a>
-        </section>
+        <h1 class="verde-oscuro--tipografia t-centrado"> Registrar Impuesto</h1>
+
+        <form>
+            <div>
+                <label for="inpt-nombre">Nombre:</label>
+                <input type="text" id="inpt-nombre" >
+            </div>
+            <div>
+                <label for="inpt-monto" id="txt-monto" >Monto:</label>
+                <input type="number" id="inpt-monto" >
+            </div>
+            <button type="button" id="btn-registrar" class="btn btn--positivo blanco--tipografia" >Registrar impuesto</button>
+        </form>
     </main>
     <!-- Fin:  Main-->
 
@@ -90,8 +94,12 @@
     <!-- Axios \\ Peticiones del front end al backend -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- Ajustes generales -->
-    <script src="../js/ajustes.js"></script>
+    <!-- Ajustes generales 
+    <script src="../js/ajustes.js"></script>-->
+
+    <!-- Registrar -->
+    <script src="../js/controlador-registrar-impuestos.js"></script>
+    <script src="../js/servicio-registrar-impuestos.js"></script>
 </body>
 
 </html>

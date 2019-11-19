@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar encargado de recinto</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/listar-encargado-recinto.css">
+</head>
+
+<body>
+    <!-- Inicio:  Header-->
+    <header>
+        <div id="cajon-superior" class="bg-verde-claro--fondo">
+            <nav class="d-flow-root">
+                <a href="#" class="blanco-a--tipografia t-centro f-derecha btn--error">Cerrar sesión</a>
+            </nav>
+        </div>
+
+        <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
+            <div class="logo d-linea-bloque f-izquierda">
+                <img src="../imgs/logo.svg" alt="Logo">
+            </div>
+
+            <div class="acomodo-c-inferior f-izquierda">
+                <nav class="d-en-linea f-izquierda menu">
+                    <a href="#" class="blanco-a--tipografia">Panel de control</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Fin:  Header-->
+
+    <!-- Inicio:  Main-->
+    <main id="main">
+        <h1 class="verde-oscuro--tipografia t-centrado">Lista de encargados de recintos</h1>
+
+        <form>
+            <div>
+                <h3 class="verde-oscuro--tipografia t-centrado">Filtrar por</h3>
+                <div>
+                    <label for="txt_correo">Correo electrónico</label>
+                    <input type="email" id="txt_correo" class="input-texto">
+                </div>
+
+                <div>
+                    <label for="txt_nombre">Nombre completo</label>
+                    <input type="text" id="txt_nombre" class="input-texto">
+                </div>
+
+                <div>
+                    <label for="txt_fecha_nacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="txt_fecha_nacimiento" class="input-texto">
+                </div>
+
+                <div>
+                    <label for="txt_edad">Edad</label>
+                    <input type="number" id="txt_edad" class="input-texto">
+                </div>
+
+                <div>
+                    <label for="txt_telefono">Teléfono</label>
+                    <input type="number" id="txt_telefono" class="input-texto">
+                </div>
+
+                <div>
+                    <p>Genero</p>
+                    <div id="div-genero">
+                        <div>
+                            <input type="radio" name="radio-genero" id="radio_masculino" value="M">
+                            <label for="radio_masculino">Masculino</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio-genero" id="radio_femenina" value="F">
+                            <label for="radio_femenina">Femenina</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio-genero" id="radio_no_especificar" value="sin especificar">
+                            <label for="radio_no_especificar">No especificar</label>
+                        </div>
+                        <div>
+                            <label for="radio_otro">Otro</label>
+                            <input type="text" id="radio_otro">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button id="btn_registrar" type="button"
+                        class="btn btn--accion btn--positivo blanco--tipografia">Aplicar</button>
+                    <button id="btn_registrar" type="button"
+                        class="btn btn--accion btn--positivo blanco--tipografia">Limpiar campos</button>
+                </div>
+            </div>
+            <div>
+                <table id="tbl-lista">
+                    <thead>
+                        <tr>
+                            <th>Correo electrónico</th>
+                            <th>Nombre completo</th>
+                            <th>Fecha de nacimiento</th>
+                            <th>Edad</th>
+                            <th>Teléfonos</th>
+                            <th>Genero</th>
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
+            </div>
+        </form>
+    </main>
+    <!-- Fin:  Main-->
+
+    <!-- Inicio:  Footer-->
+    <footer>
+        <div id="footer_inferior" class="bg-verde-oscuro--fondo">
+            <p class="blanco--tipografia t-centrado">
+                <small>
+                    <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
+                </small>
+            </p>
+        </div>
+    </footer>
+    <!-- Fin:  Footer-->
+
+    <!-- SweetAlet -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- Axios \\ Peticiones del front end al backend -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Ajustes generales -->
+    <script src="../js/funciones-generales.js"></script>
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/ajustes.js"></script>
+
+    <!-- Registrar -->
+    <script src="../js/encargado_recinto/encargado-recinto-servicio.js"></script>
+    <script src="../js/encargado_recinto/listar-encargado-recinto.js"></script>
+</body>
+
+</html>
