@@ -1,0 +1,30 @@
+#main{
+    padding-top: 0;
+}
+
+.carousel {
+    max-width: 100%;
+    position: relative;
+}
+
+#retroceder, #avanzar{
+    position: absolute;
+    cursor: pointer;
+    font-size: 50px;
+    top: 180px;
+}
+
+#retroceder{
+    left: 50px;
+}
+
+#avanzar{
+    right: 50px;
+}
+
+#imagen {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
