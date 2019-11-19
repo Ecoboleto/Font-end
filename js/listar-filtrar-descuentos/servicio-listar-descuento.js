@@ -4,7 +4,7 @@ let listar_usuarios = async()=>{
     let lista_productos;
     await axios ({
          method: 'get',
-         url: 'http:localhost:8000/Backend/registrar-descuento',
+         url: 'http:localhost:3000/Backend/registrar-descuento',
          responseType: 'json'
      })
      .then(function(res){
