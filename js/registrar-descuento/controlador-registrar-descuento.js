@@ -42,7 +42,8 @@ let enviarAValidarParaEnviarARegistro = () => {
 
 
     if (banderaError != true) {
-        consultar_ultimo_codigo(inptNombre, inptPorcentaje);
+        let estado = 'activo';
+        consultar_ultimo_codigo(inptNombre, inptPorcentaje, estado);
     }
 };
 

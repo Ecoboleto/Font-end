@@ -42,28 +42,12 @@ let enviarAValidarParaEnviarARegistro = () => {
 
 
     if (banderaError != true) {
-        consultar_ultimo_codigo(inptNombre, inptPorcentaje);
+        let estado = 'activo';
+        consultar_nombre_repetido(inptNombre, inptPorcentaje, estado);
     }
 };
 
 
 
 btnRegistrarImpuesto.addEventListener('click', enviarAValidarParaEnviarARegistro);
-
-/*
- registrarDatosDeLosImpuestos(id_nuevo_asignado, inptNombre, Number(inptPorcentaje));
-                    Swal.fire({
-                        title: 'Datos registrados',
-                        text: 'en el sistema',
-                        icon: 'succes',
-                        confirmButtonText: 'ok!'
-                    })
-                                        registrarDatosDeLosImpuestos('1', inptNombre, Number(inptPorcentaje));
-                    Swal.fire({
-                        title: 'Datos registrados',
-                        text: 'en el sistema',
-                        icon: 'succes',
-                        confirmButtonText: 'ok!'
-                    })
-*/
 

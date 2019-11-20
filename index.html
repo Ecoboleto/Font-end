@@ -60,9 +60,16 @@
 
     <!-- Inicio:  Main-->
     <main id="main" class="d-flow-root">
+
         <section class="carousel">
             <i class="fas fa-chevron-left rojo-a--tipografia" id="retroceder"></i>
             <i class="fas fa-chevron-right rojo-a--tipografia" id="avanzar"></i>
+            <div class="controles-circulares--cajon">
+                <i class="far fa-circle rojo-a--tipografia" onclick='slide_actual(1)'></i>
+                <i class="far fa-circle rojo-a--tipografia" onclick='slide_actual(2)'></i>
+                <i class="far fa-circle rojo-a--tipografia" onclick='slide_actual(3)'></i>
+                <i class="far fa-circle rojo-a--tipografia" onclick='slide_actual(4)'></i>
+            </div>
             <div id="imagen">
                 <img src="imgs/carrusel/concierto.jpg" style="display: none">
                 <img src="imgs/carrusel/venta_ropa.jpg" style="display: none">
@@ -70,6 +77,41 @@
                 <img src="imgs/carrusel/charla.jpg" style="display: none">
             </div>
         </section>
+        <section id="informacion" class="d-flow-root">
+            <div class="f-izquierda contenedor-circulos">
+                <div class="circulos-informacion bg-verde-oscuro--fondo">
+                    <h3 class="t-centrado mb-2">Innovación</h3>
+                </div>
+                <p>Boletos desde la comodidad de su hogar, sin filas y protegiendo a la naturaleza.</p>
+            </div>
+            <div class="f-izquierda contenedor-circulos">
+                <div class="circulos-informacion bg-verde-oscuro--fondo">
+                    <h3 class="t-centrado mb-2">Seguridad</h3>
+                </div>
+                <p>Sabía que con EcoBoleto puede obtener su boleto a cualquiera de los eventos, tan solo con contar con
+                    correo electrónico</p>
+            </div>
+            <div class="f-izquierda contenedor-circulos">
+                <div class="circulos-informacion bg-verde-oscuro--fondo">
+                    <h3 class="t-centrado mb-2">Accesibilidad</h3>
+                </div>
+                <p>Nosotros ayudamos a que todos puedan disfrutar eventos</p>
+            </div>
+        </section>
+        <section class="d-flow-root">
+            <div class="f-izquierda descripcion--evento t-centrado">
+                <h1 class="mb-2 verde-oscuro--tipografia">Eventos</h1>
+                <p class="mb-2">EcoBoleto le ofrece lo mejor en eventos a nivel nacional. Puede encontrar conciertos,
+                    teatro
+                    internacional, eventos de comedia, entre otros.</p>
+                <p class="mb-2">No se preocupe por las filas y adquiera las entradas desde la comodidad de su hogar.</p>
+                <button class="btn btn--positivo btn--accion blanco--tipografia" type="button">Ver eventos aquí</button>
+            </div>
+            <div class="f-derecha evento--imagen">
+                <img src="imgs/evento.jpg" alt="Evento concierto">
+            </div>
+        </section>
+
     </main>
     <!-- Fin:  Main-->
 
@@ -115,7 +157,7 @@
     <!-- Ajustes generales -->
     <script src="../js/ajustes.js"></script>
 
-    <!-- Registrar -->
+    <!-- Carrusel -->
     <script src="js/carrusel.js"></script>
 </body>
 
