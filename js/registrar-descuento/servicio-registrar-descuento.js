@@ -1,31 +1,22 @@
 'use strict';
 
-let registrarDatosDeLosImpuestos = async (id_codigo, nombre, porcentaje) => {
+let registrarDatosDeLosImpuestos = async (nombre, porcentaje, estado) => {
     //id_codigo = 'imp-' + id_codigo;
-    console.log(id_codigo, nombre, porcentaje);
+    nombre = nombre.toLowerCase();
     await axios({
         method: 'post',
-        url: 'http:localhost:3000/Backend/registrar-descuento',
+        url: 'http:localhost:3000/api/registrar-descuento',
         //body
         data: {
-            id_codigo: id_codigo,
             nombre: nombre,
-            porcentaje: porcentaje
+            porcentaje: porcentaje,
+            estado: 'activo'
         }
     }
     )
         .then(function (res) {
-            let banderaError = false;
-            //console.log(res.data);
-            //console.log(res.data.Impuesto.nombre);
+            console.log(res.data);
 
-
-            Swal.fire({
-                title: res.data.value,
-                text: 'en el sistema',
-                icon: 'success',
-                confirmButtonText: 'ok!'
-            })
         })
         .catch(function (error) {
             console.log(error);
@@ -36,24 +27,24 @@ let registrarDatosDeLosImpuestos = async (id_codigo, nombre, porcentaje) => {
 
 
 
-let consultar_ultimo_codigo = async (inptNombre, inptPorcentaje) => {
+let consultar_ultimo_codigo = async (inptNombre, inptPorcentaje, estado) => {
     let ultimo_numero;
-    let lista_impuestos;
+    let lista_descuentos;
     let id_nuevo_asignado;
     let varNombreRepetido = document.querySelector("#inpt-nombre").value;
     let banderaErrorDatoRepetido;
 
     await axios({
         method: 'get',
-        url: 'http:localhost:3000/Backend/registrar-descuento',
+        url: 'http:localhost:3000/api/registrar-descuento',
         responseType: 'json'
     })
         .then(function (res) {
             
-            lista_impuestos = res.data.productos;
+            lista_descuentos = res.data.descuentos;
         
-            for(let i=0; i<lista_impuestos.length;i++){
-                if(varNombreRepetido == lista_impuestos[i]['nombre']){
+            for(let i=0; i<lista_descuentos.length;i++){
+                if(varNombreRepetido == lista_descuentos[i]['nombre'] || inptNombre.toLowerCase() == lista_descuentos[i]['nombre']){
                     //console.log('repetido');
                     Swal.fire({
                         title: 'Ha ocurrido un pequeño error(dato repetido).',
@@ -62,39 +53,27 @@ let consultar_ultimo_codigo = async (inptNombre, inptPorcentaje) => {
                         confirmButtonText: 'ok!'
                     })
                     banderaErrorDatoRepetido = true;
-                    return;
                 }
             }
 
 
-            //console.log(lista_impuestos.length);
+            //console.log(lista_descuentos.length);
 
-            if (lista_impuestos.length != 0) {
-
-                ultimo_numero = Number(lista_impuestos[lista_impuestos.length - 1]['id_codigo'].charAt(0));
-                id_nuevo_asignado = String(ultimo_numero + 1);
-                //console.log(lista_impuestos);
-                //console.log(id_nuevo_asignado);
-                //console.log(res.data.resultado);
-                //console.log(varNombreRepetido);
-
-
-
-                   
-                 
-                    registrarDatosDeLosImpuestos(id_nuevo_asignado, inptNombre, Number(inptPorcentaje));
+            if (lista_descuentos.length != 0) {
+                if (banderaErrorDatoRepetido != true) {
+                    registrarDatosDeLosImpuestos(inptNombre, Number(inptPorcentaje), estado);
                     Swal.fire({
                         title: 'Datos registrados',
                         text: 'en el sistema',
                         icon: 'success',
                         confirmButtonText: 'ok!'
                     })
-                
+                }
 
             }
-            if (lista_impuestos.length == 0) {
+            if (lista_descuentos.length == 0) {
 
-                    registrarDatosDeLosImpuestos('1', inptNombre, Number(inptPorcentaje));
+                    registrarDatosDeLosImpuestos(inptNombre, Number(inptPorcentaje), estado);
                     Swal.fire({
                         title: 'Datos registrados',
                         text: 'en el sistema',

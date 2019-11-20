@@ -9,7 +9,7 @@ window.onload = function () {
         '../imgs/carrusel/charla.jpg'
     ];
 
-    let posicionActual = 0;
+    let posicion_actual = 0;
     let intervalo;
     const tiempo_intervalo_milesimas_segundo = 5000;
     const boton_retroceder = document.querySelector('#retroceder');
@@ -18,51 +18,40 @@ window.onload = function () {
 
     // Funciones
 
-    /**
-     * Funcion que cambia la foto en la siguiente posicion
-     */
-    const pasarFoto = () => {
-        if(posicionActual >= imagenes.length - 1) {
-            posicionActual = 0;
+    //Funcion que cambia la foto en la siguiente posicion
+    const pasar_foto = () => {
+        if (posicion_actual >= imagenes.length - 1) {
+            posicion_actual = 0;
         } else {
-            posicionActual++;
+            posicion_actual++;
         }
-        renderizarImagen();
+        renderizar_imagen();
     }
 
-    /**
-     * Funcion que cambia la foto en la anterior posicion
-     */
-    const retrocederFoto = () => {
-        if(posicionActual <= 0) {
-            posicionActual = imagenes.length - 1;
+    //Funcion que cambia la foto en la anterior posicion
+    const retroceder_foto = () => {
+        if (posicion_actual <= 0) {
+            posicion_actual = imagenes.length - 1;
         } else {
-            posicionActual--;
+            posicion_actual--;
         }
-        renderizarImagen();
+        renderizar_imagen();
     }
 
-    /**
-     * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
-     */
-    const renderizarImagen = () => {
-        imagen.style.backgroundImage = `url(${imagenes[posicionActual]})`;
+    //Funcion que actualiza la imagen de imagen dependiendo de posicion_actual
+    const renderizar_imagen = () => {
+        imagen.style.backgroundImage = `url(${imagenes[posicion_actual]})`;
     }
 
-    /**
-     * Activa el autoplay de la imagen
-     */
-    const playIntervalo = () => {
-        intervalo = setInterval(pasarFoto, tiempo_intervalo_milesimas_segundo);
-        // Desactivamos los botones de control
-        boton_avanzar.setAttribute('disabled', true);
-        boton_retroceder.setAttribute('disabled', true);
+    //Activa el autoplay de la imagen
+    const iniciar_intervalo = () => {
+        intervalo = setInterval(pasar_foto, tiempo_intervalo_milesimas_segundo);
     }
 
     // Eventos
-    boton_avanzar.addEventListener('click', pasarFoto);
-    boton_retroceder.addEventListener('click', retrocederFoto);
+    boton_avanzar.addEventListener('click', pasar_foto);
+    boton_retroceder.addEventListener('click', retroceder_foto);
     // Iniciar
-    playIntervalo();
-    renderizarImagen();
+    iniciar_intervalo();
+    renderizar_imagen();
 }; 
