@@ -107,7 +107,7 @@ const colocar_anno = () => {
 }
 
 //Detectar tipo de tarjeta
-input_numero.addEventListener('keydown', detectar_tarjeta);
+input_numero.addEventListener('keyup', detectar_tarjeta);
 
 // Acción al registro
 btn_registrar.addEventListener('click', obtener_datos);
