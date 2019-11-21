@@ -1,0 +1,86 @@
+#main h1{
+    margin-bottom: 8px;
+}
+#main{
+    height: 286px;
+}
+#main form{
+    width: 400px;
+    margin: 0 auto;
+}
+.div-filtro{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#btn-listar{
+    margin-bottom: 40px;
+    width: 135px;
+    padding: 12px 0;
+    border-radius: 18px;
+    border: none;
+    background: #2EB872;
+    color: white;
+}
+.acomodo-c-inferior{
+    padding: 30px 0;
+    padding-left: 50px;
+    float:left !important;
+}
+#btn-listar:hover{
+    background: #A3DE83;
+    color: black;
+}
+.class-inpt-nombre{
+    border: 1px solid red;
+}
+.class-inpt-porcentaje{
+    border: 1px solid red;
+}
+
+#main form div{
+    margin-bottom: 20px;
+}
+#txt-monto{
+    display: inline-block;
+    width: 62px;
+}
+#main form div input{
+    margin-left: 50px;
+    padding: 8px 5px;
+}
+.grid-cuadro-de-lista{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 260px;
+}
+.div-btn-refrescar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.div-btn-listar-descuentos{
+    margin-top: 50px;
+}
+.class-btn-bloque{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#main form div:nth-child(3) input{
+    margin-left: 37px;
+    width: 168px;
+}
+.lista-div-classe{
+    border: 1px solid #40dc40;
+    margin-right: -18px;  
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 254px;
+}
+#main form div:nth-child(4) input{
+    margin: 0 0 50px 30px;
+}
+
+#main form button{
+    width: 40%;
+    padding: 12px 0;
+    margin: 0 auto;
+}
