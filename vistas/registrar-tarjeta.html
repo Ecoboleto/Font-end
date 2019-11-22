@@ -80,7 +80,8 @@
                 <input type="text" id="txt_codigo" placeholder="CVV">
             </div>
 
-            <button id="btn_registrar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Registrar tarjeta</button>
+            <button id="btn_registrar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Registrar
+                tarjeta</button>
         </form>
 
         <div class="f-izquierda foto-tarjeta--cajon">
@@ -92,7 +93,7 @@
     <!-- Inicio:  Footer-->
     <footer>
         <div id="footer_superior" class="bg-verde-claro--fondo d-flow-root">
-            <div class="f-izquierda">
+            <div class="f-izquierda menu-izquierda">
                 <nav class="t-centrado">
                     <a href="#" class="crema-a--tipografia">Nosotros</a>
                     <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a>
@@ -101,13 +102,14 @@
 
             <div class="f-izquierda crema--tipografia">
                 <h6 class="t-centrado">Contáctenos</h6>
-                <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@contacto.com">ecoboleto@contacto.com</a></p>
+                <p>Correo: <a class="crema-a--tipografia"
+                        href="mailto:ecoboleto@contacto.com">ecoboleto@contacto.com</a></p>
                 <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
                 <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
             </div>
 
             <div id="ubicacion" class="f-derecha">
-                
+                <div id="mapa"></div>
             </div>
         </div>
 
@@ -133,6 +135,10 @@
     <!-- Registrar -->
     <script src="../js/registrar_tarjeta/registrar-tarjeta-servicio.js"></script>
     <script src="../js/registrar_tarjeta/registrar-tarjeta-controlador.js"></script>
+
+    <!-- Mapa -->
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDFdc3wI-6hc1r1BNVE_XKwq25d1sXdLtk"></script>
+    <script src="../js/mapa_index_ecoboleto.js"></script>
 </body>
 
 </html>

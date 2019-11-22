@@ -11,15 +11,15 @@ footer{
     padding: 30px 0 20px 0;
 }
 
-#footer_superior div:first-child{
+#footer_superior .menu-izquierda{
     margin-top: 30px;
 }
 
-#footer_superior div:first-child a{
+#footer_superior .menu-izquierda a{
     display: block;
 }
 
-#footer_superior div:first-child, #footer_superior div:nth-child(2){
+#footer_superior .menu-izquierda, #footer_superior div:nth-child(2){
     width: 30%;
 }
 
@@ -35,7 +35,6 @@ footer{
     margin-bottom: 10px;
 }
 
-
 #footer_superior nav a{
     margin-bottom: 50px;
     display: block;
@@ -43,4 +42,10 @@ footer{
 
 #footer_inferior{
     padding: 15px 0;
+}
+
+#mapa {
+    height: 150px;
+    width: 350px !important;
+    margin-top: 0 !important;
 }
