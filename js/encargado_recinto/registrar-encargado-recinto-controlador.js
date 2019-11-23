@@ -104,7 +104,7 @@ const encargado_recinto = async () => {
                 .then(resultado => {
                     if (resultado.estado) {
                         Swal.fire({
-                            type: 'success',
+                            icon: 'success',
                             title: 'Registro realizado con éxito',
                             text: 'El encargado de reciinto ha sido almacenado',
                             confirmButtonText: 'Entendido',
@@ -116,7 +116,7 @@ const encargado_recinto = async () => {
                         });
                     } else {
                         Swal.fire({
-                            type: 'warning',
+                            icon: 'warning',
                             title: resultado.msg,
                             confirmButtonText: 'Entendido',
                             onAfterClose: () => {
@@ -127,7 +127,7 @@ const encargado_recinto = async () => {
                 });
         } catch (error) {
             Swal.fire({
-                type: 'warning',
+                icon: 'warning',
                 title: 'No se puede conectar con el servidor',
                 confirmButtonText: 'Entendido'
             });

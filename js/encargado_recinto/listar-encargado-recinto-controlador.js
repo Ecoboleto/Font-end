@@ -34,7 +34,7 @@ const listar_sin_filtro = async () => {
         });
     } else {
         Swal.fire({
-            type: 'warning',
+            icon: 'warning',
             title: resuldatos.msg,
             confirmButtonText: 'Entendido'
         });
@@ -76,7 +76,8 @@ let listar_con_filtro = async () => {
         });
     } else {
         Swal.fire({
-            type: 'warning',
+            icon: 'warning',
+
             title: resuldatos.msg,
             confirmButtonText: 'Entendido'
         });
