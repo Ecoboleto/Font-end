@@ -71,8 +71,8 @@ const obtener_datos = () => {
         
         Swal.fire({
             icon: 'success',
-            title: 'Algunos de los campos se encuentran incorrectos',
-            text: 'Por favor revise los campos en rojo',
+            title: 'Registro exitoso',
+            text: 'La tarjeta se ha registrado con exito',
             confirmButtonText: 'Entendido'
         });
     }
