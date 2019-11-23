@@ -9,10 +9,10 @@ let listar_descuentos = async()=>{
      })
      .then(function(res){
         lista_descuentos = res.data.descuentos;
-        console.log(lista_descuentos);
+        //console.log(lista_descuentos);
      })
      .catch(function(error){
-         console.log(error);
+        //console.log(error);
          Swal.fire({
             title: 'Error de conexión en el servicio de la nube',
             text: 'Inténtalo más tarde o puedes revisar la conexión. Gracias',

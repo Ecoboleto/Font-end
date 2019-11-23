@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/listar-filtrar-impuesto.css">
+    <link rel="stylesheet" href="../css/listar-filtrar-impuestos.css">
 </head>
 
 <body>
@@ -32,9 +32,9 @@
                 <img src="../imgs/logo.svg" alt="Logo">
             </div>
 
-            <div class="acomodo-c-inferior f-derecha">
+            <div class="acomodo-c-inferior f-izquierda">
                 <nav class="d-en-linea f-izquierda menu">
-                    <a href="#" class="blanco-a--tipografia">Panel de Control</a>
+                    <a href="#" class="blanco-a--tipografia">Panel de control</a>
                 </nav>
             </div>
         </div>
@@ -43,38 +43,37 @@
 
     <!-- Inicio:  Main-->
     <main id="main">
-        <h1 class="verde-oscuro--tipografia t-centrado"> Listar Impuesto</h1>
-        <div class="div-filtro">
-            <label for="id-search-bar">Filtrar (nombre o %):</label>
-            <input type="text" id="id-search-bar">
-        </div>
-        <div class="class-btn-bloque">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="grid-cuadro-de-lista">
-            <div class="div-btn-refrescar">
-                <div></div>
-                <div class="div-btn-listar-descuentos">
-                    <button id="btn-listar">Actualizar Lista</button>
-                </div>
-                <div></div>
-            </div>
-            <div id="id-lista-div" class="lista-div-classe"></div>
-            <div></div>
-        </div>
-    </main>
-    <!-- Fin:  Main
-                <button type="button" id="btn-registrar" class="btn btn--positivo blanco--tipografia" >Registrar impuesto</button>
+        <h1 class="verde-oscuro--tipografia t-centrado">Listar Impuestos</h1>
 
-    -->
+        <section class="info">
+            <div></div>
+            <div>
+                <div class="filtro">
+                    <label for="txt_filtro">Filtrar por nombre o %:</label>
+                    <input type="text" id="txt_filtro_impuestos">
+                </div>
+
+                <div class="tabla">
+                    <table id="tbl_impuestos">
+                        <thead>
+                            <tr>
+                                <th>Nombre tipo evento</th>
+                                <th>Porcentaje</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div></div>
+        </section>
+
+
+    </main>
+    <!-- Fin:  Main-->
 
     <!-- Inicio:  Footer-->
     <footer>
@@ -94,12 +93,12 @@
     <!-- Axios \\ Peticiones del front end al backend -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- Ajustes generales 
-    <script src="../js/ajustes.js"></script>-->
+    <!-- Ajustes generales -->
+    <script src="../js/ajustes.js"></script>
 
     <!-- Registrar -->
-    <script src="../js/listar-impuesto/servicio-listar-impuestos.js"></script>
-    <script src="../js/listar-impuesto/controlador-listar-impuestos.js"></script>
+    <script src="../js/listar-impuestos/servicio-listar-impuestos.js"></script>
+    <script src="../js/listar-impuestos/controlador-listar-impuestos.js"></script>
 </body>
 
 </html>

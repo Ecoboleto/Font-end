@@ -11,8 +11,7 @@ let enviarAValidarParaEnviarARegistro = () => {
 
     
 
-    let regexcodigo = /^imp+[\d]{3,4}$/;
-    let regexnombreimpuesto = /^[a-zA-Z \d\.]{2,30}$/;
+    let regexnombreimpuesto = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/;
     let regexporcentajeimpuesto = /^[-+]?[0-9]\d{0,2}(\.\d{1,2})?%?$/;
     console.log(regexporcentajeimpuesto.test(inptPorcentaje));
     console.log(regexporcentajeimpuesto.test(inptPorcentaje));
@@ -50,21 +49,3 @@ let enviarAValidarParaEnviarARegistro = () => {
 
 
 btnRegistrarImpuesto.addEventListener('click', enviarAValidarParaEnviarARegistro);
-
-/*
- registrarDatosDeLosImpuestos(id_nuevo_asignado, inptNombre, Number(inptPorcentaje));
-                    Swal.fire({
-                        title: 'Datos registrados',
-                        text: 'en el sistema',
-                        icon: 'succes',
-                        confirmButtonText: 'ok!'
-                    })
-                                        registrarDatosDeLosImpuestos('1', inptNombre, Number(inptPorcentaje));
-                    Swal.fire({
-                        title: 'Datos registrados',
-                        text: 'en el sistema',
-                        icon: 'succes',
-                        confirmButtonText: 'ok!'
-                    })
-*/
-

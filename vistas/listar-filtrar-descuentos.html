@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/listar-filtrar-descuento.css">
+    <link rel="stylesheet" href="../css/listar-filtrar-descuentos.css">
 </head>
 
 <body>
@@ -32,9 +32,9 @@
                 <img src="../imgs/logo.svg" alt="Logo">
             </div>
 
-            <div class="acomodo-c-inferior f-derecha">
+            <div class="acomodo-c-inferior f-izquierda">
                 <nav class="d-en-linea f-izquierda menu">
-                    <a href="#" class="blanco-a--tipografia">Panel de Control</a>
+                    <a href="#" class="blanco-a--tipografia">Panel de control</a>
                 </nav>
             </div>
         </div>
@@ -43,38 +43,37 @@
 
     <!-- Inicio:  Main-->
     <main id="main">
-        <h1 class="verde-oscuro--tipografia t-centrado"> Listar Descuentos</h1>
-        <div class="div-filtro">
-            <label for="id-search-bar">Filtrar (nombre o %):</label>
-            <input type="text" id="id-search-bar">
-        </div>
-        <div class="class-btn-bloque">
+        <h1 class="verde-oscuro--tipografia t-centrado">Listar Descuentos</h1>
+
+        <section class="info">
             <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="grid-cuadro-de-lista">
-            <div class="div-btn-refrescar">
-                <div></div>
-                <div class="div-btn-listar-descuentos">
-                    <button id="btn-listar">Actualizar Lista</button>
+            <div>
+                <div class="filtro">
+                    <label for="txt_filtro">Filtrar por nombre o %:</label>
+                    <input type="text" id="txt_filtro_descuentos">
                 </div>
-                <div></div>
+
+                <div class="tabla">
+                    <table id="tbl_descuentos">
+                        <thead>
+                            <tr>
+                                <th>Nombre tipo evento</th>
+                                <th>Porcentaje</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div id="id-lista-div" class="lista-div-classe"></div>
+            <div></div>
+        </section>
 
-        </div>
+
     </main>
-    <!-- Fin:  Main
-                <button type="button" id="btn-registrar" class="btn btn--positivo blanco--tipografia" >Registrar impuesto</button>
-
-    -->
+    <!-- Fin:  Main-->
 
     <!-- Inicio:  Footer-->
     <footer>
@@ -94,8 +93,8 @@
     <!-- Axios \\ Peticiones del front end al backend -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- Ajustes generales 
-    <script src="../js/ajustes.js"></script>-->
+    <!-- Ajustes generales -->
+    <script src="../js/ajustes.js"></script>
 
     <!-- Registrar -->
     <script src="../js/listar-descuentos/servicio-listar-descuentos.js"></script>
