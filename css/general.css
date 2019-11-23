@@ -162,12 +162,20 @@
         margin: 0 auto;
     }
 
+    .d-none{
+        display: none;
+    }
+
     .d-en-linea{
         display: inline;
     }
 
     .d-linea-bloque{
         display: inline-block;
+    }
+
+    .d-bloque{
+        display: block;
     }
 
     .d-flow-root{
@@ -357,6 +365,10 @@
 
         .btn--inactivo{
             background: #A3DE83;
+        }
+
+        .btn--crema{
+            background: #FEFFE4;
         }
 
         /* Inicio: Hover botones */
