@@ -69,7 +69,7 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
         input_cedula.classList.add('input--error');
     }
 
-    if (!validar_letras(pNombre_comercial)) {
+    if (!validar_vacio_null(pNombre_comercial)) {
         error = false;
         input_nombre_comercial.classList.add('input--error');
     }
@@ -216,6 +216,7 @@ const obtener_datos = () => {
     obtener_telefonos();
     let nombre_empresa = input_nombre_empresa.value;
     let logo = input_logo.src;
+    let tipo_cedula = cedula;
     let cedula_empresa = input_cedula.value;
     let nombre_comercial = input_nombre_comercial.value;
     let annos_experiencia = input_annos_experiencia.value;
@@ -228,11 +229,9 @@ const obtener_datos = () => {
     let edad = input_edad.value;
     let genero_respuesta = genero;
     let aTelefonos = telefonos;
-
-    console.log(tipo_de_cedula);
     
 
-    if (!validar_formulario(nombre_empresa, logo, tipo_de_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta)) {
+    if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta)) {
         Swal.fire({
             icon: 'warning',
             title: 'Algunos de los campos se encuentran con valores incorrectos',
@@ -245,7 +244,7 @@ const obtener_datos = () => {
             genero_respuesta = input_otro_respuesta.value;
         };
 
-        registrar_organizador(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electonico, edad, genero_respuesta, aTelefonos);
+        registrar_organizador_eventos(nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta, aTelefonos);
 
         Swal.fire({
             icon: 'success',

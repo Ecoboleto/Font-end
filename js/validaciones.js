@@ -2,8 +2,8 @@
 const regex_contrasena = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{6,8}$";
 const regex_solo_letras = "[A-Za-zäÄëËïÏöÖüÜñáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâÑêîôûàèìòùÀÈÌÒÙ]+$";
 const regex_telefono = "\\d{4}-\\d{4}$";
-const regex_solo_numeros = "[0-9]$";
-const regex_letras_numeros = "[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑ0-9]+$";
+const regex_solo_numeros = "\\d";
+const regex_letras_numeros = "[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑ0-9]$";
 const regex_correo_electronico = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$";
 const regex_nombre_completo = "^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\']{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\']+[\\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\']{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\'])+[\\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\']{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\'])?$";
 
@@ -66,11 +66,12 @@ const validar_mayor_edad = (date) => {
 const validar = (valor,regex) => {   
     let error = true;
 
-    const resultado = valor.match(regex);
-    if (valor == '' || valor == undefined || valor == null || resultado == null ) {
+    if (valor == '' || valor == undefined || valor == null ) {
         error = false;
+    }else{
+        const resultado = valor.match(regex);
+        if( resultado == null){ error = false;}
     };
-
     return error;
 };
 
