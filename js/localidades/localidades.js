@@ -85,7 +85,7 @@ function distritoSelected() {
 }
 
 function arrayToOptions(array) {
-    var html = "<option>Seleccione una opción</option>";
+    var html = '<option value="0">Seleccione una opción</option>';
     for(key in array) {
         html += "<option value='"+key+"'>"+array[key]+"</option>";
     }

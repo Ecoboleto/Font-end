@@ -82,7 +82,7 @@
                     <input type="radio" id="txt_juridica" name="cedula" value="Juridica">
                 </div>
                 <div>
-                    <input type="number" id="txt_ced" placeholder="Cédula" maxlength="10">
+                    <input type="number" id="txt_ced" placeholder="Cédula">
                 </div>
             </div>
             <div>
@@ -158,14 +158,14 @@
             </div>
             <div>
                 <label for="txt_edad">Edad</label>
-                <input type="number" id="txt_edad">
+                <input type="number" id="txt_edad" placeholder="18">
             </div>
             <div class="d-flow-root">
                 <label for="txt_telefono">Teléfono</label>
-                <input type="number" id="txt_telefono" class="txt_telefono">
+                <input type="text" id="txt_telefono" class="txt_telefono" placeholder="1234-5678">
                 <button type="button" class="btn btn--inactivo crema--tipografia">Agregar otro teléfono</button>
             </div>
-            <div>
+            <div id="genero_contenedor">
                 <p>Género</p>
 
                 <div>
@@ -190,7 +190,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn--positivoa" id="btn_registrar">Registrar organizador de eventos</button>
+            <button type="button" class="btn btn--positivo" id="btn_registrar">Registrar organizador de eventos</button>
         </form>
     </main>
     <!-- Fin:  Main-->
