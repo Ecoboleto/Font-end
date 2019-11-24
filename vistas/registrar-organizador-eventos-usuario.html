@@ -67,7 +67,7 @@
             <div>
                 <div class="img-cloudinary">
                     <figure class="img-holder">
-                        <img src="../imgs/image-solid.svg" alt="Logo Organizador" id="img_logo">
+                        <img src="../imgs/image-solid.svg" alt="Logo Organizador" class="logo--img">
                     </figure>
 
                     <button type="button" id="btn-guardarImagen">Subir imagen</button>
@@ -186,11 +186,11 @@
                 <div>
                     <input type="radio" name="genero" value="Otro" id="txt_otro">
                     <label for="txt_otro">Otro</label>
-                    <input type="text" id="txt_otro_respuesta" class="d-none">
+                    <input type="text" id="txt_otro_respuesta">
                 </div>
             </div>
 
-            <button type="button" class="btn btn--positivoa">Registrar organizador de eventos</button>
+            <button type="button" class="btn btn--positivoa" id="btn_registrar">Registrar organizador de eventos</button>
         </form>
     </main>
     <!-- Fin:  Main-->
@@ -229,7 +229,7 @@
     <!-- Fin:  Footer-->
 
     <!-- SweetAlet -->
-    <script src="../js/sweetAlert2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <!-- Axios \\ Peticiones del front end al backend -->
     <script src="../js/axios.js"></script>
@@ -237,12 +237,7 @@
     <!-- Ajustes generales -->
     <script src="../js/ajustes.js"></script>
 
-    <!-- Registrar -->
-    <script
-        src="../js/registrar_organizador_eventos_usuario/registrar-organizador-eventos-usuario-servicio.js"></script>
-    <script
-        src="../js/registrar_organizador_eventos_usuario/registrar-organizador-eventos-usuario-controlador.js"></script>
-
+    
     <!-- Mapa -->
     <script src="../js/maps.google.api.js"></script>
     <script src="../js/mapa_index_ecoboleto.js"></script>
@@ -253,10 +248,17 @@
     <script src="../js/bootstrap.js"></script>
     <script src="../js/cloudinary.all.js" type="text/javascript"></script>
     <script src="../js/registrar_organizador_eventos_usuario/registrar-organizador-eventos-imagen.js"></script>
-    
+
     <!-- Mapa para localidad -->
     <script src="../js/jquery-2.2.0.js" type="text/javascript"></script>
     <script src="../js/localidades/localidades.js"></script>
+
+    <!-- Registrar -->
+    <script src="../js/validaciones.js"></script>
+    <script
+        src="../js/registrar_organizador_eventos_usuario/registrar-organizador-eventos-usuario-servicio.js"></script>
+    <script
+        src="../js/registrar_organizador_eventos_usuario/registrar-organizador-eventos-usuario-controlador.js"></script>
 </body>
 
 </html>
