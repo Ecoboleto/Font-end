@@ -1,0 +1,35 @@
+.recuperar-contrasenna{
+    background-color: #FEFFE4;
+    width: 70%;
+    height: 180px;
+    box-shadow: 1px 1px 3px 4px #ced6e0;
+    padding: 20px 22px 22px;
+}
+
+section{
+    margin-left: 22%;
+}
+
+.recuperar-contrasenna h1{
+    margin-bottom: 20px;
+    color: #2EB872;
+}
+
+.recuperar-contrasenna label,p{
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.recuperar-contrasenna input{
+   padding-top: 12px;
+   width: 200px;
+   margin-left: 10px;
+}
+
+.recuperar-contrasenna #btn-contrasenna{
+    margin-top: 20px;
+    padding: 8px 20px 8px 20px;
+    background-color: #2EB872;
+    border: 1px solid #2EB872;
+    color: #FFFF;
+}
