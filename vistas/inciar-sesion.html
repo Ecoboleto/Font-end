@@ -3,114 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/iniciar-sesion.css">
-
     <title>iniciar sesion</title>
-
 </head>
 
-
 <body>
-   
-<header>
-    <div id="cajon-superior" class="bg-verde-claro--fondo">
-        <nav class="d-flow-root">
-            <a href="#" class="blanco-a--tipografia t-centro f-derecha btn--error"></a>
-        </nav>
-    </div>
-
-    <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
-        <div class="logo d-linea-bloque f-izquierda">
-            <img src="../imgs/logo.svg" alt="Logo">
+    <header>
+        <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
+            <div class="logo d-linea-bloque f-izquierda">
+                <img src="../imgs/logo.svg" alt="Logo">
+            </div>
+            <div class="acomodo-c-inferior f-derecha">
+                <nav class="d-en-linea f-izquierda menu">
+                    <a href="#" class="blanco-a--tipografia"></a>
+                    <a href="#" class="blanco-a--tipografia"></a>
+                </nav>
+            </div>
         </div>
+    </header>
+    <main>
+        <section class="section-iniciar-sesion">
+            <div class="div-inicio-sesion">
+                <h1>Inicio de sesión</h1>
+                <form action="">
+                    <div>
+                        <input id="txt_correo_electronico" class="input" type="text" placeholder="Correo Electrónico">
+                    </div>
+                    <div>
+                        <input id="txt_contrasenna" class="input" type="password" placeholder="Contraseña">
+                    </div>
+                    <a class="recuperar-contrasenna" href="../vistas/recuperar-contraseña.html">¿Olvidó su
+                        contraseña?</a>
+                    <div class="btn-div">
+                        <button type="button"  class="btn-iniciar-sesion">Iniciar sesión</button>
+                        <a href="../vistas/registrar-usuarios-finales.html" class="a-registrarse">Regístrese aquí</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
 
-        <div class="acomodo-c-inferior f-derecha">
-            <nav class="d-en-linea f-izquierda menu">
-                <a href="#" class="blanco-a--tipografia"></a>
-                <a href="#" class="blanco-a--tipografia"></a>
-            </nav>
+    <footer>
+        <div id="footer_superior" class="bg-verde-claro--fondo d-flow-root">
+            <div class="f-izquierda">
+                <nav class="t-centrado">
+                    <a href="#" class="crema-a--tipografia">Nosotros</a>
+                    <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a>
+                </nav>
+            </div>
 
-
+            <div class="f-izquierda crema--tipografia">
+                <h6 class="t-centrado">Contáctenos</h6>
+                <p>Correo: <a class="crema-a--tipografia"
+                        href="mailto:ecoboleto@contacto.com">ecoboleto@contacto.com</a>
+                </p>
+                <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
+                <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
+            </div>
+            <div id="ubicacion" class="f-derecha">
+            </div>
         </div>
-    </div>
-</header>
-
-<main>
-
-    <section class="section-iniciar-sesion">
-
-        <div class="div-inicio-sesion">
-            <h1>Inicio de sesión</h1>
-
-
-            <form action="">
-
-                <div>
-                    <input id="txt_correo_electronico" class="input" type="text" placeholder="Correo Electrónico">
-                </div>
-
-                <div>
-                    <input id="txt_contrasenna" class="input" type="password" placeholder="Contraseña">
-
-                </div>
-
-                <a class="recuperar-contrasenna" href="../vistas/recuperar-contraseña.html">¿Olvidó su contraseña?</a>
-
-                <div class="btn-div">
-                    <button type="button" class="btn-iniciar-sesion">Iniciar sesión</button>
-                    <button type="button" class="btn-iniciar-facebook"> <i class="fab fa-facebook-f"></i> Iniciar sesión
-                        con Facebook</button>
-
-                    <a href="../vistas/registrar-usuarios-finales.html" class="a-registrarse">Regístrese aquí</a>
-                </div>
-
-
-
-            </form>
-
-        </div>
-
-    </section>
-</main>
-
-<footer>
-    <div id="footer_superior" class="bg-verde-claro--fondo d-flow-root">
-        <div class="f-izquierda">
-            <nav class="t-centrado">
-                <a href="#" class="crema-a--tipografia">Nosotros</a>
-                <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a>
-            </nav>
-        </div>
-
-        <div class="f-izquierda crema--tipografia">
-            <h6 class="t-centrado">Contáctenos</h6>
-            <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@contacto.com">ecoboleto@contacto.com</a>
+        <div id="footer_inferior" class="bg-verde-oscuro--fondo">
+            <p class="blanco--tipografia t-centrado">
+                <small>
+                    <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
+                </small>
             </p>
-            <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
-            <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
         </div>
-
-        <div id="ubicacion" class="f-derecha">
-
-        </div>
-    </div>
-
-    <div id="footer_inferior" class="bg-verde-oscuro--fondo">
-        <p class="blanco--tipografia t-centrado">
-            <small>
-                <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
-            </small>
-        </p>
-    </div>
-</footer>
-
-
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -118,7 +83,6 @@
     <script src="../js/validaciones.js"></script>
     <script src="../js/inicio-sesion/inicio-sesion-servicio.js"></script>
     <script src="../js/inicio-sesion/inicio-sesion-controlador.js"></script>
-
 </body>
 
 </html>
