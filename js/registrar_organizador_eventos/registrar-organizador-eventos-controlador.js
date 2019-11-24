@@ -214,21 +214,26 @@ const agregar_telefono_lista = () => {
 
 const obtener_datos = () => {
     obtener_telefonos();
-    let nombre_empresa = input_nombre_empresa.value;
+    let nombre_empresa = input_nombre_empresa.value.trim();
     let logo = input_logo.src;
     let tipo_cedula = cedula;
-    let cedula_empresa = input_cedula.value;
-    let nombre_comercial = input_nombre_comercial.value;
-    let annos_experiencia = input_annos_experiencia.value;
-    let provincia = slc_provincia.value;
-    let canton = slc_canton.value;
-    let distrito = slc_distrito.value;
-    let direccion_exacta = input_direccion_exacta.value;
-    let nombre_completo = input_nombre_completo.value;
-    let correo_electronico = input_correoelectronico.value;
-    let edad = input_edad.value;
+    let cedula_empresa = input_cedula.value.trim();
+    let nombre_comercial = input_nombre_comercial.value.trim();
+    let annos_experiencia = input_annos_experiencia.value.trim();
+    let provincia = slc_provincia.options[slc_provincia.selectedIndex].text;
+    let canton = slc_canton.options[slc_canton.selectedIndex].text;
+    let distrito = slc_distrito.options[slc_distrito.selectedIndex].text;
+    let direccion_exacta = input_direccion_exacta.value.trim();
+    let nombre_completo = input_nombre_completo.value.trim();
+    let correo_electronico = input_correoelectronico.value.trim();
+    let edad = input_edad.value.trim();
     let genero_respuesta = genero;
     let aTelefonos = telefonos;
+
+    console.log(distrito);
+    console.log(provincia);
+    console.log(canton);
+    
     
 
     if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta)) {
