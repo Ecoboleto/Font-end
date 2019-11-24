@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrar encargado de recinto</title>
+    <title>Lista de encargados de recintos</title>
 
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/reset.css">
@@ -71,15 +71,15 @@
                 </div>
 
                 <div>
-                    <p>Genero</p>
+                    <p>Género</p>
                     <div id="div-genero">
                         <div>
-                            <input type="radio" name="radio-genero" id="radio_masculino" value="M">
+                            <input type="radio" name="radio-genero" id="radio_masculino" value="Masculino">
                             <label for="radio_masculino">Masculino</label>
                         </div>
                         <div>
-                            <input type="radio" name="radio-genero" id="radio_femenina" value="F">
-                            <label for="radio_femenina">Femenina</label>
+                            <input type="radio" name="radio-genero" id="radio_femenino" value="Femenino">
+                            <label for="radio_femenino">Femenino</label>
                         </div>
                         <div>
                             <input type="radio" name="radio-genero" id="radio_no_especificar" value="sin especificar">
@@ -93,10 +93,10 @@
                 </div>
 
                 <div>
-                    <button id="btn_registrar" type="button"
+                    <button id="btn_limpiar" type="button"
+                        class="btn btn--accion btn--positivo blanco--tipografia">Limpiar filtro</button>
+                    <button id="btn_aplicar" type="button"
                         class="btn btn--accion btn--positivo blanco--tipografia">Aplicar</button>
-                    <button id="btn_registrar" type="button"
-                        class="btn btn--accion btn--positivo blanco--tipografia">Limpiar campos</button>
                 </div>
             </div>
             <div>
@@ -108,7 +108,7 @@
                             <th>Fecha de nacimiento</th>
                             <th>Edad</th>
                             <th>Teléfonos</th>
-                            <th>Genero</th>
+                            <th>Género</th>
                         </tr>
                     </thead>
                     <tbody> </tbody>
@@ -143,7 +143,7 @@
 
     <!-- Registrar -->
     <script src="../js/encargado_recinto/encargado-recinto-servicio.js"></script>
-    <script src="../js/encargado_recinto/listar-encargado-recinto.js"></script>
+    <script src="../js/encargado_recinto/listar-encargado-recinto-controlador.js"></script>
 </body>
 
 </html>

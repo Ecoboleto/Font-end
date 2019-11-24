@@ -1,5 +1,4 @@
 'use strict';
-
 const regex_contrasena = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{6,8}$";
 const regex_solo_letras = "[A-Za-zäÄëËïÏöÖüÜñáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâÑêîôûàèìòùÀÈÌÒÙ]+$";
 const regex_telefono = "\\d{4}-\\d{4}$";
@@ -35,7 +34,7 @@ const validar_vacio_null = (valor) => {
 };
 
 /* Valida un teléfono, retorna true si la validación es correcto */
-const validar_telefono = (valor) => {
+const validar_telefono = (valor) => {    
     if(valor == "0000-0000"){
         return false;
     }

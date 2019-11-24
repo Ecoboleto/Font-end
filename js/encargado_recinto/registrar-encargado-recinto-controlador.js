@@ -7,7 +7,7 @@ const input_agregar_telefono = document.querySelector('#text-agregar-telefono');
 let genero;
 let telefonos = [];
 const input_masculino = document.querySelector('#radio_masculino');
-const input_fenenina = document.querySelector('#radio_femenina');
+const input_fenenino = document.querySelector('#radio_femenino');
 const input_no_especificar = document.querySelector('#radio_no_especificar');
 const input_otro = document.querySelector('#radio_otro');
 
@@ -79,7 +79,7 @@ const resetear_formulario = () => {
 
     genero = "";
     input_masculino.checked = false;
-    input_fenenina.checked = false;
+    input_fenenino.checked = false;
     input_no_especificar.checked = false;
     input_otro.value = "";
 }
@@ -98,13 +98,13 @@ const encargado_recinto = async () => {
             //Normaliza los datos para enviarlo al servidor
             nombre_completo = Normaliza_string(nombre_completo);
             genero = Normaliza_string(genero);
-            correo_electronico = correo_electronico.trim().toUpperCase();
+            correo_electronico = correo_electronico.trim().toLowerCase();
 
             await registrar_encargado_recinto(nombre_completo, correo_electronico, fecha_nacimiento, edad, telefonos, genero)
                 .then(resultado => {
                     if (resultado.estado) {
                         Swal.fire({
-                            type: 'success',
+                            icon: 'success',
                             title: 'Registro realizado con éxito',
                             text: 'El encargado de reciinto ha sido almacenado',
                             confirmButtonText: 'Entendido',
@@ -116,7 +116,7 @@ const encargado_recinto = async () => {
                         });
                     } else {
                         Swal.fire({
-                            type: 'warning',
+                            icon: 'warning',
                             title: resultado.msg,
                             confirmButtonText: 'Entendido',
                             onAfterClose: () => {
@@ -127,7 +127,7 @@ const encargado_recinto = async () => {
                 });
         } catch (error) {
             Swal.fire({
-                type: 'warning',
+                icon: 'warning',
                 title: 'No se puede conectar con el servidor',
                 confirmButtonText: 'Entendido'
             });
@@ -205,7 +205,7 @@ const obtener_telefonos = () => {
     ul_telefonos.forEach(li => telefonos.push(li.getAttribute('dato-telefono')));
 };
 
-//Obtine el genero de las etiquetas  #radio_masculino,#radio_femenina,#radio_no_especificar
+//Obtine el genero de las etiquetas  #radio_masculino,#radio_femenino,#radio_no_especificar
 // y guarda su value en la variable genero
 const radio_genero = () => {
     input_otro.value = "";
@@ -214,7 +214,7 @@ const radio_genero = () => {
 //Obtine el genero de las etiquetas  #input_otro
 const input_genero = () => {
     input_masculino.checked = false;
-    input_fenenina.checked = false;
+    input_fenenino.checked = false;
     input_no_especificar.checked = false;
     genero = event.srcElement.value;
 };
@@ -232,6 +232,6 @@ btn_agregar_telefono.addEventListener('click', agregar_telefono_lista);
 input_fecha_nacimiento.addEventListener('change', Edad);
 btn_registrar.addEventListener('click', encargado_recinto);
 input_masculino.addEventListener('click', radio_genero);
-input_fenenina.addEventListener('click', radio_genero);
+input_fenenino.addEventListener('click', radio_genero);
 input_no_especificar.addEventListener('click', radio_genero);
 input_otro.addEventListener('keyup', input_genero);

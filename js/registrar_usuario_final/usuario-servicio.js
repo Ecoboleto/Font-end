@@ -1,23 +1,22 @@
 'use strict'
 
-// let getAge = (fecha_nacimiento) => {
-//     let today = new Date();
-//     let birthDate = new Date(fecha_nacimiento);
-//     let age = today.getFullYear() - birthDate.getFullYear();
-//     let m = today.getMonth() - birthDate.getMonth();
-//     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-//         age = age - 1;
-//     }
 
-//     return age;
 
-//     console.log(age);
+let getEdad = (fecha_nacimiento) => {
 
-// }
+    let hoy = new Date();
+    let fechaNacimiento = new Date(fecha_nacimiento);
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    let mes = hoy.getMonth() - fechaNacimiento.getMonth();
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+        edad = edad - 1;
+    }
+    return edad;
+}
 
 
 let registrar_usuario_final = async(correo, primer_nombre, segundo_nombre, primer_apellido,
-    segundo_apellido, fecha_nacimiento, provincia, canton, distrito, genero) => {
+    segundo_apellido,fecha_nacimiento,edad, provincia, canton, distrito, genero, avatar) => {
 
     await axios({
 
@@ -25,7 +24,7 @@ let registrar_usuario_final = async(correo, primer_nombre, segundo_nombre, prime
                 url: 'http://localhost:3000/api/registrar-usuario-final', 
                 responseType: 'json',
 
-                //falta pasarle la edad y el codigo de la contraseña
+               
                 data: {
                     correo: correo,
                     primer_nombre: primer_nombre,
@@ -33,11 +32,13 @@ let registrar_usuario_final = async(correo, primer_nombre, segundo_nombre, prime
                     primer_apellido: primer_apellido,
                     segundo_apellido: segundo_apellido,
                     fecha_nacimiento: fecha_nacimiento,
+                    edad: edad,
                     provincia: provincia,
                     canton: canton,
                     distrito: distrito,
                     genero: genero,
-                    // edad: edad
+                    avatar: avatar
+                    
                 }
 
             }
@@ -47,9 +48,10 @@ let registrar_usuario_final = async(correo, primer_nombre, segundo_nombre, prime
             console.log(res.data);
         })
         .catch(function(error) {
-            console.log(error);
-        });
-};
+         
+});
+
+    };
 
 let listar_usuarios_finales = async() => {
     let lista_usuarios_finales;
@@ -72,3 +74,25 @@ let listar_usuarios_finales = async() => {
 
     return lista_usuarios_finales;
 };
+
+
+let listar_datos_inicio_sesion = async() =>{
+    let lista_datos_inicio_sesion; 
+
+    await axios({
+        method: 'get', 
+        url: 'http://localhost:3000/api/iniciar-sesion', 
+        responseType: 'json'
+    })
+
+    then(function(res){
+        lista_datos_inicio_sesion = ''; 
+     })
+
+     .catch(function(error){
+         console.log(error)
+     }); 
+
+     return lista_datos_inicio_sesion;
+}
+

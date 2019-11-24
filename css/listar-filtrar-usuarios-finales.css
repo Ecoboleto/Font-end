@@ -1,0 +1,35 @@
+.avatar{
+    width: 60px;
+    height: 80px;
+}
+.filtro{
+    margin-bottom: 30px;
+    margin-left: 40%;
+    font-size: 20px;
+
+}
+
+.filtro input{
+    padding: 10px 3px 10px 3px;
+}
+
+#tbl-usuarios-finales{
+    margin-left: 5%;
+   
+}
+
+#tbl-usuarios-finales thead, th{
+    border: 1px solid #000;
+    
+}
+
+#tbl-usuarios-finales th{
+    text-align: center;
+    background-color: #2EB872;
+    color: #FFFF;
+    padding: 15px 5px 15px 5px;
+}
+
+#tbl-usuarios-finales tbody,td{ 
+    border: 1px solid #000;
+}

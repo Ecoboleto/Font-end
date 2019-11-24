@@ -12,76 +12,70 @@ const input_canton = document.querySelector('#txt_canton');
 const input_distrito = document.querySelector('#txt_distrito');
 const input_genero = document.querySelector('.txt_genero');
 const btn_guardar = document.querySelector('#btn-guardar');
+const avatar_usuario = document.querySelector('#imgAvatar');
+let edad;
+ 
 
-let validar_datos = () => {
+
+const validar_datos = (correo, primer_nombre, primer_apellido,fecha_nacimiento,
+     provincia, canton, distrito) => {
+
     let error = false;
 
-    if (input_correo.value == '') {
+    //removemos la clase error  
+    input_correo.classList.remove('input--error');
+    input_primer_nombre.classList.remove('input--error');
+    input_primer_apellido.classList.remove('input--error');
+    input_fecha_nacimiento.classList.remove('input--error');
+    input_provincia.classList.remove('input--error');
+    input_canton.classList.remove('input--error');
+    input_distrito.classList.remove('input--error'); 
+   
+    
+
+    if (!validar_vacio_null(primer_nombre)) {
         error = true;
-        input_correo.classList.add('error');
-    } else {
-        input_correo.classList.remove('error');
+        input_primer_nombre.classList.add('input--error');
     }
 
-
-    if (input_primer_nombre.value == '') {
+      
+    if (!validar_vacio_null(primer_apellido)) {
         error = true;
-        input_primer_nombre.classList.add('error');
-    } else {
-        input_primer_nombre.classList.remove('error');
+        input_primer_apellido.classList.add('input--error');
     }
 
-
-    if (input_primer_apellido.value == '') {
+  
+    if(!validar_vacio_null(correo)){
         error = true;
-        input_primer_apellido.classList.add('error');
-    } else {
-        input_primer_apellido.classList.remove('error');
+        input_correo.classList.add('input--error');
     }
 
-
-    if (input_fecha_nacimiento.value == '') {
+    
+    if(!validar_vacio_null(fecha_nacimiento)){
         error = true;
-        input_fecha_nacimiento.classList.add('error');
-    } else {
-        input_fecha_nacimiento.classList.remove('error');
+        input_fecha_nacimiento.classList.add('input--error');
     }
 
-
-    if (input_provincia.value == '') {
+    
+    if(!validar_vacio_null(provincia)){
         error = true;
-        input_provincia.classList.add('error');
-    } else {
-        input_provincia.classList.remove('error');
+        input_provincia.classList.add('input--error');
     }
 
-
-    if (input_canton.value == '') {
+    
+    if(!validar_vacio_null(canton)){
         error = true;
-        input_canton.classList.add('error');
-    } else {
-        input_canton.classList.remove('error');
+        input_canton.classList.add('input--error');
     }
 
-    if (input_distrito.value == '') {
+    if(!validar_vacio_null(distrito)){
         error = true;
-        input_distrito.classList.add('error');
-    } else {
-        input_distrito.classList.remove('error');
-    }
-
-
-    if (input_genero.value == '') {
-        error = true;
-        input_genero.classList.add('error');
-    } else {
-        input_genero.classList.remove('error');
+        input_distrito.classList.add('input--error');
     }
 
     return error;
+    
 };
-
-
 
 let registrar_usuarios_finales = () => {
 
@@ -91,13 +85,16 @@ let registrar_usuarios_finales = () => {
     let primer_apellido = input_primer_apellido.value;
     let segundo_apellido = input_segundo_apellido.value;
     let fecha_nacimiento = input_fecha_nacimiento.value;
+    edad = getEdad(input_fecha_nacimiento.value);
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let genero = input_genero.value;
-    //TAMBIEN TENGO QUE PASARLE LA EDAD
+    let avatar = avatar_usuario.src; 
+    
 
-    if (validar_datos()) {
+    if (validar_datos(correo, primer_nombre, primer_apellido,fecha_nacimiento,
+         provincia, canton, distrito) ) {
 
         Swal.fire({
             icon: 'warning',
@@ -108,9 +105,10 @@ let registrar_usuarios_finales = () => {
 
     } else {
 
+       try {
 
         registrar_usuario_final(correo, primer_nombre, segundo_nombre, primer_apellido,
-            segundo_apellido, fecha_nacimiento, provincia, canton, distrito, genero);
+            segundo_apellido,fecha_nacimiento,edad, provincia, canton, distrito, genero, avatar);
 
         Swal.fire({
             icon: 'success',
@@ -118,6 +116,19 @@ let registrar_usuarios_finales = () => {
             text: 'El usuario ha sido almacenado',
             confirmButtonText: 'Entendido'
         })
+           
+       } catch (error) {
+
+        Swal.fire({
+            icon: 'warning', 
+            title: 'Error en el registro', 
+            text: 'El usuario ya se encuentra registrado', 
+            confirmButtonText: 'Entendido'
+        })
+           
+       }
+
+      
     }
 
 
