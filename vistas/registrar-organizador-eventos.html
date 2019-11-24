@@ -61,52 +61,50 @@
 
         <form>
             <div>
-                <label for="txt_nombre_empresa">Nombre de la empresa</label>
-                <input type="text" id="txt_nombre_empresa">
+                <label for="txt_nombre_empresa">Nombre de la empresa<span class="rojo--tipografia">*</span></label>
+                <input type="text" id="txt_nombre_empresa" placeholder="Nombre empresa">
             </div>
             <div>
+                <p>Ingrese el logotipo de la empresa <span class="rojo--tipografia">*</span></p>
                 <div class="img-cloudinary">
                     <figure class="img-holder">
                         <img src="../imgs/image-solid.svg" alt="Logo Organizador" class="logo--img">
                     </figure>
 
-                    <button type="button" id="btn-guardarImagen">Subir imagen</button>
+                    <button type="button" id="btn-guardarImagen" class="btn btn--positivo crema-a--tipografia">Subir imagen</button>
                 </div>
             </div>
             <div>
-                <p>Cédula</p>
-                <div>
-                    <label for="txt_fisica">Física</label>
+                <p>Cédula <span class="rojo--tipografia">*</span></p>
+                <div class="f-izquierda">
                     <input type="radio" id="txt_fisica" name="cedula" value="Fisica">
-                    <label for="txt_juridica">Jurídica</label>
+                    <label for="txt_fisica">Física</label>
                     <input type="radio" id="txt_juridica" name="cedula" value="Juridica">
+                    <label for="txt_juridica">Jurídica</label>
                 </div>
-                <div>
+                <div class="f-izquierda">
                     <input type="number" id="txt_ced" placeholder="Cédula">
                 </div>
             </div>
             <div>
-                <label for="txt_nombre_comercial">Nombre comercial</label>
-                <input type="text" id="txt_nombre_comercial">
+                <label for="txt_nombre_comercial">Nombre comercial <span class="rojo--tipografia">*</span></label>
+                <input type="text" id="txt_nombre_comercial" placeholder="Nombre comercial">
             </div>
             <div>
-                <label for="txt_annos_experiencia">Años de experiencia</label>
-                <input type="number" id="txt_annos_experiencia"> <!-- Minimo un año de experiencia -->
+                <label for="txt_annos_experiencia">Años de experiencia <span class="rojo--tipografia">*</span></label>
+                <input type="number" id="txt_annos_experiencia" placeholder="10"> <!-- Minimo un año de experiencia -->
             </div>
         </form>
 
         <form id="ubicationForm" onsubmit="return sendData();">
-            <p>
-                Seleccione la ubicación
-            </p>
+            <p class="mb-2">Seleccione la ubicación <span class="rojo--tipografia">*</span></p>
             <div class="data-container">
                 <div class="form-row">
                     <div class="form-desc">
                         Provincia:
                     </div>
                     <div class="form-val">
-                        <select id="provincias" name="provincia" onchange="getCantones(this.value);">
-                        </select>
+                        <select id="provincias" name="provincia" onchange="getCantones(this.value);"></select>
                     </div>
                 </div>
                 <div class="form-row canton">
@@ -114,8 +112,7 @@
                         Cantón:
                     </div>
                     <div class="form-val">
-                        <select id="cantones" name="canton" onchange="getDistritos(this.value);">
-                        </select>
+                        <select id="cantones" name="canton" onchange="getDistritos(this.value);"></select>
                     </div>
                 </div>
                 <div class="form-row distrito">
@@ -123,40 +120,40 @@
                         Distrito:
                     </div>
                     <div class="form-val">
-                        <select id="distritos" name="distrito" onchange="distritoSelected();">
-                        </select>
+                        <select id="distritos" name="distrito" onchange="distritoSelected();"></select>
                     </div>
                 </div>
                 <div>
-                    <label for="txt_direccion_exacta">Dirección exacta</label>
-                    <input type="text" id="txt_direccion_exacta">
+                    <label for="txt_direccion_exacta">Dirección exacta <span class="rojo--tipografia">*</span></label>
+                    <input type="text" id="txt_direccion_exacta" placeholder="Dirección exacta">
                 </div>
             </div>
         </form>
 
-        <h3 class="verde-oscuro--tipografia t-centrado">Contacto asociado</h3>
+        <h3 class="verde-oscuro--tipografia t-centrado" id="contacto_asociado">Contacto asociado</h3>
 
         <form>
             <div>
-                <label for="txt_nombre_completo">Nombre completo</label>
-                <input type="text" id="txt_nombre_completo">
+                <label for="txt_nombre_completo">Nombre completo <span class="rojo--tipografia">*</span></label>
+                <input type="text" id="txt_nombre_completo" placeholder="Nombre completo">
             </div>
             <div>
-                <label for="txt_correo_electronico">Correo electrónico</label>
-                <input type="text" id="txt_correo_electronico">
+                <label for="txt_correo_electronico">Correo electrónico <span class="rojo--tipografia">*</span></label>
+                <input type="text" id="txt_correo_electronico" placeholder="ecoboleto@gmail.com">
             </div>
             <div>
-                <label for="txt_edad">Edad</label>
+                <label for="txt_edad">Edad <span class="rojo--tipografia">*</span></label>
                 <input type="number" id="txt_edad" placeholder="18">
             </div>
             <div class="d-flow-root">
-                <label for="txt_telefono">Teléfono</label>
+                <label for="txt_telefono">Teléfono <span class="rojo--tipografia">*</span></label>
                 <input type="text" id="txt_telefono" class="txt_telefono" placeholder="1234-5678">
-                <button type="button" class="btn btn--inactivo crema--tipografia" id="agregar_telefono">Agregar otro teléfono</button>
+                <button type="button" class="btn btn--inactivo crema--tipografia" id="agregar_telefono">Agregar otro
+                    teléfono</button>
                 <ul id="ul-lista-telefono"></ul>
             </div>
             <div id="genero_contenedor">
-                <p>Género</p>
+                <p>Género <span class="rojo--tipografia">*</span></p>
 
                 <div>
                     <input type="radio" name="genero" value="Masculino" id="txt_masculino">
@@ -180,7 +177,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn--positivo" id="btn_registrar">Registrar organizador de eventos</button>
+            <button type="button" class="btn btn--positivo crema-a--tipografia" id="btn_registrar">Registrar organizador de eventos</button>
         </form>
     </main>
     <!-- Fin:  Main-->
@@ -197,8 +194,7 @@
 
             <div class="f-izquierda crema--tipografia">
                 <h6 class="t-centrado">Contáctenos</h6>
-                <p>Correo: <a class="crema-a--tipografia"
-                        href="mailto:ecoboleto@gmail.com">ecoboleto@gmail.com</a></p>
+                <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@gmail.com">ecoboleto@gmail.com</a></p>
                 <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
                 <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
             </div>
@@ -227,11 +223,10 @@
     <!-- Ajustes generales -->
     <script src="../js/ajustes.js"></script>
 
-    
     <!-- Mapa -->
     <script src="../js/maps.google.api.js"></script>
     <script src="../js/mapa_index_ecoboleto.js"></script>
-    
+
     <!-- Cloudinary -->
     <script src="../js/jquery-3.3.1.js"></script>
     <script src="../js/popper.js"></script>
@@ -246,10 +241,8 @@
     <!-- Registrar -->
     <script src="../js/validaciones.js"></script>
     <script src="../js/funciones-generales.js"></script>
-    <script
-        src="../js/registrar_organizador_eventos/registrar-organizador-eventos-servicio.js"></script>
-    <script
-        src="../js/registrar_organizador_eventos/registrar-organizador-eventos-controlador.js"></script>
+    <script src="../js/registrar_organizador_eventos/registrar-organizador-eventos-servicio.js"></script>
+    <script src="../js/registrar_organizador_eventos/registrar-organizador-eventos-controlador.js"></script>
 </body>
 
 </html>

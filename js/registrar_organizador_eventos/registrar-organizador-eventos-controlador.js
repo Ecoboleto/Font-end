@@ -237,6 +237,13 @@ const obtener_datos = () => {
             text: 'Por favor revise los campos en rojo',
             confirmButtonText: 'Entendido'
         });
+    } else if ( canton == undefined || distrito == undefined ){
+        Swal.fire({
+            icon: 'warning',
+            title: 'Recuerde que debe de verificar que todos los campos esten completos',
+            text: 'Por favor revise los campos en rojo',
+            confirmButtonText: 'Entendido'
+        });
     } else {
 
         if( genero_respuesta == 'Otro' ){
