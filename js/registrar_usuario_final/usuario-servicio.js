@@ -21,7 +21,7 @@ let registrar_usuario_final = async(correo, primer_nombre, segundo_nombre, prime
     await axios({
 
                 method: 'post',
-                url: 'http://localhost:3000/api/registrar-usuario-final', 
+                url: 'http://localhost:3000/api/registrar-usuarios-finales', 
                 responseType: 'json',
 
                

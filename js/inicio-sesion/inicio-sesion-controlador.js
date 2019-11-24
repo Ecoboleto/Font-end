@@ -1,79 +1,103 @@
 'use strict'
 
-const correo = document.querySelector('#txt_correo_electronico'); 
-const contrasenna = document.querySelector('#txt_contrasenna');
+const input_correo = document.querySelector('#txt_correo_electronico'); 
+const input_contrasenna = document.querySelector('#txt_contrasenna');
 
 const btn_ingresar = document.querySelector('.btn-iniciar-sesion'); 
 
 const inicioSesion = () => {
-    let sUsuario = inputUsuario.value;
-    let sContrasenna = inputContrasenna.value;
-    let bAcceso = false;
-    let bError = validar(sUsuario, sContrasenna);
+    let correo = input_correo.value;
+    let contrasenna = input_contrasenna.value;
+    let acceso = false;
+    let bError = validar_datos(correo, contrasenna);
 
     if(bError == true){
         
-        if(sUsuario == '' || sContrasenna == ''){
+        if(correo == '' & null || contrasenna == '' & null){
             swal({
                 type : 'warning',
-                title: 'Algo ocurrió',
-                text: 'El campo no puede estar vacío',
+                title: 'Error',
+                text: 'Revise los campos vacíos',
                 confirmButtonText: 'Entendido'
             });
             console.log('El campo no puede estar vacío');
-        } else if(sUsuario == null || sContrasenna == null){
-            swal({
-                type : 'warning',
-                title: 'Algo ocurrió',
-                text: 'Tuvimos un problema por favor intentelo de nuevo',
-                confirmButtonText: 'Entendido'
-            });
-            console.log('Tuvimos un problema por favor intentelo de nuevo');
-        };
+        // } else if(sUsuario == null || sContrasenna == null){
+        //     swal({
+        //         type : 'warning',
+        //         title: 'Algo ocurrió',
+        //         text: 'Tuvimos un problema por favor intentelo de nuevo',
+        //         confirmButtonText: 'Entendido'
+        //     });
+        //     console.log('Tuvimos un problema por favor intentelo de nuevo');
+        // };
 
     } else {
         
-        bAcceso = validarCredenciales(sUsuario, sContrasenna);
+        acceso = validarCredenciales(correo, contrasenna);
         limpiarFormulario();
     
-        if(bAcceso == true){
+        if(acceso == true){
             ingresar();
         };
 
     };
 };
-//Fin: Funcion Iniciar Sesion
 
-//Inicio: Funcion Ingresar
+};
 const ingresar = () => {
-    let rol = sessionStorage.getItem('rolUsuarioActivo');
+    let rol = localStorage.getItem('rolUsuario');
 
     switch(rol){
         case 'Admin':
-            window.location.href = 'pag/admin.html';
-        break;
-        case 'Instructor':
-            window.location.href = 'pag/instructor.html';
+            window.location.href = '#';
         break;
         case 'Cliente':
-            window.location.href = 'pag/cliente.html';
+            window.location.href = '#';
         break;
+        case 'Organizador_eventos':
+            window.location.href = '#';
+        break;
+        case 'Encargado_recinto':
+            window.location.href = '#';
         default:
             swal({
                 type : 'warning',
-                title: 'Algo ocurrió',
-                text: 'Su usuario o contraseña no coinciden con los del sistema, intentelo nuevamente o contacte a su instructor.',
+                title: 'Aviso',
+                text: 'Sus credenciales son incorrectas,inténtelo de nuevo',
                 confirmButtonText: 'Entendido'
             });
         break;
     };
 }
-//Fin: Funcion Ingresar
 
-//Inicio: Funcion limpiarFormulario
 const limpiarFormulario = () => {
-    inputUsuario.value = '';
-    inputContrasenna.value = '';
+    input_correo.value = '';
+    input_contrasenna.value = '';
 };
-//Fin: Funcion limpiarFormulario
 
+const validar_datos = (correo, contrasenna) => {
+    let bError = false;
+    // const regexCorreo = /^[a-zA-Z0-9@]+$/;
+
+  
+    if(validar(correo)){
+        bError = true;
+        input_correo.classList.add('input--error');
+    } else {
+        input_correo.classList.remove('input-error');
+    };
+
+    
+    if(validar(contrasenna)){
+        bError = true;
+        input_contrasenna.classList.add('input--error');
+    } else {
+        input_contrasenna.classList.remove('input--error');
+    };
+
+    return bError;
+
+};
+
+
+btn_ingresar.addEventListener('click', inicioSesion);
