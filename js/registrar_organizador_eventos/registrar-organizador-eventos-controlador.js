@@ -230,12 +230,6 @@ const obtener_datos = () => {
     let genero_respuesta = genero;
     let aTelefonos = telefonos;
 
-    console.log(distrito);
-    console.log(provincia);
-    console.log(canton);
-    
-    
-
     if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta)) {
         Swal.fire({
             icon: 'warning',
