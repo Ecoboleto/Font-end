@@ -31,14 +31,14 @@ let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, ce
                 Swal.fire({
                     icon: 'success',
                     title: 'Registro realizado con éxito',
-                    text: 'El tipo de evento ha sido almacenado',
+                    text: 'El organizador de eventos ha sido almacenado',
                     confirmButtonText: 'Entendido'
                 });
 
             } else {
                 Swal.fire({
                     icon: 'warning',
-                    title: 'No se pudo registrar el tipo de evento, el nombre ya existe',
+                    title: 'No se pudo registrar el organizador de eventos, el correo electrónico ya existe',
                     confirmButtonText: 'Entendido'
                 });
             }
