@@ -1,0 +1,7 @@
+.img-holder{
+    width: 200px;
+}
+
+.img-holder>img{
+    width: 100%;
+}
