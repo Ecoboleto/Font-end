@@ -2,6 +2,7 @@
 
 //Toma de variables
 const input_nombre_empresa = document.querySelector('#txt_nombre_empresa');
+const input_imagen = document.querySelector('#img_logo');
 //Cédula 
 const rbt_fisica = document.querySelector('#txt_fisica');
 const rbt_juridica = document.querySelector('#txt_juridica');
