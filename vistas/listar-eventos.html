@@ -7,9 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Listar tipo evento</title>
 
-    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
-
     <!-- Fontawesome local -->
     <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
 
@@ -18,7 +15,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/listar-tipo-evento.css">
+    <link rel="stylesheet" href="../css/listar-evento.css">
 </head>
 
 <body>
@@ -37,7 +34,7 @@
 
             <div class="acomodo-c-inferior f-izquierda">
                 <nav class="d-en-linea f-izquierda menu">
-                    <a href="panel-de-control-administrador.html" class="blanco-a--tipografia">Panel de control</a>
+                    <a href="#" class="blanco-a--tipografia">Panel de control</a>
                 </nav>
             </div>
         </div>
@@ -46,20 +43,31 @@
 
     <!-- Inicio:  Main-->
     <main id="main">
-        <h1 class="verde-oscuro--tipografia t-centrado">Listar tipo evento</h1>
+        <h1 class="verde-oscuro--tipografia t-centrado">Listar eventos</h1>
 
         <section class="info">
-            <div class="filtro">
-                <label for="txt_filtro">Filtrar tipo evento por nombre:</label>
-                <input type="text" id="txt_filtro_tipo_evento">
-            </div>
+            <!--<div class="filtro">
+                <label for="txt_filtro">Filtrar evento por nombre:</label>
+                <input type="text" id="txt_filtro_evento">
+            </div>-->
 
             <div class="tabla">
-                <table id="tbl_tipo_evento">
+                <table id="tbl_evento">
                     <thead>
                         <tr>
-                            <th>Nombre tipo evento</th>
+                            <th>Organizador Evento</th>
+                            <th>Nombre Evento</th>
+                            <th>Tipo Evento</th>
+                            <!-- <th>Foto Evento</th>-->
+                            <th>Recinto Evento</th>
+                            <th>Descripcion Evento</th>
+                            <th>Precio Entrada</th>
+                            <th>Asistentes Esperados</th>
+                            <th>Limite Entradas</th>
                             <th>Estado</th>
+                            <th>Fechas</th>
+                            <th>Impuestos</th>
+                            <th>Descuentos</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -94,11 +102,27 @@
     <!-- Ajustes generales -->
     <script src="../js/ajustes.js"></script>
 
-    <!-- Registrar -->
-    <script src="../js/registrar_tipo_evento/tipo-evento-servicio.js"></script>
-    <script src="../js/registrar_tipo_evento/listar-tipo-evento-controlador.js"></script>
 
-    <script src="../js/cerrar-sesion.js"></script>
+    <!-- Cloudinary -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
+    <!-- Registrar -->
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/registrar_tipo_evento/evento-servicio.js"></script>
+    <script src="../js/registrar_tipo_evento/tipo-evento-servicio.js"></script>
+    <script src="../js/registrar_tipo_evento/listar-evento-controlador.js"></script>
 </body>
 
 </html>

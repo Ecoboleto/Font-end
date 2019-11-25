@@ -1,0 +1,17 @@
+main{
+    padding: 0 0 100px 0;
+}
+
+#parallax {
+    background-image: url("../imgs/landing-ecoboleto/25068.jpg");
+    height: 100%;
+    /* Crea el efecto parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .efecto-parallax {
+    height: 450px;
+}

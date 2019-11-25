@@ -106,7 +106,7 @@ const encargado_recinto = async () => {
                         Swal.fire({
                             icon: 'success',
                             title: 'Registro realizado con éxito',
-                            text: 'El encargado de reciinto ha sido almacenado',
+                            text: 'El encargado de recinto ha sido almacenado',
                             confirmButtonText: 'Entendido',
                             onAfterClose: () => {
                                 //Reseteamos todos los campos del formulario
