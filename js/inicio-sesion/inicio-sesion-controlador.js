@@ -53,7 +53,7 @@ const inicio_sesion = async () => {
                         break;
                 }
 
-                console.log(resultado);
+                window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
                 window.localStorage.setItem('usuario_id', resultado.datos._id);
             } else {
                 Swal.fire({

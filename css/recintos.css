@@ -1,0 +1,72 @@
+#map {
+    min-width: 500px;
+    width: 100%;
+    height: 400px;
+}
+
+#main h1 {
+    margin-bottom: 50px;
+}
+
+#main form {
+    width: 400px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#main form>div {
+    margin: 10px;
+}
+
+#main form>div .input-texto {
+    width: 250px;
+}
+
+
+
+#main form>div>div {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 10px;
+}
+
+#main form div div div {
+    margin: 5px;
+}
+
+
+#main form .lista-telefono li {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 8px;
+    background: #eee;
+    user-select: none;
+}
+
+
+#main form .lista-telefono li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+
+#main form .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 8px;
+}
+
+#main form .close:hover {
+    background: #A3DE83;
+    color: #333;
+}
+
+#main form .telefonos>div {
+    display: flex;
+}
+
+.localidades {
+    width: 160px;
+}
