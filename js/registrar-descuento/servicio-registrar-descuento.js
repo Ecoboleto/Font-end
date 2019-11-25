@@ -5,7 +5,7 @@ let registrarDatosDeLosImpuestos = async (id_codigo, nombre, porcentaje) => {
     console.log(id_codigo, nombre, porcentaje);
     await axios({
         method: 'post',
-        url: 'http:localhost:8000/Backend/registrar-descuento',
+        url: 'http:localhost:3000/Backend/registrar-descuento',
         //body
         data: {
             id_codigo: id_codigo,
@@ -16,8 +16,8 @@ let registrarDatosDeLosImpuestos = async (id_codigo, nombre, porcentaje) => {
     )
         .then(function (res) {
             let banderaError = false;
-            console.log(res.data);
-            console.log(res.data.Impuesto.nombre);
+            //console.log(res.data);
+            //console.log(res.data.Impuesto.nombre);
 
 
             Swal.fire({
@@ -45,7 +45,7 @@ let consultar_ultimo_codigo = async (inptNombre, inptPorcentaje) => {
 
     await axios({
         method: 'get',
-        url: 'http:localhost:8000/Backend/registrar-descuento',
+        url: 'http:localhost:3000/Backend/registrar-descuento',
         responseType: 'json'
     })
         .then(function (res) {
@@ -54,7 +54,7 @@ let consultar_ultimo_codigo = async (inptNombre, inptPorcentaje) => {
         
             for(let i=0; i<lista_impuestos.length;i++){
                 if(varNombreRepetido == lista_impuestos[i]['nombre']){
-                    console.log('repetido');
+                    //console.log('repetido');
                     Swal.fire({
                         title: 'Ha ocurrido un pequeño error(dato repetido).',
                         text: 'Existe un mismo nombre dentro del sistema.',
@@ -67,16 +67,16 @@ let consultar_ultimo_codigo = async (inptNombre, inptPorcentaje) => {
             }
 
 
-            console.log(lista_impuestos.length);
+            //console.log(lista_impuestos.length);
 
             if (lista_impuestos.length != 0) {
 
                 ultimo_numero = Number(lista_impuestos[lista_impuestos.length - 1]['id_codigo'].charAt(0));
                 id_nuevo_asignado = String(ultimo_numero + 1);
-                console.log(lista_impuestos);
-                console.log(id_nuevo_asignado);
-                console.log(res.data.resultado);
-                console.log(varNombreRepetido);
+                //console.log(lista_impuestos);
+                //console.log(id_nuevo_asignado);
+                //console.log(res.data.resultado);
+                //console.log(varNombreRepetido);
 
 
 
