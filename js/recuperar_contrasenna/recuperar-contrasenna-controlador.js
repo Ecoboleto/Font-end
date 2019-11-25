@@ -26,7 +26,24 @@ let recuperar_contrasenna = () => {
            confirmButtonText: 'Entendido'
        })
    } else {
-       enviar_contrasenna(correo);
+
+        if(enviar_contrasenna(correo)) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Contraseña recuperada',
+                text: 'Revise su correo electrónico.',
+                confirmButtonText: 'Entendido'
+            })
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Correo incorrecto',
+                text: 'El correo electrónico ingresado no se encuentra ' +
+                'en nuestra base de datos',
+                confirmButtonText: 'Entendido'
+            })
+        }
+      
     }
 };
 

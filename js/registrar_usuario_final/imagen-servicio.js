@@ -1,6 +1,10 @@
 var myWidget1 = cloudinary.createUploadWidget({
     cloudName: 'dyssoftware',
-    uploadPreset: 'avatarUsuario'
+    uploadPreset: 'avatarUsuario', clientAllowedFormats: [
+        "png",
+        "gif",
+        "jpeg"]
+    
 }, (error, result) => {
     if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);

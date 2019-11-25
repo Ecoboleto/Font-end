@@ -1,7 +1,9 @@
 'use strict';
 
+let respuesta;
+
 let enviar_contrasenna = async (correo) => {
-    await axios({
+        await axios({
         method: 'post',
         url: 'http://localhost:3000/api/recuperar-contrasenna',
         responseType: 'json',
@@ -9,8 +11,11 @@ let enviar_contrasenna = async (correo) => {
             correo_electronico: correo,
         }
     }).then(function (res) {
+        respuesta = res;
         console.log(res.data);
     }).catch(function (error) {
         console.log(error);
     });
+
+    return respuesta;
 };
