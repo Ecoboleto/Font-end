@@ -14,11 +14,11 @@ const input_genero = document.querySelector('.txt_genero');
 const btn_guardar = document.querySelector('#btn-guardar');
 const avatar_usuario = document.querySelector('#imgAvatar');
 let edad;
- 
 
 
-const validar_datos = (correo, primer_nombre, primer_apellido,fecha_nacimiento,
-     provincia, canton, distrito) => {
+
+const validar_datos = (correo, primer_nombre, primer_apellido, fecha_nacimiento,
+    provincia, canton, distrito) => {
 
     let error = false;
 
@@ -29,56 +29,54 @@ const validar_datos = (correo, primer_nombre, primer_apellido,fecha_nacimiento,
     input_fecha_nacimiento.classList.remove('input--error');
     input_provincia.classList.remove('input--error');
     input_canton.classList.remove('input--error');
-    input_distrito.classList.remove('input--error'); 
-   
-    
+    input_distrito.classList.remove('input--error');
+
+
 
     if (!validar_vacio_null(primer_nombre)) {
         error = true;
         input_primer_nombre.classList.add('input--error');
     }
 
-      
+
     if (!validar_vacio_null(primer_apellido)) {
         error = true;
         input_primer_apellido.classList.add('input--error');
     }
 
-  
-    if(!validar_vacio_null(correo)){
+
+    if (!validar_vacio_null(correo)) {
         error = true;
         input_correo.classList.add('input--error');
     }
 
-    
-    if(!validar_vacio_null(fecha_nacimiento)){
+
+    if (!validar_vacio_null(fecha_nacimiento)) {
         error = true;
         input_fecha_nacimiento.classList.add('input--error');
     }
 
-    
-    if(!validar_vacio_null(provincia)){
+
+    if (!validar_vacio_null(provincia)) {
         error = true;
         input_provincia.classList.add('input--error');
     }
 
-    
-    if(!validar_vacio_null(canton)){
+
+    if (!validar_vacio_null(canton)) {
         error = true;
         input_canton.classList.add('input--error');
     }
 
-    if(!validar_vacio_null(distrito)){
+    if (!validar_vacio_null(distrito)) {
         error = true;
         input_distrito.classList.add('input--error');
     }
 
     return error;
-    
 };
 
 let registrar_usuarios_finales = () => {
-
     let correo = input_correo.value;
     let primer_nombre = input_primer_nombre.value;
     let segundo_nombre = input_segundo_nombre.value;
@@ -90,11 +88,11 @@ let registrar_usuarios_finales = () => {
     let canton = input_canton.value;
     let distrito = input_distrito.value;
     let genero = input_genero.value;
-    let avatar = avatar_usuario.src; 
-    
+    let avatar = avatar_usuario.src;
 
-    if (validar_datos(correo, primer_nombre, primer_apellido,fecha_nacimiento,
-         provincia, canton, distrito) ) {
+
+    if (validar_datos(correo, primer_nombre, primer_apellido, fecha_nacimiento,
+        provincia, canton, distrito)) {
 
         Swal.fire({
             icon: 'warning',
@@ -102,41 +100,29 @@ let registrar_usuarios_finales = () => {
             text: 'Por favor revise los campos en rojo',
             confirmButtonText: 'Entendido'
         })
-
     } else {
+        try {
 
-       try {
+            registrar_usuario_final(correo, primer_nombre, segundo_nombre, primer_apellido,
+                segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar);
 
-        registrar_usuario_final(correo, primer_nombre, segundo_nombre, primer_apellido,
-            segundo_apellido,fecha_nacimiento,edad, provincia, canton, distrito, genero, avatar);
+            Swal.fire({
+                icon: 'success',
+                title: 'Registro realizado con exito',
+                text: 'El usuario ha sido almacenado',
+                confirmButtonText: 'Entendido'
+            })
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Registro realizado con exito',
-            text: 'El usuario ha sido almacenado',
-            confirmButtonText: 'Entendido'
-        })
-           
-       } catch (error) {
+        } catch (error) {
 
-        Swal.fire({
-            icon: 'warning', 
-            title: 'Error en el registro', 
-            text: 'El usuario ya se encuentra registrado', 
-            confirmButtonText: 'Entendido'
-        })
-           
-       }
-
-      
+            Swal.fire({
+                icon: 'warning',
+                title: 'Error en el registro',
+                text: 'El usuario ya se encuentra registrado',
+                confirmButtonText: 'Entendido'
+            })
+        }
     }
-
-
-
-
-
 };
-
-
 
 btn_guardar.addEventListener('click', registrar_usuarios_finales);

@@ -15,84 +15,50 @@ let getEdad = (fecha_nacimiento) => {
 }
 
 
-let registrar_usuario_final = async(correo, primer_nombre, segundo_nombre, primer_apellido,
-    segundo_apellido,fecha_nacimiento,edad, provincia, canton, distrito, genero, avatar) => {
+let registrar_usuario_final = async (correo, primer_nombre, segundo_nombre, primer_apellido,
+    segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar) => {
 
     await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-usuarios',
+        responseType: 'json',
+        data: {
+            correo_electronico: correo,
+            primer_nombre: primer_nombre,
+            segundo_nombre: segundo_nombre,
+            primer_apellido: primer_apellido,
+            segundo_apellido: segundo_apellido,
+            fecha_nacimiento: fecha_nacimiento,
+            edad: edad,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
+            genero: genero,
+            avatar: avatar
+        }
+    }
+    ).then(function (res) {
+        console.log(res.data);
+    }).catch(function (error) {
+        console.log(error);
+    });
+};
 
-                method: 'post',
-                url: 'http://localhost:3000/api/registrar-usuarios-finales', 
-                responseType: 'json',
-
-               
-                data: {
-                    correo: correo,
-                    primer_nombre: primer_nombre,
-                    segundo_nombre: segundo_nombre,
-                    primer_apellido: primer_apellido,
-                    segundo_apellido: segundo_apellido,
-                    fecha_nacimiento: fecha_nacimiento,
-                    edad: edad,
-                    provincia: provincia,
-                    canton: canton,
-                    distrito: distrito,
-                    genero: genero,
-                    avatar: avatar
-                    
-                }
-
-            }
-
-
-        ).then(function(res) {
-            console.log(res.data);
-        })
-        .catch(function(error) {
-         
-});
-
-    };
-
-let listar_usuarios_finales = async() => {
+let listar_usuarios_finales = async () => {
     let lista_usuarios_finales;
     await axios({
         method: 'get',
         url: 'http://localhost:3000/api/listar-filtrar-usuario-final',
         responseType: 'json'
-    })
-
-    .then(function(res) {
-
+    }).then(function (res) {
 
         lista_usuarios_finales = res.data.clientes;
 
-    })
+    }).catch(function (error) {
 
-    .catch(function(error) {
         console.log(error);
+
     });
 
     return lista_usuarios_finales;
 };
-
-
-let listar_datos_inicio_sesion = async() =>{
-    let lista_datos_inicio_sesion; 
-
-    await axios({
-        method: 'get', 
-        url: 'http://localhost:3000/api/iniciar-sesion', 
-        responseType: 'json'
-    })
-
-    then(function(res){
-        lista_datos_inicio_sesion = ''; 
-     })
-
-     .catch(function(error){
-         console.log(error)
-     }); 
-
-     return lista_datos_inicio_sesion;
-}
-
