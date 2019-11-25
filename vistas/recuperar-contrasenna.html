@@ -3,31 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrar tarjeta</title>
+
+    <title>Recuperar contraseña</title>
 
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
 
-    <!-- Fontawesome local -->
-    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
-
-    <!-- Estilos -->
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/registrar-org-evento.css">
+    <link rel="stylesheet" href="../css/recuperar-contraseña.css">
 </head>
 
 <body>
-    <!-- Inicio:  Header-->
     <header>
         <div id="cajon-superior" class="bg-verde-claro--fondo">
             <nav class="d-flow-root">
-                <a href="registrar-usuarios-finales.html" class="blanco-a--tipografia t-centro f-derecha btn--inactivo">Registrarse</a>
-                <a href="inciar-sesion.html" class="blanco-a--tipografia t-centro f-derecha btn--inactivo">Iniciar sesión</a>
+                <a href="#" class="blanco-a--tipografia t-centro f-derecha btn--error">Cerrar sesión</a>
             </nav>
         </div>
 
@@ -38,45 +32,40 @@
 
             <div class="acomodo-c-inferior f-derecha">
                 <nav class="d-en-linea f-izquierda menu">
-                    <a href="../index.html" class="blanco-a--tipografia">Inicio</a>
-                    <a href="eventos.html" class="blanco-a--tipografia">Eventos</a>
+                    <a href="../vistas/inciar-sesion.html" class="blanco-a--tipografia">Iniciar sesion</a>
                 </nav>
-
-                <form class="f-izquierda">
-                    <div>
-                        <input type="search">
-                        <button class="btn gris-oscuro-a--tipografia">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
             </div>
         </div>
     </header>
-    <!-- Fin:  Header-->
 
-    <!-- Inicio:  Main-->
-    <main id="main" class="d-flow-root">
-        <h1 class="verde-oscuro--tipografia t-centrado">Eventos</h1>
+    <main>
+        <section>
+            <div class="recuperar-contrasenna">
+                <h1>Recuperación de contraseña</h1>
+                <p><i class="fa fa-angle-right"></i>Ingrese su correo electrónico al cual se le enviaran las
+                    instrucciones
+                    para recuperar su contraseña. </p>
+                <label for="txt_correo">Correo electrónico </label>
+                <input type="text" id="txt_correo">
 
-        <section id="eventos"></section>
+                <button id="btn-contrasenna" type="button">Enviar</button>
+            </div>
+        </section>
     </main>
-    <!-- Fin:  Main-->
 
-    <!-- Inicio:  Footer-->
     <footer>
         <div id="footer_superior" class="bg-verde-claro--fondo d-flow-root">
-            <div class="f-izquierda menu-izquierda">
+            <div class="f-izquierda">
                 <nav class="t-centrado">
                     <a href="#" class="crema-a--tipografia">Nosotros</a>
                     <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a>
-                    <a href="vistas/registrar-organizador-eventos.html" class="crema-a--tipografia">¿Organizas eventos? Registrate</a>
                 </nav>
             </div>
 
             <div class="f-izquierda crema--tipografia">
                 <h6 class="t-centrado">Contáctenos</h6>
-                <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@gmail.com">ecoboleto@gmail.com</a></p>
+                <p>Correo: <a class="crema-a--tipografia"
+                        href="mailto:ecoboleto@contacto.com">ecoboleto@contacto.com</a></p>
                 <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
                 <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
             </div>
@@ -94,17 +83,17 @@
             </p>
         </div>
     </footer>
-    <!-- Fin:  Footer-->
 
-    <!-- Axios \\ Peticiones del front end al backend -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="../js/axios.js"></script>
 
-    <!-- Ajustes generales -->
-    <script src="../js/ajustes.js"></script>
-
     <!-- Mapa -->
-    <script src="../js/maps.google.api.js"></script>
-    <script src="../js/mapa_index_ecoboleto.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDFdc3wI-6hc1r1BNVE_XKwq25d1sXdLtk"></script>
+    <script src="js/mapa_index_ecoboleto.js"></script>
+
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/recuperar_contrasenna/recuperar-contrasenna-servicio.js"></script>
+    <script src="../js/recuperar_contrasenna/recuperar-contraseña-controlador.js"></script>
 </body>
 
 </html>

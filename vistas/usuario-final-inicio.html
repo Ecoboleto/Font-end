@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrar tarjeta</title>
+    <title>EcoBoleto</title>
 
-    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
 
     <!-- Fontawesome local -->
     <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/registrar-tarjetas.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -62,34 +62,49 @@
 
     <!-- Inicio:  Main-->
     <main id="main" class="d-flow-root">
-        <h1 class="verde-oscuro--tipografia t-centrado">Registrar tarjetas</h1>
+        <section class="carousel">
+            <i class="fas fa-chevron-left rojo-a--tipografia" id="retroceder"></i>
+            <i class="fas fa-chevron-right rojo-a--tipografia" id="avanzar"></i>
+            <div id="imagen">
+                <img src="imgs/carrusel/concierto.jpg" style="display: none">
+                <img src="imgs/carrusel/venta_ropa.jpg" style="display: none">
+                <img src="imgs/carrusel/gastronomía.jpg" style="display: none">
+                <img src="imgs/carrusel/charla.jpg" style="display: none">
+            </div>
+        </section>
 
-        <form class="f-izquierda">
-            <div>
-                <label for="txt_nombre">Nombre de tarjeta <span class="rojo--tipografia">*</span></label>
-                <input type="text" id="txt_nombre" placeholder="Como viene en la tarjeta">
+        <section id="informacion" class="d-flow-root">
+            <div class="f-izquierda contenedor-circulos">
+                <div class="circulos-informacion bg-verde-oscuro--fondo">
+                    <h3 class="t-centrado mb-2 crema--tipografia">Innovación</h3>
+                </div>
+                <p class="t-centrado">Boletos desde la comodidad de su hogar, sin filas y protegiendo a la naturaleza.
+                </p>
             </div>
-            <div>
-                <label for="txt_numero">Número de tarjeta <span class="rojo--tipografia">*</span></label>
-                <input type="number" id="txt_numero">
+            <div class="f-izquierda contenedor-circulos">
+                <div class="circulos-informacion bg-verde-oscuro--fondo">
+                    <h3 class="t-centrado mb-2 crema--tipografia">Seguridad</h3>
+                </div>
+                <p class="t-centrado">Sabía que con EcoBoleto puede obtener su boleto a cualquiera de los eventos, tan
+                    solo con contar con
+                    correo electrónico.</p>
             </div>
-            <div>
-                <label for="txt_fecha_expiracion">Fecha de expiración <span class="rojo--tipografia">*</span></label>
-                <select name="mes" id="txt_mes"></select>
-                <select name="anno" id="txt_anno"></select>
+            <div class="f-izquierda contenedor-circulos">
+                <div class="circulos-informacion bg-verde-oscuro--fondo">
+                    <h3 class="t-centrado mb-2 crema--tipografia">Accesibilidad</h3>
+                </div>
+                <p class="t-centrado">Nosotros ayudamos a que todos puedan disfrutar eventos.</p>
             </div>
-            <div>
-                <label for="txt_codigo">Código de seguridad <span class="rojo--tipografia">*</span></label>
-                <input type="text" id="txt_codigo" placeholder="CVV">
-            </div>
+        </section>
 
-            <button id="btn_registrar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Registrar
-                tarjeta</button>
-        </form>
+        <section id="parallax">
+            <div class="efecto-parallax"></div>
+        </section>
 
-        <div class="f-izquierda foto-tarjeta--cajon">
-            <output id="foto_tarjeta"></output>
-        </div>
+        <section class="d-flow-root" id="eventos">
+            
+        </section>
+
     </main>
     <!-- Fin:  Main-->
 
@@ -105,13 +120,12 @@
 
             <div class="f-izquierda crema--tipografia">
                 <h6 class="t-centrado">Contáctenos</h6>
-                <p>Correo: <a class="crema-a--tipografia"
-                        href="mailto:ecoboleto@contacto.com">ecoboleto@contacto.com</a></p>
+                <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@gmail.com">ecoboleto@gmail.com</a></p>
                 <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
                 <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
             </div>
 
-            <div id="ubicacion" class="f-derecha">
+            <div id="ubicacion" class="f-derecha">               
                 <div id="mapa"></div>
             </div>
         </div>
@@ -135,13 +149,12 @@
     <!-- Ajustes generales -->
     <script src="../js/ajustes.js"></script>
 
-    <!-- Registrar -->
-    <script src="../js/registrar_tarjeta/registrar-tarjeta-servicio.js"></script>
-    <script src="../js/registrar_tarjeta/registrar-tarjeta-controlador.js"></script>
+    <!-- Carrusel -->
+    <script src="js/carrusel.js"></script>
 
     <!-- Mapa -->
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDFdc3wI-6hc1r1BNVE_XKwq25d1sXdLtk"></script>
-    <script src="../js/mapa_index_ecoboleto.js"></script>
+    <script src="js/mapa_index_ecoboleto.js"></script>
 </body>
 
 </html>

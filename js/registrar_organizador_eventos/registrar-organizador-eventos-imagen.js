@@ -2,6 +2,11 @@
 
 var myWidget1 = cloudinary.createUploadWidget({
     cloudName: 'dyssoftware',
+    clientAllowedFormats: [
+        "png",
+        "gif",
+        "jpeg"
+    ],
     uploadPreset: 'organizadorEventos'
 }, (error, result) => {
     if (!error && result && result.event === "success") {
@@ -10,6 +15,6 @@ var myWidget1 = cloudinary.createUploadWidget({
     }
 })
 
-document.getElementById("btn-guardarImagen").addEventListener("click", function() {
+document.getElementById("btn-guardarImagen").addEventListener("click", function () {
     myWidget1.open();
 }, false);

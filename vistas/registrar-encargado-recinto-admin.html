@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de encargados de recintos</title>
 
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+
+    <title>Registrar encargado de recinto</title>
 
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/listar-encargado-recinto.css">
+    <link rel="stylesheet" href="../css/registrar-encargado-recinto.css">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
 
             <div class="acomodo-c-inferior f-izquierda">
                 <nav class="d-en-linea f-izquierda menu">
-                    <a href="panel-de-control-administrador.html" class="blanco-a--tipografia">Panel de control</a>
+                    <a href="registrar-encargado-recinto-admin.html" class="blanco-a--tipografia">Panel de control</a>
                 </nav>
             </div>
         </div>
@@ -43,11 +44,10 @@
 
     <!-- Inicio:  Main-->
     <main id="main">
-        <h1 class="verde-oscuro--tipografia t-centrado">Lista de encargados de recintos</h1>
+        <h1 class="verde-oscuro--tipografia t-centrado">Registrar encargado de recinto</h1>
 
         <form>
             <div>
-                <h3 class="verde-oscuro--tipografia t-centrado">Filtrar por</h3>
                 <div>
                     <label for="txt_correo">Correo electrónico</label>
                     <input type="email" id="txt_correo" class="input-texto">
@@ -59,20 +59,14 @@
                 </div>
 
                 <div>
+                    
                     <label for="txt_fecha_nacimiento">Fecha de nacimiento</label>
+                    <p id="p-edad" for="txt_fecha_nacimiento">Edad:</p>
                     <input type="date" id="txt_fecha_nacimiento" class="input-texto">
                 </div>
-
                 <div>
-                    <label for="txt_edad">Edad</label>
-                    <input type="number" id="txt_edad" class="input-texto">
-                </div>
 
-                <div>
-                    <label for="txt_telefono">Teléfono</label>
-                    <input type="number" id="txt_telefono" class="input-texto">
                 </div>
-
                 <div>
                     <p>Género</p>
                     <div id="div-genero">
@@ -95,30 +89,23 @@
                     </div>
                 </div>
 
+                <button id="btn_registrar" type="button"
+                    class="btn btn--accion btn--positivo blanco--tipografia">Registrar encargado de recinto</button>
+
+            </div>
+            <div>
+                <div class="telefonos">
+                    <p for="txt_fecha_expiracion">Agregar teléfono</p>
+                    <input id="text-agregar-telefono" type="text" placeholder="0000-0000" class="input-texto">
+                    <button id="btn-agregar-telefono" type="button"
+                        class="btn-agregar blanco--tipografia  bg-verde-claro--fondo">Agregar</button>
+                </div>
+
                 <div>
-                    <button id="btn_limpiar" type="button"
-                        class="btn btn--accion btn--positivo blanco--tipografia">Limpiar filtro</button>
-                    <button id="btn_aplicar" type="button"
-                        class="btn btn--accion btn--positivo blanco--tipografia">Aplicar</button>
+                    <p class="bg-verde-claro--fondo t-centrado">Lista de teléfono</p>
+                    <ul class="lista-telefono" id="ul-lista-telefono"> </ul>
                 </div>
             </div>
-
-            <div>
-                <table id="tbl-lista">
-                    <thead>
-                        <tr>
-                            <th>Correo electrónico</th>
-                            <th>Nombre completo</th>
-                            <th>Fecha de nacimiento</th>
-                            <th>Edad</th>
-                            <th>Teléfonos</th>
-                            <th>Género</th>
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
-            
         </form>
     </main>
     <!-- Fin:  Main-->
@@ -148,7 +135,7 @@
 
     <!-- Registrar -->
     <script src="../js/encargado_recinto/encargado-recinto-servicio.js"></script>
-    <script src="../js/encargado_recinto/listar-encargado-recinto-controlador.js"></script>
+    <script src="../js/encargado_recinto/registrar-encargado-recinto-controlador.js"></script>
 </body>
 
 </html>
