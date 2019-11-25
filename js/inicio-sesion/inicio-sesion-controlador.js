@@ -37,24 +37,29 @@ const inicio_sesion = async () => {
 
                 switch (resultado.datos.tipo_usuario) {
                     case 'encargado_de_recinto':
+                        window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
+                        window.localStorage.setItem('usuario_id', resultado.datos._id);
                         window.location = "http://127.0.0.1:5500/vistas/panel-de-control-encargado-recinto.html";
                         break;
                     case 'organizador_evento':
+                        window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
+                        window.localStorage.setItem('usuario_id', resultado.datos._id);
                         window.location = "http://127.0.0.1:5500/vistas/panel-de-control-organizador-eventos.html";
                         break;
                     case 'usuario_final':
+                        window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
+                        window.localStorage.setItem('usuario_id', resultado.datos._id);
                         window.location = "http://127.0.0.1:5500/vistas/usuario-final-inicio.html";
                         break;
                     case 'administrador':
+                        window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
+                        window.localStorage.setItem('usuario_id', resultado.datos._id);
                         window.location = "http://127.0.0.1:5500/vistas/panel-de-control-administrador.html";
                         break;
                     default:
                         window.location = "http://127.0.0.1:5500";
                         break;
                 }
-
-                window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
-                window.localStorage.setItem('usuario_id', resultado.datos._id);
             } else {
                 Swal.fire({
                     icon: 'warning',
