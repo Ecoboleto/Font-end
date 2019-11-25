@@ -49,18 +49,17 @@ let listar_descuentos = async () => {
 
 
 
-let registrar_evento = async (organizador_evento, nombre_evento, tipo_evento_nombre, foto_evento, recinto_evento_nombre, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos) => {
+let registrar_evento = async (nombre_evento, tipo_evento, foto_evento, recinto_evento, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos) => {
     await axios(
         {
             method: 'post',
             url: 'http://localhost:3000/api/registrar-evento',
             responseType: 'json',
             data: {
-                organizador_evento,
                 nombre_evento,
-                tipo_evento_nombre,
+                tipo_evento,
                 foto_evento,
-                recinto_evento_nombre,
+                recinto_evento,
                 descripcion_evento,
                 entrada_evento,
                 asistentes_evento,
