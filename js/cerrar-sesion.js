@@ -7,7 +7,7 @@ const cerrar_sesion = () => {
 }
 
 const sesion_inautorizada = () => {
-    let valor = localStorage.removeItem('usuario_id');
+    let valor = localStorage.getItem('usuario_id');
     if (valor == '' || valor == undefined || valor == null) {
         window.localStorage.clear();
         window.location = "http://127.0.0.1:5500/";
