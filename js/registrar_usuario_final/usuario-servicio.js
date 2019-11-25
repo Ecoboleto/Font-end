@@ -20,10 +20,10 @@ let registrar_usuario_final = async (correo, primer_nombre, segundo_nombre, prim
 
     await axios({
         method: 'post',
-        url: 'http://localhost:3000/api/registrar-usuarios',
+        url: 'http://localhost:3000/api/registrar-usuarios-finales',
         responseType: 'json',
         data: {
-            correo_electronico: correo,
+            correo: correo,
             primer_nombre: primer_nombre,
             segundo_nombre: segundo_nombre,
             primer_apellido: primer_apellido,
