@@ -13,5 +13,33 @@ main{
 }
 
 section .efecto-parallax {
-    height: 450px;
+    height: 700px;
+}
+
+#valores{
+    display: flow-root;
+}
+#valores .card-integante{
+
+    margin-top: 30px;
+    margin-left: 7.5%;
+    margin-right: 5%;
+    background: #A3DE83;
+    width: 20%;
+    height: 400px;
+    float: left;
+    box-shadow: 2px 3px 4px #ced6e0;
+}
+
+.icon-integrante{
+    margin-top: 10px;
+    margin-left: 50px;
+    height: 190px;
+    width: 200px;
+}
+
+.card-integante .blanco-a--tipografia{
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 80px;
 }
