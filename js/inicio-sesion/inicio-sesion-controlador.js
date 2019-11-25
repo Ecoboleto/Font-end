@@ -40,16 +40,16 @@ const inicio_sesion = async () => {
                         window.location = "http://127.0.0.1:5500/vistas/panel-de-control-encargado-recinto.html";
                         break;
                     case 'organizador_evento':
-                        window.location = "http://127.0.0.1:5500/vistas/";
+                        window.location = "http://127.0.0.1:5500/vistas/panel-de-control-organizador-eventos.html";
                         break;
                     case 'usuario_final':
-                        window.location = "http://127.0.0.1:5500/vistas/";
+                        window.location = "http://127.0.0.1:5500/vistas/usuario-final-inicio.html";
                         break;
                     case 'administrador':
-                        window.location = "http://127.0.0.1:5500/vistas/";
+                        window.location = "http://127.0.0.1:5500/vistas/panel-de-control-administrador.html";
                         break;
                     default:
-                        window.location = "http://127.0.0.1:5500/vistas/";
+                        window.location = "http://127.0.0.1:5500";
                         break;
                 }
 

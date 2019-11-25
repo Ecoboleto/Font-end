@@ -12,6 +12,27 @@ main{
     background-size: cover;
 }
 
+#parallas .info-equipo{
+
+
+    height: 90px;
+    width: 300px;
+    background-color: #FFF;
+   
+}
+
+.info-equipo p{
+
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.info-equipo h1{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
 section .efecto-parallax {
     height: 700px;
 }
@@ -32,14 +53,31 @@ section .efecto-parallax {
 }
 
 .icon-integrante{
-    margin-top: 10px;
-    margin-left: 50px;
+    margin-top: 20px;
+    margin-left: 40px;
     height: 190px;
-    width: 200px;
+    width: 220px;
 }
 
 .card-integante .blanco-a--tipografia{
     font-size: 20px;
     margin-top: 15px;
     margin-left: 80px;
+}
+
+.card-integante{
+    display: flow-root;
+}
+.card-integante .lista-destrezas{
+
+    margin-left: 25px;
+    float: left;
+    color: #FFF;
+    font-size: 18px;
+}
+
+.card-integante .rol{
+
+    color: #FFF;
+    text-align: center;
 }
