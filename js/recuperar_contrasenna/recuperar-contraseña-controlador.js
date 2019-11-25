@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const input_correo = document.querySelector('#txt_correo');
 const btn_enviar = document.querySelector('#btn-contrasenna');
@@ -8,7 +8,7 @@ const validar_correo = (correo) => {
 
     input_correo.classList.remove('input--error');
 
-    if (validar_vacio_null(correo)) {
+    if (!validar_vacio_null(correo)) {
         error = true;
         input_correo.classList.add('input--error');
     }
@@ -16,7 +16,7 @@ const validar_correo = (correo) => {
 }; 
 
 let recuperar_contrasenna = () => {
-    let correo = input_correo.value; 
+    const correo = input_correo.value; 
 
     if (validar_correo(correo) ) {
        Swal.fire({
