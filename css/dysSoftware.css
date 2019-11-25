@@ -12,9 +12,21 @@ main{
     background-size: cover;
 }
 
+#parallax2 {
+    background-image: url("../imgs/landing-ecoboleto/19858.jpg");
+    height: 100%;
+    /* Crea el efecto parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parallax .efecto-parallax, #parallax2 .efecto-parallax {
+    height: 300px;
+}
+
 #parallas .info-equipo{
-
-
     height: 90px;
     width: 300px;
     background-color: #FFF;
@@ -54,9 +66,10 @@ section .efecto-parallax {
 
 .icon-integrante{
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 25px;
     height: 190px;
     width: 220px;
+    border-radius: 10px;
 }
 
 .card-integante .blanco-a--tipografia{
