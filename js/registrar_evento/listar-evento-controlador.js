@@ -39,7 +39,7 @@ let nombre_impuestos = async (pid) => {
     for (let i = 0; i < impuestoevento.length; i++) {
         for (let f = 0; f < impuestosid.length; f++) {
             if (impuestoevento[i]['_id'] == impuestosid[f]) {
-                nombre.push(impuestoevento[i]['nombre_impuesto'])
+                nombre.push(impuestoevento[i]['nombre'])
             }
         }
     }
@@ -54,7 +54,7 @@ let nombre_descuentos = async (pid) => {
     for (let i = 0; i < descuentoevento.length; i++) {
         for (let f = 0; f < descuentosid.length; f++) {
             if (descuentoevento[i]['_id'] == descuentosid[f]) {
-                nombre.push(descuentoevento[i]['nombre_descuento'])
+                nombre.push(descuentoevento[i]['nombre'])
             }
         }
     }
@@ -65,26 +65,20 @@ let llenarTabla = async () => {
     lista_eventos = await listar_evento();
     tbody.innerHTML = '';
     for (let i = 0; i < lista_eventos.length; i++) {
-        let tipoevento = await nombre_tipo_evento(lista_eventos[i]['tipo_evento']);
-        let recintoevento = await nombre_recinto_evento(lista_eventos[i]['recinto_evento']);
-        let impuestosevento = await nombre_impuestos(lista_eventos[i]['impuestos']);
-        let descuentosevento = await nombre_descuentos(lista_eventos[i]['descuentos']);
-
         let fila = tbody.insertRow();
-
-        fila.insertCell().innerHTML = lista_eventos[i]['organizador_evento'];
+        /*fila.insertCell().innerHTML = lista_eventos[i]['organizador_evento'];*/
         fila.insertCell().innerHTML = lista_eventos[i]['nombre_evento'];
-        fila.insertCell().innerHTML = tipoevento;
+        fila.insertCell().innerHTML = await nombre_tipo_evento(lista_eventos[i]['tipo_evento']);
         /*fila.insertCell().innerHTML = lista_eventos[i]['foto_evento'];*/
-        fila.insertCell().innerHTML = recintoevento;
+        fila.insertCell().innerHTML = await nombre_recinto_evento(lista_eventos[i]['recinto_evento']);
         fila.insertCell().innerHTML = lista_eventos[i]['descripcion_evento'];
         fila.insertCell().innerHTML = lista_eventos[i]['entrada_evento'];
         fila.insertCell().innerHTML = lista_eventos[i]['asistentes_evento'];
         fila.insertCell().innerHTML = lista_eventos[i]['limite_evento'];
         fila.insertCell().innerHTML = lista_eventos[i]['estado'];
         fila.insertCell().innerHTML = lista_eventos[i]['fechas'];
-        fila.insertCell().innerHTML = impuestosevento;
-        fila.insertCell().innerHTML = descuentosevento;
+        fila.insertCell().innerHTML = await nombre_impuestos(lista_eventos[i]['impuestos']);
+        fila.insertCell().innerHTML = await nombre_descuentos(lista_eventos[i]['descuentos']);
     }
 };
 

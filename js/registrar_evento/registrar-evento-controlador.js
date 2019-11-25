@@ -1,7 +1,7 @@
 'use strict';
 
 // Variables de los input y botón de registrar
-const input_organizador_evento = document.querySelector('#txt_organizador_evento');
+/*const input_organizador_evento = document.querySelector('#txt_organizador_evento');*/
 const input_nombre_evento = document.querySelector('#txt_nombre_evento');
 const input_tipo_evento = document.querySelector('#txt_tipo_evento');
 const input_foto_evento = document.querySelector('#imgEvento');
@@ -57,7 +57,6 @@ const llenarRecintos = async () => {
     for (let i = 0; i < lista_recinto_evento.length; i++) {
         opt = document.createElement('option');
         opt.value = lista_recinto_evento[i]['_id'];
-        opt.setAttribute('nombre', lista_recinto_evento[i]['nombre_recinto']);
         opt.setAttribute('capacidadrecinto', lista_recinto_evento[i]['capacidad']);
         opt.innerHTML = lista_recinto_evento[i]['nombre_recinto'] + ' -- ' + lista_recinto_evento[i]['capacidad'] + ' espacios';
         select.appendChild(opt);
@@ -78,7 +77,7 @@ const llenarImpuestos = async () => {
     for (let i = 0; i < lista_impuestos.length; i++) {
         opt = document.createElement('option');
         opt.value = lista_impuestos[i]['_id'];
-        opt.innerHTML = lista_impuestos[i]['nombre_impuesto'];
+        opt.innerHTML = lista_impuestos[i]['nombre'];
         select.appendChild(opt);
     };
 }
@@ -96,7 +95,7 @@ const llenarDescuentos = async () => {
     for (let i = 0; i < lista_descuentos.length; i++) {
         opt = document.createElement('option');
         opt.value = lista_descuentos[i]['_id'];
-        opt.innerHTML = lista_descuentos[i]['nombre_descuento'];
+        opt.innerHTML = lista_descuentos[i]['nombre'];
         select.appendChild(opt);
     };
 }
@@ -205,7 +204,7 @@ const llenarFinalM = () => {
 const agregarFechaLista = () => {
     const sel = document.querySelector('#txt_fecha_evento')
     const label = document.querySelector('#fechas');
-    let lab = document.createElement('p');
+    let lab = document.createElement('output');
 
     let fecha_evento;
     let fecha = new Date(input_fecha_evento.value);
@@ -262,7 +261,7 @@ const agregarFechaLista = () => {
         Swal.fire({
             icon: 'warning',
             title: 'Error de fechas u horas',
-            text: 'Por favor revise la informacion, debe de seleccionar todos los campos de horas y minutos, no puede ingresar fechas anteriores a hoy, la hora final no puede ser menor a la hora de inicio y no pueden haber eventos el mismo dia con horarios reservados',
+            text: 'Por favor revise la informacion: Seleccionar todos los campos de horas y minutos. No ingresar fechas anteriores a hoy. Hora final no puede ser menor a la hora de inicio. No se permiten eventos el mismo dia en horarios ya reservados y en horas consecutivas.',
             confirmButtonText: 'Entendido'
         });
     }
@@ -631,7 +630,7 @@ let validarVaciosFormato = () => {
 let validarRecintoCapacidad = () => {
     let error = false;
     const sel = document.querySelector('#txt_recinto_evento');
-    let capacidad = sel.options[sel.selectedIndex].getAttribute('capacidadrecinto');
+    let capacidad = Number(sel.options[sel.selectedIndex].getAttribute('capacidadrecinto'));
     if (input_asistentes_evento.value > capacidad) {
         error = true;
         input_asistentes_evento.classList.add('input--error');
@@ -641,6 +640,19 @@ let validarRecintoCapacidad = () => {
 
     return error;
 
+};
+
+let validarLimiteEntradas = () => {
+    let error = false;
+    let limite = Number(input_limite_evento.value);
+    let asis = Number(input_asistentes_evento.value)
+    if (limite > asis) {
+        error = true;
+        input_limite_evento.classList.add('input--error');
+    } else {
+        input_limite_evento.classList.remove('input--error');
+    }
+    return error;
 };
 
 //Resetear formulario
@@ -660,19 +672,19 @@ const resetear = () => {
     input_inicio_evento_m.value = "mm";
     input_final_evento_h.value = "hh";
     input_final_evento_h.value = "mm";
-    input_foto_evento.src = "../imgs/byron";
+    input_foto_evento.src = "../imgs/evento.jpg";
 }
 
 
 //Funcion de obtener datos
 const obtenerEvento = async () => {
-    let organizador_evento = input_organizador_evento.value;
+    /*let organizador_evento = input_organizador_evento.value;*/
     let nombre_evento = input_nombre_evento.value;
-    let tipo_evento_id = input_tipo_evento.value;
-    let tipo_evento_nombre = input_tipo_evento.options[input_tipo_evento.selectedIndex].text;
+    let tipo_evento = input_tipo_evento.value;
+    /*let tipo_evento_nombre = input_tipo_evento.options[input_tipo_evento.selectedIndex].text;*/
     let foto_evento = input_foto_evento.src;
-    let recinto_evento_id = input_recinto_evento.value;
-    let recinto_evento_nombre = input_recinto_evento.options[input_recinto_evento.selectedIndex].text;
+    let recinto_evento = input_recinto_evento.value;
+    /*let recinto_evento_nombre = input_recinto_evento.options[input_recinto_evento.selectedIndex].text;*/
     let descripcion_evento = input_descripcion_evento.value;
     let entrada_evento = input_entrada_evento.value;
     let asistentes_evento = input_asistentes_evento.value;
@@ -697,8 +709,16 @@ const obtenerEvento = async () => {
             confirmButtonText: 'Entendido'
         });
 
+    } else if (validarLimiteEntradas()) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'El limite de entradas por cliente no puede superar los asistentes esperados',
+            text: 'Por favor revise la informacion ingresada',
+            confirmButtonText: 'Entendido'
+        });
+
     } else {
-        await registrar_evento(organizador_evento, nombre_evento, tipo_evento_nombre, foto_evento, recinto_evento_nombre, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos);
+        await registrar_evento(nombre_evento, tipo_evento, foto_evento, recinto_evento, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos);
         resetear();
     };
 

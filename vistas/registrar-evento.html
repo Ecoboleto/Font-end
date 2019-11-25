@@ -46,10 +46,10 @@
         <h1 class="verde-oscuro--tipografia t-centrado">Registrar evento</h1>
 
         <form>
-            <div>
+            <!--<div>
                 <label for="txt_organizador_evento">Organizador de evento</label>
                 <input type="text" id="txt_organizador_evento">
-            </div>
+            </div>-->
             <div>
                 <label for="txt_nombre_evento">Nombre del evento</label>
                 <input type="text" id="txt_nombre_evento">
@@ -59,12 +59,12 @@
                 <select name="tipoevento" id="txt_tipo_evento"></select>
             </div>
             <div class="img-cloudinary">
-                <label for="txt_foto">Foto</label>
+                <label for="txt_foto">Foto evento</label>
                 <figure class="img-holder">
-                    <img src="../imgs/byron" alt="" id="imgEvento">
+                    <img src="../imgs/evento.jpg" alt="" id="imgEvento">
                 </figure>
 
-                <button type="button" id="btn_foto">Subir imagen</button>
+                <button type="button" id="btn_foto" class="btn btn--accion btn--positivo blanco--tipografia">Subir imagen</button>
 
             </div>
             <div>
@@ -76,20 +76,20 @@
                     <div>
                         <label for="txt_fecha_evento">Agregar Fecha</label>
                         <input id="txt_fecha_evento" type="date">
+                        <br>
 
                         <label for="txt_fecha_evento">Hora Inicio</label>
                         <select name="horainicio" id="txt_inicio_evento_h"></select>
                         <select name="minutosinicio" id="txt_inicio_evento_m"></select>
-
+                        <br>
                         <label for="txt_fecha_evento">Hora Final</label>
                         <select name="horafinal" id="txt_final_evento_h"></select>
                         <select name="minutosfinal" id="txt_final_evento_m"></select>
 
-                        <button id="btn_fecha" type="button">Agregar fecha</button>
+                        <button id="btn_fecha" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Agregar fecha a la lista</button>
                     </div>
-
                     <div>
-                        <p>Lista de fechas</p>
+                        <p>Lista de fechas agregadas (MM-DD-YYYY::Ih:Im::Fh:Fm)</p>
                         <div class="fechas" id="fechas"></div>
                     </div>
                 </div>
@@ -114,10 +114,10 @@
                 <div>
                     <label for="txt_impuestos_evento">Impuestos</label>
                     <select name="impuestosevento" id="txt_impuestos_evento"></select>
-                    <button id="btn_impuesto" type="button">Agregar impuesto</button>
+                    <button id="btn_impuesto" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Agregar impuesto a la lista</button>
                 </div>
                 <div>
-                    <p>Lista de impuestos</p>
+                    <p>Lista de impuestos agregados</p>
                     <div class="impuestos" id="impuestos"></div>
                 </div>
             </div>
@@ -126,16 +126,16 @@
                 <div>
                     <label for="txt_descuentos_evento">Descuentos</label>
                     <select name="descuentosevento" id="txt_descuentos_evento"></select>
-                    <button id="btn_descuento" type="button">Agregar descuento</button>
+                    <button id="btn_descuento" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Agregar descuento a la lista</button>
                 </div>
                 <div>
-                    <p>Lista de descuentos</p>
+                    <p>Lista de descuentos agregados</p>
                     <div class="descuentos" id="descuentos"></div>
                 </div>
             </div>
 
             <button id="btn_registrar" type="button"
-                class="btn btn--accion btn--positivo blanco--tipografia">Registrar</button>
+                class="btn btn--accion btn--positivo blanco--tipografia">Registrar Evento</button>
         </form>
     </main>
     <!-- Fin:  Main-->
@@ -176,9 +176,6 @@
 
 
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-
-    <!-- cerrar sesion -->
-    <script src="../js/cerrar-sesion.js"></script>
 
     <!-- Registrar -->
     <script src="../js/validaciones.js"></script>
