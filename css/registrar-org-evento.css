@@ -1,16 +1,112 @@
-#main{
-    width: 800px;
+#main {
+    width: 100%;
+}
+
+#main h1 {
+    margin-bottom: 50px;
+}
+
+#main form {
+    width: 400px;
     margin: 0 auto;
 }
 
-#main form{
-    margin-left: 50px;
+#main form {
+    width: 450px;
+    margin: 0 50px 0 450px;
 }
 
-.img-holder{
+#main form div {
+    margin-bottom: 20px;
+}
+
+#main div:nth-child(3) p{
+    margin-bottom: 10px;
+}
+
+#main div:nth-child(3) div input[type='radio']{
+    margin: 0 10px 0 20px;
+}
+
+
+#main form div input {
+    margin-left: 50px;
+    padding: 8px 5px;
+}
+
+#main div:nth-child(3) div:nth-child(3) input{
+    margin: -15px 0 0 25px;
+}
+
+#provincias, #cantones, #distritos{
+    padding: 10px 20px;
+}
+
+#txt_nombre_comercial{
+    margin-left: 75px !important;
+}
+
+#txt_annos_experiencia{
+    margin-left: 63px !important;
+}
+
+#txt_direccion_exacta{
+    margin-left: 100px !important;
+}
+
+#contacto_asociado{
+    margin: 50px 0 30px 0;
+}
+
+#txt_correo_electronico{
+    margin-left: 48px !important;
+}
+
+#txt_edad{
+    margin-left: 143px !important;
+}
+
+#txt_telefono{
+    margin-left: 118px !important;
+    margin-bottom: 30px;
+}
+
+#genero_contenedor p{
+    margin-bottom: 20px;
+}
+
+select option {
+    text-align: center;
+}
+
+#main form button {
+    width: 60%;
+    padding: 12px 0;
+    margin: 0 auto;
+}
+
+#main .foto-tarjeta--cajon {
+    margin-top: 40px;
+    margin-left: -50px;
+}
+
+.img-holder {
     width: 200px;
 }
 
-.img-holder>img{
+.img-holder>img {
     width: 100%;
+}
+
+main figure {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#txt_otro_respuesta{
+    margin-bottom: 50px;
+}
+
+#btn_registrar{
+    font-size: 16px;
 }
