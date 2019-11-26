@@ -1,6 +1,6 @@
 'use strict';
 
-let listar_impuestos = async()=>{
+/*let listar_impuestos = async()=>{
     let lista_impuestos;
     await axios ({
          method: 'get',
@@ -20,4 +20,20 @@ let listar_impuestos = async()=>{
         })
      });
      return lista_impuestos;
- };
+ };*/
+
+ let listar_impuestos = async () => {
+    let lista_impuestos;
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar-impuestos',
+        responseType: 'json',
+    })
+        .then(function (res) {
+            lista_impuestos = res.data.impuestos;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    return lista_impuestos;
+};
