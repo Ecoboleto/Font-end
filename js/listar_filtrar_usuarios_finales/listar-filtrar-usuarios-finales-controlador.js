@@ -17,12 +17,13 @@ let llenar_tabla = async() => {
 
     for (let i = 0; i < lista_usuarios_finales.length; i++) {
         let nombre = lista_usuarios_finales[i]['primer_nombre'].toLowerCase();
-        let correo = lista_usuarios_finales[i]['correo'].toLowerCase();
-        if (nombre.includes(filtro) || correo.includes(filtro)) {
+        let correo = lista_usuarios_finales[i]['correo_electronico'].toLowerCase();
+        let tipo_usuario = lista_usuarios_finales[i]['tipo_usuario'];
+        if ((nombre.includes(filtro) || correo.includes(filtro)) && tipo_usuario.includes('usuario_final')  ) {
 
             let fila = tbody.insertRow();
 
-            fila.insertCell().innerHTML = lista_usuarios_finales[i]['correo']
+            fila.insertCell().innerHTML = lista_usuarios_finales[i]['correo_electronico']
             fila.insertCell().innerHTML = lista_usuarios_finales[i]['primer_nombre']
             fila.insertCell().innerHTML = lista_usuarios_finales[i]['segundo_nombre']
             fila.insertCell().innerHTML = lista_usuarios_finales[i]['primer_apellido']
