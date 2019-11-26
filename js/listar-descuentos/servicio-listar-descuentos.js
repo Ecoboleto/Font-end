@@ -4,7 +4,7 @@ let listar_descuentos = async()=>{
     let lista_descuentos;
     await axios ({
          method: 'get',
-         url: 'http:localhost:3000/api/registrar-descuento',
+         url: 'http:localhost:3000/api/listar-descuento',
          responseType: 'json'
      })
      .then(function(res){
