@@ -106,11 +106,16 @@ let registrar_usuarios_finales = () => {
             registrar_usuario_final(correo, primer_nombre, segundo_nombre, primer_apellido,
                 segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar);
 
+                window.location = "http://127.0.0.1:5500";
+
             Swal.fire({
                 icon: 'success',
                 title: 'Registro realizado con exito',
                 text: 'El usuario ha sido almacenado',
-                confirmButtonText: 'Entendido'
+                confirmButtonText: 'Entendido',
+                onAfterClose: () => {
+                    window.location = "http://127.0.0.1:5500";
+                }
             })
 
         } catch (error) {
