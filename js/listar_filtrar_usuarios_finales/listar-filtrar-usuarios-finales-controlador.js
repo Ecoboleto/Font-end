@@ -19,7 +19,7 @@ let llenar_tabla = async() => {
         let nombre = lista_usuarios_finales[i]['primer_nombre'].toLowerCase();
         let correo = lista_usuarios_finales[i]['correo_electronico'].toLowerCase();
         let tipo_usuario = lista_usuarios_finales[i]['tipo_usuario'];
-        if ((nombre.includes(filtro) || correo.includes(filtro)) && tipo_usuario.includes('usuario_final')  ) {
+        if ((nombre.includes(filtro) || correo.includes(filtro))  ) {
 
             let fila = tbody.insertRow();
 
