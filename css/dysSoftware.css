@@ -1,19 +1,16 @@
-main{
+main {
     padding: 0 0 100px 0;
 }
 
 #parallax {
     background-image: url("../imgs/landing-ecoboleto/25068.jpg");
-    height: 100%;
-    /* Crea el efecto parallax */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 #parallax2 {
     background-image: url("../imgs/landing-ecoboleto/19858.jpg");
+}
+
+.parallax {
     height: 100%;
     /* Crea el efecto parallax */
     background-attachment: fixed;
@@ -26,71 +23,86 @@ main{
     height: 300px;
 }
 
-#parallas .info-equipo{
-    height: 90px;
-    width: 300px;
+.info-equipo {
+    padding: 6% 4%;
     background-color: #FFF;
-   
 }
 
-.info-equipo p{
-
+.info-equipo p {
     font-size: 20px;
-    margin-bottom: 30px;
-    margin-left: 30px;
+    line-height: 28px;
 }
 
-.info-equipo h1{
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-bottom: 20px;
-}
-section .efecto-parallax {
-    height: 700px;
+.info-equipo h1 {
+    padding-bottom: 5%;
 }
 
-#valores{
-    display: flow-root;
+.mision-vision {
+    width: 33.33%;
+    padding: 0 2%;
+    box-sizing: border-box;
 }
-#valores .card-integante{
 
-    margin-top: 30px;
-    margin-left: 7.5%;
-    margin-right: 5%;
+.icono-d-software {
+    font-size: 80px;
+    margin-bottom: 5%;
+}
+
+.mision-vision h3 {
+    margin-bottom: 5%;
+}
+
+#valores {
+    padding-top: 4%;
+}
+
+.card-integrante {
+    width: 22%;
+    height: 500px;
     background: #A3DE83;
-    width: 20%;
-    height: 400px;
-    float: left;
     box-shadow: 2px 3px 4px #ced6e0;
+    border-radius: 2%;
+    margin: 0 3% 3% 7.5%;
+    color: #FEFFE4;
 }
 
-.icon-integrante{
+.icon-integrante {
+    width: 82%;
+    height: 168px;
+
     margin-top: 20px;
     margin-left: 25px;
-    height: 190px;
-    width: 220px;
     border-radius: 10px;
 }
 
-.card-integante .blanco-a--tipografia{
-    font-size: 20px;
-    margin-top: 15px;
-    margin-left: 80px;
+#valores h2 {
+    margin-bottom: 3%;
 }
 
-.card-integante{
-    display: flow-root;
-}
-.card-integante .lista-destrezas{
-
-    margin-left: 25px;
-    float: left;
-    color: #FFF;
-    font-size: 18px;
+#valores2{
+    margin-left: 25%;
 }
 
-.card-integante .rol{
+#valores2 .card-integrante {
+    width: 29%;
+    margin-bottom: 0;
+}
 
-    color: #FFF;
+
+#valores2 .card-integrante:last-child {
+    margin-left: 13%;
+}
+
+#valores2 div:first-child{
+    margin-left: 0;
+}
+
+.fortalezas-debilidades{
+    padding: 0 8%;
+    box-sizing: border-box;
     text-align: center;
+}
+
+.fortalezas-debilidades div:first-child{
+    margin-right: 8%;
 }
