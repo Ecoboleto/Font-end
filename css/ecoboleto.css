@@ -1,47 +1,16 @@
-body {
-  overflow: auto;
-}
-
-/* Estilos del header */
-
-header div {
-  display: inline-block;
-}
-
-header ul {
-  margin-left: 900px !important;
-  vertical-align: top;
-  margin-top: -70px !important;
-  display: inline-block;
-  list-style-type: none;
-}
-
-header nav ul li {
-  display: inline;
-  margin-left: 18px;
-}
-
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-header nav ul li a:hover {
-  color: #bdc3c7;
-  text-decoration: none;
-}
-
 main{
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
 }
 
 #inicio {
   background-image: url("../imgs/landing-ecoboleto/evento-ecoboleto.jpg");
+}
+
+.parallax{
   height: 100%;
   /* Crea el efecto parallax */
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -50,59 +19,76 @@ main{
   height: 400px;
 }
 
-#definicionEcoboleto {
-  background-color: #A3DE83;
-  padding: 40px 0;
-}
-
-#definicionEcoboleto .queEs {
-  color: #FFF;
-  display: inline-block;
-  width: 500px;
-  padding-top: 20px;
-  margin-left: 35%;
-  transform: translate(-7%, -18%);
+#banner{
   position: relative;
 }
 
-#definicionEcoboleto .queEs h2 {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 10px;
+#banner h2{
+  position: absolute;
+  font-size: 50px;
+  right: 10%;
+  top: 40%;
+  text-shadow: 0px 0px 20px #FA4659;
 }
 
-#definicionEcoboleto .queEs p {
-  text-align: justify;
-  padding-top: 15px;
-  font-size: 1.1em;
-  line-height: 25px;
+#banner h4{
+  font-family: 'Roboto-italica', 'Helvetica', Arial, sans-serif;
+  font-style: italic;
+  font-size: 24px;
+  position: absolute;
+  right: 10%;
+  bottom: 40%;
+  text-shadow: 0px 0px 20px #FA4659;
+}
+
+#definicionEcoboleto {
+  background-color: #A3DE83;
+  padding: 4% 0;
+}
+
+.boleto{
+  font-size: 250px;
+  box-sizing: border-box;
+  margin-left: 10%;
+}
+
+.queEs {
+  width: 50%;
+  color: #FFF;
+  box-sizing: border-box;
+  padding: 5% 0 0 20%;
+}
+
+.queEs h1{
+  margin-bottom: 6%;
+}
+
+.queEs p {
+  font-size: 18px;
+  line-height: 26px;
 }
 
 #quePodesHacer {
   background-color: #2EB872;
-  padding: 20px 0 45px;
+  padding: 5% 0 6% 0;
 }
 
 #quePodesHacer h2 {
-  text-align: center;
-  padding: 40px 0;
+  margin-bottom: 4%;
   color: #fff;
   font-size: 2em;
-  margin-bottom: 45px;
 }
 
 #quePodesHacer div {
-  display: inline-block;
-  margin-left: 80px;
+  margin-left: 6%;
 }
 
 .iconos {
-  border-radius: 50%;
   width: 90px;
+  padding: 20px;
   font-size: 4.5em;
   color: #fff;
-  padding: 20px;
-  text-align: center;
+  border-radius: 50%;
   margin-left: 30% !important;
 }
 
@@ -114,4 +100,37 @@ main{
   padding-top: 15px;
   font-size: 1.1em;
   line-height: 25px;
+}
+
+#compannia div{
+  width: 50%;
+}
+
+#compannia div:last-child img, #anuncio div:first-child img{
+  width: 100%;
+}
+
+#anuncio div:first-child{
+  width: 50%;
+}
+
+#anuncio div:last-child{
+  width: 50%;
+}
+
+.gmnoprint, .gm-style-cc{
+  display: none;
+}
+
+.localizacion{
+  padding: 5% 8%;
+  box-sizing: border-box;
+}
+
+#ubicacion{
+  width: 100%;
+}
+
+#mapa{
+  padding-left: 47% !important;
 }
