@@ -134,3 +134,10 @@ main{
 #mapa{
   padding-left: 47% !important;
 }
+
+#divisor{
+  background: #2EB872;
+  width: 80%;
+  height: 2px;
+  margin: 0 auto 5% auto;
+}
