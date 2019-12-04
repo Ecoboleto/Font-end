@@ -37,8 +37,8 @@ const llenarTipoEvento = async () => {
 
     for (let i = 0; i < lista_tipos_eventos.length; i++) {
         opt = document.createElement('option');
-        opt.value = lista_tipos_eventos[i]['_id'];
-        opt.setAttribute('nombre', lista_tipos_eventos[i]['tipo_evento']);
+        opt.value = lista_tipos_eventos[i]['tipo_evento'];
+        opt.setAttribute('dato_id', lista_tipos_eventos[i]['_id']);
         opt.innerHTML = lista_tipos_eventos[i]['tipo_evento'];
         select.appendChild(opt);
     };
@@ -56,8 +56,9 @@ const llenarRecintos = async () => {
 
     for (let i = 0; i < lista_recinto_evento.length; i++) {
         opt = document.createElement('option');
-        opt.value = lista_recinto_evento[i]['_id'];
+        opt.value = lista_recinto_evento[i]['nombre_recinto'];
         opt.setAttribute('capacidadrecinto', lista_recinto_evento[i]['capacidad']);
+        opt.setAttribute('dato_id', lista_recinto_evento[i]['_id']);
         opt.innerHTML = lista_recinto_evento[i]['nombre_recinto'] + ' -- ' + lista_recinto_evento[i]['capacidad'] + ' espacios';
         select.appendChild(opt);
     };
@@ -76,7 +77,8 @@ const llenarImpuestos = async () => {
 
     for (let i = 0; i < lista_impuestos.length; i++) {
         opt = document.createElement('option');
-        opt.value = lista_impuestos[i]['_id'];
+        opt.value = lista_impuestos[i]['nombre'];
+        opt.setAttribute('dato_id', lista_impuestos[i]['_id']);
         opt.innerHTML = lista_impuestos[i]['nombre'];
         select.appendChild(opt);
     };
@@ -94,7 +96,8 @@ const llenarDescuentos = async () => {
 
     for (let i = 0; i < lista_descuentos.length; i++) {
         opt = document.createElement('option');
-        opt.value = lista_descuentos[i]['_id'];
+        opt.value = lista_descuentos[i]['nombre'];
+        opt.setAttribute('dato_id', lista_descuentos[i]['_id']);
         opt.innerHTML = lista_descuentos[i]['nombre'];
         select.appendChild(opt);
     };
@@ -279,7 +282,7 @@ const obtenerFechas = () => {
     return fecha_evento
 };
 
-//Remover impuestos para resetear el formulario
+//Remover fechas para resetear el formulario
 const removerFechas = () => {
     let lista_fechas_evento = document.querySelectorAll('.listafechas');
 
@@ -438,7 +441,7 @@ const agregarImpuestosLista = () => {
     let impuestos_obt = obtenerImpuestos();
     let validarimp = impuestos_obt.join().includes(impuesto);
     if (!validarimp && sel.value != '--') {
-        lab.setAttribute('dato_id', impuesto);
+        lab.setAttribute('nombre', impuesto);
         lab.value = impuesto;
         lab.innerHTML = sel.options[sel.selectedIndex].text;
         lab.classList.add('listaimpuestos');
@@ -454,7 +457,7 @@ const obtenerImpuestos = () => {
     let impuestos = [];
 
     for (let i = 0; i < lista_impuestos_evento.length; i++) {
-        impuestos.push(lista_impuestos_evento[i].getAttribute('dato_id'))
+        impuestos.push(lista_impuestos_evento[i].getAttribute('nombre'))
     };
     return impuestos
 };
@@ -468,7 +471,7 @@ const removerImpuestos = () => {
     };
 };
 
-// Agregar descuetos a la lista
+// Agregar descuentos a la lista
 const agregarDescuentosLista = () => {
     const sel = document.querySelector('#txt_descuentos_evento')
     const label = document.querySelector('#descuentos');
@@ -479,7 +482,7 @@ const agregarDescuentosLista = () => {
     let descuentos_obt = obtenerDescuentos();
     let validardes = descuentos_obt.join().includes(descuento);
     if (!validardes && sel.value != '--') {
-        lab.setAttribute('dato_id', descuento);
+        lab.setAttribute('nombre', descuento);
         lab.value = descuento;
         lab.innerHTML = sel.options[sel.selectedIndex].text;
         lab.classList.add('listadescuentos');
@@ -496,7 +499,7 @@ const obtenerDescuentos = () => {
     let descuentos = [];
 
     for (let i = 0; i < lista_descuentos_evento.length; i++) {
-        descuentos.push(lista_descuentos_evento[i].getAttribute('dato_id'))
+        descuentos.push(lista_descuentos_evento[i].getAttribute('nombre'))
     };
     return descuentos
 };
@@ -671,7 +674,7 @@ const resetear = () => {
     input_inicio_evento_h.value = "hh";
     input_inicio_evento_m.value = "mm";
     input_final_evento_h.value = "hh";
-    input_final_evento_h.value = "mm";
+    input_final_evento_m.value = "mm";
     input_foto_evento.src = "../imgs/evento.jpg";
 }
 
