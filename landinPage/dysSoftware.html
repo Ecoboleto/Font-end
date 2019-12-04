@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/cards.css">
     <link rel="stylesheet" href="../css/dysSoftware.css">
 </head>
 
@@ -44,196 +45,349 @@
             <div class="efecto-parallax"></div>
         </section>
 
-
-        <section>
-            <div class="info-equipo">
-                <h1 class="verde-oscuro--tipografia t-centrado">Diseño y soluciones de software</h1>
-                <div class="d-flow-root">
-                    <div class="mision-vision f-izquierda">
-                        <div class="icono-d-software t-centrado">
-                            <i class="fas fa-people-carry verde-claro--tipografia"></i>
-                        </div>
-                        <h3 class="t-centrado verde-oscuro--tipografia">
-                            Misión
-                        </h3>
-                        <p class="t-centrado">
-                            Suministrar sistemas de calidad que ayuden al cliente a desarrollar el máximo
-                            potencial
-                            en su actividad.
-                        </p>
-                    </div>
-                    <div class="mision-vision f-izquierda">
-                        <div class="icono-d-software t-centrado">
-                            <i class="fas fa-eye verde-claro--tipografia"></i>
-                        </div>
-                        <h3 class="t-centrado verde-oscuro--tipografia">
-                            Visión
-                        </h3>
-                        <p class="t-centrado">
-                            Ser una empresa reconocida por su trabajo, calidad y eficiencia. Diferenciando
-                            nuestros
-                            productos con creatividad e innovación.
-                        </p>
-                    </div>
-                    <div class="mision-vision f-izquierda">
-                        <div class="icono-d-software t-centrado">
-                            <i class="fas fa-compass verde-claro--tipografia"></i>
-                        </div>
-                        <h3 class="t-centrado verde-oscuro--tipografia">
-                            Valores
-                        </h3>
-                        <p class="t-centrado">
-                            Colaboración, responsabilidad, perseverancia, honestidad.
-                        </p>
-                    </div>
-                </div>
+        <section class="info-equipo info1 d-flow-root">
+            <h1 class="verde-oscuro--tipografia t-centrado">Diseño y soluciones de software</h1>
+            <div class="f-izquierda">
+                <img src="/imgs/landing-ecoboleto/computer.jpg" alt="Misión" class="d-bloque">
+            </div>
+            <div class="informacion f-izquierda">
+                <h3 class="t-centrado verde-oscuro--tipografia mb-2">
+                    Misión
+                </h3>
+                <p class="t-centrado">
+                    Suministrar sistemas de calidad que ayuden al cliente a desarrollar el máximo
+                    potencial
+                    en su actividad.
+                </p>
             </div>
         </section>
 
-        <section id="parallax2" class="parallax">
-            <div class="efecto-parallax"></div>
+        <section class="info-equipo d-flow-root">
+            <div class="informacion f-izquierda">
+                <h3 class="t-centrado verde-oscuro--tipografia mb-2">
+                    Visión
+                </h3>
+                <p class="t-centrado">
+                    Ser una empresa reconocida por su trabajo, calidad y eficiencia. Diferenciando
+                    nuestros
+                    productos con creatividad e innovación.
+                </p>
+            </div>
+            <div class="f-izquierda">
+                <img src="/imgs/landing-ecoboleto/vision.svg" alt="Visión" class="d-bloque">
+            </div>
+        </section>
+
+        <section class="info-equipo info3 d-flow-root">
+            <div class="f-izquierda">
+                <img src="/imgs/landing-ecoboleto/team.svg" alt="Valores" class="d-bloque">
+            </div>
+            <div class="informacion f-izquierda">
+                <h3 class="t-centrado verde-oscuro--tipografia mb-2">
+                    Valores
+                </h3>
+                <p class="t-centrado">
+                    Colaboración, responsabilidad, perseverancia, honestidad.
+                </p>
+            </div>
         </section>
 
         <section id="valores">
-            <h2 class="t-centrado crema--tipografia">Conózcanos</h2>
-            <div class="d-flow-root">
-                <div class="card-integrante f-izquierda">
-                    <div class="mb-2">
-                        <img src="../imgs/landing-ecoboleto/Juan.JPG" alt="" class="icon-integrante">
+            <h2 class="t-centrado crema--tipografia mb-3">Conózcanos</h2>
+            <div class="d-flow-root1">
+                <figure class="card card--normal">
+                    <div class="card__image-container">
+                        <img src="../imgs/landing-ecoboleto/Juan.JPG" alt="Juan Carlos" class="card__image">
                     </div>
-                    <h5 class="t-centrado mb-2">Juan Moscoso</h5>
-                    <p class="rol mb-2 t-centrado"><b>Rol:</b> Soporte</p>
-                    <div class="d-flow-root fortalezas-debilidades">
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Fortalezas
-                            </h6>
-                            <p>Honestidad</p>
-                            <p>Autodidacta</p>
-                            <p>Comprometido</p>
-                            <p>Persistente</p>
-                            <p>Comprensivo</p>
-                            <p>Responsable</p>
+
+                    <figcaption class="card__caption">
+                        <h1 class="card__name">Juan Moscoso</h1>
+
+                        <h4 class="card__type">
+                            soporte
+                        </h4>
+
+                        <table class="card__stats">
+                            <tbody>
+                                <tr>
+                                    <th>HTML</th>
+                                    <td>55</td>
+                                </tr>
+                                <tr>
+                                    <th>CSS</th>
+                                    <td>55</td>
+                                </tr>
+
+                                <tr>
+                                    <th>JS</th>
+                                    <td>50</td>
+                                </tr>
+
+                                <tr>
+                                    <th>EXPRESS</th>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <th>MONGO</th>
+                                    <td>65</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="card__abilities">
+                            <h4 class="card__ability">
+                                <span class="card__label">Fortalezas</span>
+                                <p>Honestidad</p>
+                                <p>Autodidacta</p>
+                                <p>Comprometido</p>
+                                <p>Persistente</p>
+                                <p>Comprensivo</p>
+                                <p>Responsable</p>
+                            </h4>
+                            <h4 class="card__ability">
+                                <span class="card__label">Debilidades</span>
+                                <p>Impaciente</p>
+                                <p>Indeciso</p>
+                            </h4>
                         </div>
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Debilidades
-                            </h6>
-                            <p>Impaciente</p>
-                            <p>Indeciso</p>
-                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="card card--normal">
+                    <div class="card__image-container">
+                        <img src="../imgs/landing-ecoboleto/Paola.JPG" alt="Paola Sánchez" class="card__image">
                     </div>
-                </div>
-                <div class="card-integrante f-izquierda">
-                    <div class="mb-2">
-                        <img src="../imgs/landing-ecoboleto/Paola.JPG" alt="" class="icon-integrante">
-                    </div>
-                    <h5 class="t-centrado mb-2">Paola Sánchez</h5>
-                    <p class="rol mb-2 t-centrado"><b>Rol:</b> Coordinadora</p>
-                    <div class="d-flow-root fortalezas-debilidades">
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Fortalezas
-                            </h6>
-                            <p>Comprensiva</p>
-                            <p>Responsable</p>
-                            <p>Persistente</p>
-                            <p>Carismática</p>
-                            <p>Flexible</p>
-                            <p>Comprometida</p>
+
+                    <figcaption class="card__caption">
+                        <h1 class="card__name">Paola Sánchez</h1>
+
+                        <h4 class="card__type tamanno-especial">
+                            coordinación
+                        </h4>
+
+                        <table class="card__stats">
+                            <tbody>
+                                <tr>
+                                    <th>HTML</th>
+                                    <td>40</td>
+                                </tr>
+                                <tr>
+                                    <th>CSS</th>
+                                    <td>30</td>
+                                </tr>
+
+                                <tr>
+                                    <th>JS</th>
+                                    <td>30</td>
+                                </tr>
+
+                                <tr>
+                                    <th>EXPRESS</th>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <th>MONGO</th>
+                                    <td>30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="card__abilities">
+                            <h4 class="card__ability">
+                                <span class="card__label">Fortalezas</span>
+                                <p>Comprensiva</p>
+                                <p>Responsable</p>
+                                <p>Persistente</p>
+                                <p>Carismática</p>
+                                <p>Flexible</p>
+                                <p>Comprometida</p>
+                            </h4>
+                            <h4 class="card__ability">
+                                <span class="card__label">Debilidades</span>
+                                <p>Indecisión</p>
+                                <p>Impaciente</p>
+                                <p>Desconfianza</p>
+                                <p>Exigente</p>
+                            </h4>
                         </div>
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Debilidades
-                            </h6>
-                            <p>Indecisión</p>
-                            <p>Impaciente</p>
-                            <p>Desconfianza</p>
-                            <p>Exigente</p>
-                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="card card--normal">
+                    <div class="card__image-container">
+                        <img src="../imgs/landing-ecoboleto/Byron1.JPG" alt="Byron Sequeira" class="card__image">
                     </div>
-                </div>
-                <div class="card-integrante f-izquierda">
-                    <div class="mb-2">
-                        <img src="../imgs/landing-ecoboleto/Byron1.JPG" alt="" class="icon-integrante">
-                    </div>
-                    <h5 class="t-centrado mb-2">Byron Sequeira</h5>
-                    <p class="rol mb-2 t-centrado"><b>Rol:</b> Desarrollo</p>
-                    <div class="d-flow-root fortalezas-debilidades">
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">Fortalezas</h6>
-                            <p>Responsabilidad</p>
-                            <p>Compromiso</p>
-                            <p>Optimismo</p>
-                            <p>Puntualidad</p>
+
+                    <figcaption class="card__caption">
+                        <h1 class="card__name">Byron Sequeira</h1>
+
+                        <h4 class="card__type">
+                            desarrollo
+                        </h4>
+
+                        <table class="card__stats">
+                            <tbody>
+                                <tr>
+                                    <th>HTML</th>
+                                    <td>55</td>
+                                </tr>
+                                <tr>
+                                    <th>CSS</th>
+                                    <td>55</td>
+                                </tr>
+
+                                <tr>
+                                    <th>JS</th>
+                                    <td>50</td>
+                                </tr>
+
+                                <tr>
+                                    <th>EXPRESS</th>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <th>MONGO</th>
+                                    <td>65</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="card__abilities">
+                            <h4 class="card__ability">
+                                <span class="card__label">Fortalezas</span>
+                                <p>Responsabilidad</p>
+                                <p>Compromiso</p>
+                                <p>Optimismo</p>
+                                <p>Puntualidad</p>
+                            </h4>
+                            <h4 class="card__ability">
+                                <span class="card__label">Debilidades</span>
+                                <p>Dispersión</p>
+                                <p>Indiferencia</p>
+                                <p>Impaciencia</p>
+                                <p>Duda</p>
+                            </h4>
                         </div>
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">Debilidades</h6>
-                            <p>Dispersión</p>
-                            <p>Indiferencia</p>
-                            <p>Impaciencia</p>
-                            <p>Duda</p>
-                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="card card--normal">
+                    <div class="card__image-container">
+                        <img src="../imgs/landing-ecoboleto/Andres1.jpg" alt="Andrés Vargas" class="card__image">
                     </div>
-                </div>
-            </div>
-            <div id="valores2"class="d-flow-root">
-                <div class="card-integrante f-izquierda">
-                    <div class="mb-2">
-                        <img src="../imgs/landing-ecoboleto/Andres1.jpg" alt="Andrés Vargas calidad 1"
-                            class="icon-integrante">
-                    </div>
-                    <h5 class="t-centrado mb-2">Andrés Vargas</h5>
-                    <p class="rol mb-2 t-centrado"><b>Rol:</b> Calidad</p>
-                    <div class="d-flow-root fortalezas-debilidades">
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Fortalezas
-                            </h6>
-                            <p>Responsable</p>
-                            <p>Simpatía</p>
-                            <p>Sinceridad</p>
-                            <p>Amable</p>
-                            <p>Puntual</p>
-                            <p>Compañerismo</p>
+
+                    <figcaption class="card__caption">
+                        <h1 class="card__name">Andrés Vargas</h1>
+
+                        <h4 class="card__type">
+                            Calidad
+                        </h4>
+
+                        <table class="card__stats">
+                            <tbody>
+                                <tr>
+                                    <th>HTML</th>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <th>CSS</th>
+                                    <td>90</td>
+                                </tr>
+
+                                <tr>
+                                    <th>JS</th>
+                                    <td>90</td>
+                                </tr>
+
+                                <tr>
+                                    <th>EXPRESS</th>
+                                    <td>50</td>
+                                </tr>
+                                <tr>
+                                    <th>MONGO</th>
+                                    <td>30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="card__abilities">
+                            <h4 class="card__ability">
+                                <span class="card__label">Fortalezas</span>
+                                <p>Responsable</p>
+                                <p>Simpatía</p>
+                                <p>Sinceridad</p>
+                                <p>Amable</p>
+                                <p>Puntual</p>
+                                <p>Compañerismo</p>
+                            </h4>
+                            <h4 class="card__ability">
+                                <span class="card__label">Debilidades</span>
+                                <p>Ansiedad</p>
+                                <p>Desconfianza</p>
+                                <p>Dispersión</p>
+                                <p>Pesimismo</p>
+                            </h4>
                         </div>
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Debilidades
-                            </h6>
-                            <p>Ansiedad</p>
-                            <p>Desconfianza</p>
-                            <p>Dispersión</p>
-                            <p>Pesimismo</p>
-                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="card card--normal">
+                    <div class="card__image-container">
+                        <img src="../imgs/landing-ecoboleto/David.JPG" alt="David Zúñiga" class="card__image">
                     </div>
-                </div>
-                <div class="card-integrante f-izquierda">
-                    <div class="mb-2">
-                        <img src="../imgs/landing-ecoboleto/David.JPG" alt="" class="icon-integrante">
-                    </div>
-                    <h5 class="t-centrado mb-2">David Zuñiga</h5>
-                    <p class="rol mb-2 t-centrado"><b>Rol:</b> Calidad</p>
-                    <div class="d-flow-root fortalezas-debilidades">
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Fortalezas
-                            </h6>
-                            <p>Comprensivo</p>
-                            <p>Persistente</p>
-                            <p>Carismático</p>
-                            <p>Trabajador</p>
+
+                    <figcaption class="card__caption">
+                        <h1 class="card__name">David Zúñiga</h1>
+
+                        <h4 class="card__type">
+                            Calidad
+                        </h4>
+
+                        <table class="card__stats">
+                            <tbody>
+                                <tr>
+                                    <th>HTML</th>
+                                    <td>55</td>
+                                </tr>
+                                <tr>
+                                    <th>CSS</th>
+                                    <td>55</td>
+                                </tr>
+
+                                <tr>
+                                    <th>JS</th>
+                                    <td>50</td>
+                                </tr>
+
+                                <tr>
+                                    <th>EXPRESS</th>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <th>MONGO</th>
+                                    <td>65</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="card__abilities">
+                            <h4 class="card__ability">
+                                <span class="card__label">Fortalezas</span>
+                                <p>Comprensivo</p>
+                                <p>Persistente</p>
+                                <p>Carismático</p>
+                                <p>Trabajador</p>
+                            </h4>
+                            <h4 class="card__ability">
+                                <span class="card__label">Debilidades</span>
+                                <p>Condescendiente</p>
+                                <p>Silencioso</p>
+                                <p>Tímido</p>
+                            </h4>
                         </div>
-                        <div class="f-izquierda">
-                            <h6 class="mb-1 t-centrado">
-                                Debilidades
-                            </h6>
-                            <p>Condescendiente</p>
-                            <p>Silencioso</p>
-                            <p>Tímido</p>
-                        </div>
-                    </div>
-                </div>
+                    </figcaption>
+                </figure>
+
             </div>
         </section>
 
