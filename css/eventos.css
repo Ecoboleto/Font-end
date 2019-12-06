@@ -1,0 +1,62 @@
+section {
+    width: 100%;
+    display: flow-root;
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card{
+    width: 28%;
+    height: 600px;
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-bottom: 30px;
+}
+
+.imgcont{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.nombre{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: #2EB872;
+    margin-bottom: 10px;
+}
+
+.fecha{
+    text-align: center;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 15px;
+
+}
+
+.recinto{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2EB872;
+}
+
+.precio{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
