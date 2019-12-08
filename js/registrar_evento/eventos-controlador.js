@@ -59,11 +59,11 @@ let crearCards = async () => {
         cont_img.classList.add('imgcont');
         imagen.classList.add('img');
         nombre.classList.add('nombre');
-        tipo.classList.add('recinto');
-        fecha.classList.add('fecha');
-        hora.classList.add('fecha');
-        recinto.classList.add('recinto');
-        precio.classList.add('precio');
+        tipo.classList.add('recinto', 'mb-2', 'd-bloque');
+        fecha.classList.add('fecha', 'mb-2', 'd-bloque');
+        hora.classList.add('fecha', 'mb-2', 'd-bloque');
+        recinto.classList.add('recinto', 'mb-2', 'd-bloque');
+        precio.classList.add('precio', 'mb-2', 'd-bloque');
         boton.classList.add('btn');
         boton.classList.add('btn--accion');
         boton.classList.add('btn--positivo');
