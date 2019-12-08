@@ -38,11 +38,11 @@ let crearCards = async () => {
         let cont_img = document.createElement('figure');
         let imagen = document.createElement('img');
         let nombre = document.createElement('h3');
-        let tipo = document.createElement('h7');
-        let fecha = document.createElement('h5');
-        let hora = document.createElement('h5');
-        let recinto = document.createElement('h7');
-        let precio = document.createElement('h9');
+        let tipo = document.createElement('p');
+        let fecha = document.createElement('p');
+        let hora = document.createElement('p');
+        let recinto = document.createElement('p');
+        let precio = document.createElement('p');
         let boton = document.createElement('button');
 
         imagen.src = lista_eventos[i]['foto_evento'];
