@@ -60,8 +60,7 @@ section {
     font-weight: bold;
 }
 
-button{
-    width: 100%;
+.button{
     position: absolute;
     bottom: 0;
     left: 30%;

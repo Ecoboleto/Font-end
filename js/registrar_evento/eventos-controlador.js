@@ -10,7 +10,7 @@ let fechas = async (fechas_obt) => {
     for (let i = 0; i < fechas_obt.length; i++) {
 
         fech = fechas_obt[i].slice(0, 10);
-        fechatest.push('Fecha: '+fech);
+        fechatest.push('Fecha: ' + fech);
         return fechatest;
     }
 };
@@ -21,7 +21,7 @@ let horas = async (horas_obt) => {
     for (let i = 0; i < horas_obt.length; i++) {
 
         hor = horas_obt[i].slice(12, 17);
-        horatest.push('Hora: '+hor);
+        horatest.push('Hora: ' + hor);
         return horatest;
     }
 };
@@ -59,15 +59,26 @@ let crearCards = async () => {
         cont_img.classList.add('imgcont');
         imagen.classList.add('img');
         nombre.classList.add('nombre');
-        tipo.classList.add('recinto', 'mb-2', 'd-bloque');
-        fecha.classList.add('fecha', 'mb-2', 'd-bloque');
-        hora.classList.add('fecha', 'mb-2', 'd-bloque');
-        recinto.classList.add('recinto', 'mb-2', 'd-bloque');
-        precio.classList.add('precio', 'mb-2', 'd-bloque');
-        boton.classList.add('btn');
-        boton.classList.add('btn--accion');
-        boton.classList.add('btn--positivo');
-        boton.classList.add('blanco--tipografia');
+        tipo.classList.add('recinto',
+                            'mb-2',
+                            'd-bloque');
+        fecha.classList.add('fecha', 
+                            'mb-2', 
+                            'd-bloque');
+        hora.classList.add('fecha', 
+                            'mb-2', 
+                            'd-bloque');
+        recinto.classList.add('recinto', 
+                              'mb-2', 
+                              'd-bloque');
+        precio.classList.add('precio', 
+                             'mb-2', 
+                             'd-bloque');
+        boton.classList.add('btn', 
+                            'btn--accion', 
+                            'btn--positivo', 
+                            'blanco--tipografia', 
+                            'button');
 
         contenedor.appendChild(card);
         card.appendChild(cont_img);
