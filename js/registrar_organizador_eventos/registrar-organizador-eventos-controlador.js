@@ -1,4 +1,7 @@
 'use strict';
+//REVISAR QUE LA FECHA DE NACIMIENTO ESTÉ BIEN PROGRAMADA Y QUE APAREZCA CORRECTAMENTE LA EDAD
+//REVISAR QUE LA FECHA DE NACIMIENTO ESTÉ VALIDADA Y APAREZCA EL CORRESPONDIENTE PLACEHOLDER CON EL ORDEN CORRESPONDIENTE
+
 
 //Toma de variables
 const input_nombre_empresa = document.querySelector('#txt_nombre_empresa');
@@ -17,7 +20,8 @@ const input_direccion_exacta = document.querySelector('#txt_direccion_exacta');
 //Contacto Asociado
 const input_nombre_completo = document.querySelector('#txt_nombre_completo');
 const input_correoelectronico = document.querySelector('#txt_correo_electronico');
-const input_edad = document.querySelector('#txt_edad');
+const input_fecha_de_nacimiento = document.querySelector('#txt_fecha_de_nacimiento');
+const output_edad = document.querySelector('#txt_edad');
 const input_agregar_telefono = document.querySelector('#txt_telefono');
 const btn_agregar_telefono = document.querySelector('#agregar_telefono');
 //Genero
@@ -30,11 +34,12 @@ const genero_contenedor = document.querySelector('#genero_contenedor');
 let telefonos = [];
 let genero,
     cedula,
-    tipo_de_cedula;
+    tipo_de_cedula,
+    edad;
 
 const btn_registrar = document.querySelector('#btn_registrar');
 
-const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_comercial, pAnnos_experiencia, pProvincia, pCanton, pDistrito, pDireccion_exacta, pNombre_completo, pCorreo_electronico, pEdad, pGenero) => {
+const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_comercial, pAnnos_experiencia, pProvincia, pCanton, pDistrito, pDireccion_exacta, pNombre_completo, pCorreo_electronico, pfecha_de_nacimiento, pEdad, pGenero) => {
     let error = true;
 
     //removemos la clase error  
@@ -49,112 +54,125 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
     input_direccion_exacta.classList.remove('input--error');
     input_nombre_completo.classList.remove('input--error');
     input_correoelectronico.classList.remove('input--error');
-    input_edad.classList.remove('input--error');
+    output_edad.classList.remove('input--error');
     input_agregar_telefono.classList.remove('input--error');
     input_otro_respuesta.classList.remove('input--error');
     genero_contenedor.classList.remove('input--error');
 
-    if (!validar_letras(pNombre_empresa)) {
-        error = false;
-        input_nombre_empresa.classList.add('input--error');
-    }
+    // if (!validar_letras(pNombre_empresa)) {
+    //     error = false;
+    //     input_nombre_empresa.classList.add('input--error');
+    // }
 
-    if (pLogo === '../imgs/image-solid.svg') {
-        error = false;
-        input_logo.classList.add('input--error');
-    }
+    // if (pLogo === '../imgs/image-solid.svg') {
+    //     error = false;
+    //     input_logo.classList.add('input--error');
+    // }
 
-    if (!validar_numeros(pCedula_empresa)) {
-        error = false;
-        input_cedula.classList.add('input--error');
-    }
+    // if (!validar_numeros(pCedula_empresa)) {
+    //     error = false;
+    //     input_cedula.classList.add('input--error');
+    // }
 
-    if (!validar_vacio_null(pNombre_comercial)) {
-        error = false;
-        input_nombre_comercial.classList.add('input--error');
-    }
+    // if (!validar_vacio_null(pNombre_comercial)) {
+    //     error = false;
+    //     input_nombre_comercial.classList.add('input--error');
+    // }
 
-    if (!validar_numeros(pAnnos_experiencia)) {
-        error = false;
-        input_annos_experiencia.classList.add('input--error');
-    }
+    // if (!validar_numeros(pAnnos_experiencia)) {
+    //     error = false;
+    //     input_annos_experiencia.classList.add('input--error');
+    // }
 
-    if (pProvincia == 0) {
-        error = false;
-        slc_provincia.classList.add('input--error');
-    }
+    // if (pProvincia == 0) {
+    //     error = false;
+    //     slc_provincia.classList.add('input--error');
+    // }
 
-    if (pCanton == 0) {
-        error = false;
-        slc_canton.classList.add('input--error');
-    }
+    // if (pCanton == 0) {
+    //     error = false;
+    //     slc_canton.classList.add('input--error');
+    // }
 
-    if (pDistrito == 0) {
-        error = false;
-        slc_distrito.classList.add('input--error');
-    }
+    // if (pDistrito == 0) {
+    //     error = false;
+    //     slc_distrito.classList.add('input--error');
+    // }
 
-    if (!validar_numeros_letros(pDireccion_exacta)) {
-        error = false;
-        input_direccion_exacta.classList.add('input--error');
-    }
+    // if (!validar_numeros_letros(pDireccion_exacta)) {
+    //     error = false;
+    //     input_direccion_exacta.classList.add('input--error');
+    // }
 
-    if (!validar_letras(pNombre_completo)) {
-        error = false;
-        input_nombre_completo.classList.add('input--error');
-    }
+    // if (!validar_letras(pNombre_completo)) {
+    //     error = false;
+    //     input_nombre_completo.classList.add('input--error');
+    // }
 
-    if (!validar_correo_electronico(pCorreo_electronico)) {
-        error = false;
-        input_correoelectronico.classList.add('input--error');
-    }
+    // if (!validar_correo_electronico(pCorreo_electronico)) {
+    //     error = false;
+    //     input_correoelectronico.classList.add('input--error');
+    // }
 
-    if (!validar_edad(pEdad)) {
-        error = false;
-        input_edad.classList.add('input--error');
-    }
+    // if (!validar_edad(pEdad)) {
+    //     error = false;
+    //     output_edad.classList.add('input--error');
+    // }
 
-    if (!validar_vacio_null(telefonos)) {
-        error = false;
-        input_agregar_telefono.classList.add('input--error');
-    }
+    // if (!validar_vacio_null(telefonos)) {
+    //     error = false;
+    //     input_agregar_telefono.classList.add('input--error');
+    // }
 
-    if (pGenero == undefined) {
-        error = false;
-        genero_contenedor.classList.add('input--error');
-    }
+    // if (pGenero == undefined) {
+    //     error = false;
+    //     genero_contenedor.classList.add('input--error');
+    // }
 
-    if (pGenero == 'Otro') {
-        if (input_otro_respuesta.value == '') {
-            input_otro_respuesta.classList.add('input--error');
-        }
-    };
+    // if (pGenero == 'Otro') {
+    //     if (input_otro_respuesta.value == '') {
+    //         input_otro_respuesta.classList.add('input--error');
+    //     }
+    // };
 
     return error;
 };
 
 const validar_genero = (e) => {
-    genero = e.srcElement.value;
-    return genero;
+    // genero = e.srcElement.value;
+    // return genero;
 };
 
 const validar_cedula_empresa = (e) => {
-    cedula = e.srcElement.value;
+    // cedula = e.srcElement.value;
 
-    if (cedula == 'Fisica') {
-        input_cedula.setAttribute('minlength', '1');
-        input_cedula.setAttribute('maxlength', '9');
-        input_cedula.setAttribute('size', '9');
-        input_cedula.setAttribute('placeholder', 123456789);
-    } else if (cedula == 'Juridica') {
-        input_cedula.setAttribute('minlength', '1');
-        input_cedula.setAttribute('maxlength', '10');
-        input_cedula.setAttribute('size', '10');
-        input_cedula.setAttribute('placeholder', 123456789);
-    };
+    // if (cedula == 'Fisica') {
+    //     input_cedula.setAttribute('minlength', '1');
+    //     input_cedula.setAttribute('maxlength', '9');
+    //     input_cedula.setAttribute('size', '9');
+    //     input_cedula.setAttribute('placeholder', 123456789);
+    // } else if (cedula == 'Juridica') {
+    //     input_cedula.setAttribute('minlength', '1');
+    //     input_cedula.setAttribute('maxlength', '10');
+    //     input_cedula.setAttribute('size', '10');
+    //     input_cedula.setAttribute('placeholder', 123456789);
+    // };
 
-    tipo_de_cedula = cedula;
-    return tipo_de_cedula;
+    // tipo_de_cedula = cedula;
+    // return tipo_de_cedula;
+};
+
+//e equivale a event para escuchar el evento de cambio que se produce en el DOM
+//viene una acción desde el HTML en el campo de input de la fecha de nacimiento
+const calc_edad = (e) => {
+    // console.log(e);
+    // console.log(target);
+    // console.log(e.target.value);
+    edad = getEdad(e.target.value);
+    output_edad.classList.remove('gris--tipografia');
+    output_edad.classList.add('gris-oscuro--tipografia');
+    output_edad.classList.add('edad_numero'); //Esta clase está en registrar org eventos .css
+    output_edad.innerHTML = edad;
 };
 
 //Elimina un teléfono de la lista
@@ -226,11 +244,12 @@ const obtener_datos = () => {
     let direccion_exacta = input_direccion_exacta.value.trim();
     let nombre_completo = input_nombre_completo.value.trim();
     let correo_electronico = input_correoelectronico.value.trim();
-    let edad = input_edad.value.trim();
+    let fecha_de_nacimiento = input_fecha_de_nacimiento.value;
     let genero_respuesta = genero;
     let aTelefonos = telefonos;
+    
 
-    if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta)) {
+    if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_de_nacimiento, edad, genero_respuesta)) {
         Swal.fire({
             icon: 'warning',
             title: 'Algunos de los campos se encuentran con valores incorrectos',
@@ -250,7 +269,7 @@ const obtener_datos = () => {
             genero_respuesta = input_otro_respuesta.value;
         };
 
-        registrar_organizador_eventos(nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta, aTelefonos);
+        registrar_organizador_eventos(nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_de_nacimiento, genero_respuesta, aTelefonos);
 
         Swal.fire({
             icon: 'success',

@@ -1,6 +1,18 @@
 'use strict';
 
-let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, edad, genero_respuesta, aTelefonos) => {
+const getEdad = (fecha_nacimiento) => {
+    let aFecha_actual = [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()];
+    let aFecha_nacimiento = [new Date(fecha_nacimiento).getFullYear(), new Date(fecha_nacimiento).getMonth() + 1, new Date(fecha_nacimiento).getDate()+1];
+    let edad = aFecha_actual[0] - aFecha_nacimiento[0];
+    let mes = aFecha_actual[1] - aFecha_nacimiento[1];
+    
+    if (mes < 0 || (mes === 0 && aFecha_actual[2] < aFecha_nacimiento[2])) {
+        edad = edad - 1;
+    }
+    return edad;
+}
+
+let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_nacimiento, genero_respuesta, aTelefonos) => {
     await axios(
         {
             method: 'post',
@@ -19,7 +31,7 @@ let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, ce
                 direccion_exacta,
                 nombre_completo,
                 correo_electronico,
-                edad,
+                fecha:fecha_nacimiento,
                 genero:genero_respuesta,
                 telefonos:aTelefonos
             }

@@ -6,14 +6,13 @@
     margin-bottom: 50px;
 }
 
-#main form {
-    width: 400px;
+#main .contenedor {
+    width: 500px;
     margin: 0 auto;
 }
 
 #main form {
     width: 450px;
-    margin: 0 50px 0 450px;
 }
 
 #main form div {
@@ -38,8 +37,20 @@
     margin: -15px 0 0 25px;
 }
 
+#ubicationForm{
+    padding-top: 15px;
+}
+
 #provincias, #cantones, #distritos{
     padding: 10px 20px;
+}
+
+#provincias{
+    margin-left: 145px;
+}
+
+#cantones, #distritos{
+    margin-left: 160px;
 }
 
 #txt_nombre_comercial{
@@ -51,23 +62,43 @@
 }
 
 #txt_direccion_exacta{
-    margin-left: 100px !important;
+    margin-left: 91px !important;
 }
 
 #contacto_asociado{
     margin: 50px 0 30px 0;
 }
 
+#txt_nombre_completo{
+    margin-left: 80px !important;
+}
+
 #txt_correo_electronico{
-    margin-left: 48px !important;
+    margin-left: 78px !important;
+}
+
+#txt_fecha_de_nacimiento{
+    margin-left: 61px !important;
+    width: 170px;
+    text-align: center;
 }
 
 #txt_edad{
-    margin-left: 143px !important;
+    margin-left: 185px !important;
+}
+
+.edad{
+    padding: 8px 76px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.edad_numero{
+    padding: 8px 83px !important;
 }
 
 #txt_telefono{
-    margin-left: 118px !important;
+    margin-left: 148px !important;
     margin-bottom: 30px;
 }
 

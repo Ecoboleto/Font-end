@@ -5,8 +5,8 @@ const calcular_edad = (fecha_nacimiento) => {
     const fecha_actual = new Date();
     var fecha_nacimiento = new Date(fecha_nacimiento);
 
-    var edad = fecha_actual.getFullYear() - fecha_nacimiento.getFullYear();
-    var mes = fecha_actual.getMonth() - fecha_nacimiento.getMonth();
+    let edad = fecha_actual.getFullYear() - fecha_nacimiento.getFullYear();
+    let mes = fecha_actual.getMonth() - fecha_nacimiento.getMonth();
 
     if (mes < 0 || (mes === 0 && fecha_actual.getDate() < fecha_nacimiento.getDate())) {
         edad--;

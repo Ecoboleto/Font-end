@@ -26,8 +26,10 @@
     <header>
         <div id="cajon-superior" class="bg-verde-claro--fondo">
             <nav class="d-flow-root">
-                <a href="registrar-usuarios-finales.html" class="blanco-a--tipografia t-centro f-derecha btn--inactivo">Registrarse</a>
-                <a href="inciar-sesion.html" class="blanco-a--tipografia t-centro f-derecha btn--inactivo">Iniciar sesión</a>
+                <a href="registrar-usuarios-finales.html"
+                    class="blanco-a--tipografia t-centro f-derecha btn--inactivo">Registrarse</a>
+                <a href="inciar-sesion.html" class="blanco-a--tipografia t-centro f-derecha btn--inactivo">Iniciar
+                    sesión</a>
             </nav>
         </div>
 
@@ -39,7 +41,7 @@
             <div class="acomodo-c-inferior f-derecha">
                 <nav class="d-en-linea f-izquierda menu">
                     <a href="../index.html" class="blanco-a--tipografia">Inicio</a>
-                    <!-- <a href="eventos.html" class="blanco-a--tipografia">Eventos</a> -->
+                    <a href="eventos.html" class="blanco-a--tipografia">Eventos</a>
                 </nav>
 
                 <form class="f-izquierda">
@@ -57,128 +59,144 @@
 
     <!-- Inicio:  Main-->
     <main id="main" class="d-flow-root">
-        <h1 class="verde-oscuro--tipografia t-centrado">Registro de organizador de eventos</h1>
+        <div class="contenedor">
+            <h1 class="verde-oscuro--tipografia t-centrado">Registro de organizador de eventos</h1>
 
-        <form>
-            <div>
-                <label for="txt_nombre_empresa">Nombre de la empresa<span class="rojo--tipografia">*</span></label>
-                <input type="text" id="txt_nombre_empresa" placeholder="Nombre empresa">
-            </div>
-            <div>
-                <p>Ingrese el logotipo de la empresa <span class="rojo--tipografia">*</span></p>
-                <div class="img-cloudinary">
-                    <figure class="img-holder">
-                        <img src="../imgs/image-solid.svg" alt="Logo Organizador" class="logo--img">
-                    </figure>
+            <form>
+                <div>
+                    <label for="txt_nombre_empresa">Nombre de la empresa<span class="rojo--tipografia">*</span></label>
+                    <input type="text" id="txt_nombre_empresa" placeholder="Nombre empresa">
+                </div>
+                <div>
+                    <p>Ingrese el logotipo de la empresa <span class="rojo--tipografia">*</span></p>
+                    <div class="img-cloudinary">
+                        <figure class="img-holder">
+                            <img src="../imgs/image-solid.svg" alt="Logo Organizador" class="logo--img">
+                        </figure>
 
-                    <button type="button" id="btn-guardarImagen" class="btn btn--positivo crema-a--tipografia">Subir imagen</button>
-                </div>
-            </div>
-            <div>
-                <p>Cédula <span class="rojo--tipografia">*</span></p>
-                <div class="f-izquierda">
-                    <input type="radio" id="txt_fisica" name="cedula" value="Fisica">
-                    <label for="txt_fisica">Física</label>
-                    <input type="radio" id="txt_juridica" name="cedula" value="Juridica">
-                    <label for="txt_juridica">Jurídica</label>
-                </div>
-                <div class="f-izquierda">
-                    <input type="number" id="txt_ced" placeholder="Cédula">
-                </div>
-            </div>
-            <div>
-                <label for="txt_nombre_comercial">Nombre comercial <span class="rojo--tipografia">*</span></label>
-                <input type="text" id="txt_nombre_comercial" placeholder="Nombre comercial">
-            </div>
-            <div>
-                <label for="txt_annos_experiencia">Años de experiencia <span class="rojo--tipografia">*</span></label>
-                <input type="number" id="txt_annos_experiencia" placeholder="10"> <!-- Minimo un año de experiencia -->
-            </div>
-        </form>
-
-        <form id="ubicationForm" onsubmit="return sendData();">
-            <p class="mb-2">Seleccione la ubicación <span class="rojo--tipografia">*</span></p>
-            <div class="data-container">
-                <div class="form-row">
-                    <div class="form-desc">
-                        Provincia:
-                    </div>
-                    <div class="form-val">
-                        <select id="provincias" name="provincia" onchange="getCantones(this.value);"></select>
-                    </div>
-                </div>
-                <div class="form-row canton">
-                    <div class="form-desc">
-                        Cantón:
-                    </div>
-                    <div class="form-val">
-                        <select id="cantones" name="canton" onchange="getDistritos(this.value);"></select>
-                    </div>
-                </div>
-                <div class="form-row distrito">
-                    <div class="form-desc">
-                        Distrito:
-                    </div>
-                    <div class="form-val">
-                        <select id="distritos" name="distrito" onchange="distritoSelected();"></select>
+                        <button type="button" id="btn-guardarImagen" class="btn btn--positivo crema-a--tipografia">Subir
+                            imagen</button>
                     </div>
                 </div>
                 <div>
-                    <label for="txt_direccion_exacta">Dirección exacta <span class="rojo--tipografia">*</span></label>
-                    <input type="text" id="txt_direccion_exacta" placeholder="Dirección exacta">
+                    <p>Cédula <span class="rojo--tipografia">*</span></p>
+                    <div class="f-izquierda">
+                        <input type="radio" id="txt_fisica" name="cedula" value="Fisica">
+                        <label for="txt_fisica">Física</label>
+                        <input type="radio" id="txt_juridica" name="cedula" value="Juridica">
+                        <label for="txt_juridica">Jurídica</label>
+                    </div>
+                    <div class="f-izquierda">
+                        <input type="number" id="txt_ced" placeholder="Cédula">
+                    </div>
                 </div>
-            </div>
-        </form>
-
-        <h3 class="verde-oscuro--tipografia t-centrado" id="contacto_asociado">Contacto asociado</h3>
-
-        <form>
-            <div>
-                <label for="txt_nombre_completo">Nombre completo <span class="rojo--tipografia">*</span></label>
-                <input type="text" id="txt_nombre_completo" placeholder="Nombre completo">
-            </div>
-            <div>
-                <label for="txt_correo_electronico">Correo electrónico <span class="rojo--tipografia">*</span></label>
-                <input type="text" id="txt_correo_electronico" placeholder="ecoboleto@gmail.com">
-            </div>
-            <div>
-                <label for="txt_edad">Edad <span class="rojo--tipografia">*</span></label>
-                <input type="number" id="txt_edad" placeholder="18">
-            </div>
-            <div class="d-flow-root">
-                <label for="txt_telefono">Teléfono <span class="rojo--tipografia">*</span></label>
-                <input type="text" id="txt_telefono" class="txt_telefono" placeholder="1234-5678">
-                <button type="button" class="btn btn--inactivo crema--tipografia" id="agregar_telefono">Agregar otro
-                    teléfono</button>
-                <ul id="ul-lista-telefono"></ul>
-            </div>
-            <div id="genero_contenedor">
-                <p>Género <span class="rojo--tipografia">*</span></p>
-
                 <div>
-                    <input type="radio" name="genero" value="Masculino" id="txt_masculino">
-                    <label for="txt_masculino">Masculino</label>
+                    <label for="txt_nombre_comercial">Nombre comercial <span class="rojo--tipografia">*</span></label>
+                    <input type="text" id="txt_nombre_comercial" placeholder="Nombre comercial">
                 </div>
-
                 <div>
-                    <input type="radio" name="genero" value="Femenino" id="txt_femenino">
-                    <label for="txt_femenino">Femenino</label>
+                    <label for="txt_annos_experiencia">Años de experiencia <span
+                            class="rojo--tipografia">*</span></label>
+                    <input type="number" id="txt_annos_experiencia" placeholder="10">
+                    <!-- Minimo un año de experiencia -->
                 </div>
+            </form>
 
+            <form id="ubicationForm" onsubmit="return sendData();">
+                <div class="data-container">
+                    <div class="form-row d-flow-root">
+                        <div class="form-desc f-izquierda">
+                            <p>Provincia <span class="rojo--tipografia">*</span></p>
+                        </div>
+                        <div class="form-val f-izquierda">
+                            <select id="provincias" name="provincia" onchange="getCantones(this.value);"></select>
+                        </div>
+                    </div>
+                    <div class="form-row canton d-flow-root">
+                        <div class="form-desc f-izquierda">
+                            <p>Cantón <span class="rojo--tipografia">*</span></p>
+                        </div>
+                        <div class="form-val f-izquierda">
+                            <select id="cantones" name="canton" onchange="getDistritos(this.value);">
+                                <option value="0">Seleccione una opción</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row distrito d-flow-root">
+                        <div class="form-desc f-izquierda">
+                            <p>Distrito <span class="rojo--tipografia">*</span></p>
+                        </div>
+                        <div class="form-val f-izquierda">
+                            <select id="distritos" name="distrito" onchange="distritoSelected();">
+                                <option value="0">Seleccione una opción</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="txt_direccion_exacta">Dirección exacta <span
+                                class="rojo--tipografia">*</span></label>
+                        <input type="text" id="txt_direccion_exacta" placeholder="Dirección exacta">
+                    </div>
+                </div>
+            </form>
+
+            <h3 class="verde-oscuro--tipografia t-centrado" id="contacto_asociado">Contacto asociado</h3>
+
+            <form>
                 <div>
-                    <input type="radio" name="genero" value="Prefiero no especificar" id="txt_sin_especificar">
-                    <label for="txt_sin_especificar">Prefiero no especificar</label>
+                    <label for="txt_nombre_completo">Nombre completo <span class="rojo--tipografia">*</span></label>
+                    <input type="text" id="txt_nombre_completo" placeholder="Nombre completo">
                 </div>
-
                 <div>
-                    <input type="radio" name="genero" value="Otro" id="txt_otro">
-                    <label for="txt_otro">Otro</label>
-                    <input type="text" id="txt_otro_respuesta">
+                    <label for="txt_correo_electronico">Correo electrónico <span
+                            class="rojo--tipografia">*</span></label>
+                    <input type="text" id="txt_correo_electronico" placeholder="ecoboleto@gmail.com">
                 </div>
-            </div>
+                <div>
+                    <label for="txt_fecha_de_nacimiento">Fecha de nacimiento <span
+                            class="rojo--tipografia">*</span></label>
+                    <input id="txt_fecha_de_nacimiento" type="date" onChange="calc_edad(event)">
+                </div>
+                <div>
+                    <label for="txt_edad">Edad</label>
+                    <output id="txt_edad" class="gris--tipografia edad">Edad</output>
+                </div>
+                <div class="d-flow-root">
+                    <label for="txt_telefono">Teléfono <span class="rojo--tipografia">*</span></label>
+                    <input type="text" id="txt_telefono" class="txt_telefono" placeholder="1234-5678">
+                    <button type="button" class="btn btn--inactivo crema--tipografia" id="agregar_telefono">Agregar otro
+                        teléfono</button>
+                    <ul id="ul-lista-telefono"></ul>
+                </div>
+                <div id="genero_contenedor">
+                    <p>Género <span class="rojo--tipografia">*</span></p>
 
-            <button type="button" class="btn btn--positivo crema-a--tipografia" id="btn_registrar">Registrar organizador de eventos</button>
-        </form>
+                    <div>
+                        <input type="radio" name="genero" value="Masculino" id="txt_masculino">
+                        <label for="txt_masculino">Masculino</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="genero" value="Femenino" id="txt_femenino">
+                        <label for="txt_femenino">Femenino</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="genero" value="Prefiero no especificar" id="txt_sin_especificar">
+                        <label for="txt_sin_especificar">Prefiero no especificar</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="genero" value="Otro" id="txt_otro">
+                        <label for="txt_otro">Otro</label>
+                        <input type="text" id="txt_otro_respuesta">
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn--positivo crema-a--tipografia" id="btn_registrar">Registrar
+                    organizador de eventos</button>
+            </form>
+        </div>
     </main>
     <!-- Fin:  Main-->
 
@@ -189,7 +207,8 @@
                 <nav class="t-centrado">
                     <a href="#" class="crema-a--tipografia">Nosotros</a>
                     <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a>
-                    <a href="registrar-organizador-eventos.html" class="crema-a--tipografia">¿Organizas eventos? Registrate</a>
+                    <a href="registrar-organizador-eventos.html" class="crema-a--tipografia">¿Organizas eventos?
+                        Registrate</a>
                 </nav>
             </div>
 
@@ -239,8 +258,8 @@
     <script src="../js/jquery-2.2.0.js" type="text/javascript"></script>
     <script src="../js/localidades/localidades.js"></script>
 
-    
-    
+
+
     <!-- Registrar -->
     <script src="../js/validaciones.js"></script>
     <script src="../js/funciones-generales.js"></script>
