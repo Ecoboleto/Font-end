@@ -1,7 +1,4 @@
 'use strict';
-//REVISAR QUE LA FECHA DE NACIMIENTO ESTÉ BIEN PROGRAMADA Y QUE APAREZCA CORRECTAMENTE LA EDAD
-//REVISAR QUE LA FECHA DE NACIMIENTO ESTÉ VALIDADA Y APAREZCA EL CORRESPONDIENTE PLACEHOLDER CON EL ORDEN CORRESPONDIENTE
-
 
 //Toma de variables
 const input_nombre_empresa = document.querySelector('#txt_nombre_empresa');
@@ -54,6 +51,7 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
     input_direccion_exacta.classList.remove('input--error');
     input_nombre_completo.classList.remove('input--error');
     input_correoelectronico.classList.remove('input--error');
+    input_fecha_de_nacimiento.classList.remove('input--error');
     output_edad.classList.remove('input--error');
     input_agregar_telefono.classList.remove('input--error');
     input_otro_respuesta.classList.remove('input--error');
@@ -77,11 +75,6 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
     // if (!validar_vacio_null(pNombre_comercial)) {
     //     error = false;
     //     input_nombre_comercial.classList.add('input--error');
-    // }
-
-    // if (!validar_numeros(pAnnos_experiencia)) {
-    //     error = false;
-    //     input_annos_experiencia.classList.add('input--error');
     // }
 
     // if (pProvincia == 0) {
@@ -116,6 +109,7 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
 
     // if (!validar_edad(pEdad)) {
     //     error = false;
+    //     input_fecha_de_nacimiento.classList.add('input--error');
     //     output_edad.classList.add('input--error');
     // }
 
@@ -139,27 +133,27 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
 };
 
 const validar_genero = (e) => {
-    // genero = e.srcElement.value;
-    // return genero;
+    genero = e.srcElement.value;
+    return genero;
 };
 
 const validar_cedula_empresa = (e) => {
-    // cedula = e.srcElement.value;
+    cedula = e.srcElement.value;
 
-    // if (cedula == 'Fisica') {
-    //     input_cedula.setAttribute('minlength', '1');
-    //     input_cedula.setAttribute('maxlength', '9');
-    //     input_cedula.setAttribute('size', '9');
-    //     input_cedula.setAttribute('placeholder', 123456789);
-    // } else if (cedula == 'Juridica') {
-    //     input_cedula.setAttribute('minlength', '1');
-    //     input_cedula.setAttribute('maxlength', '10');
-    //     input_cedula.setAttribute('size', '10');
-    //     input_cedula.setAttribute('placeholder', 123456789);
-    // };
+    if (cedula == 'Fisica') {
+        input_cedula.setAttribute('minlength', '1');
+        input_cedula.setAttribute('maxlength', '9');
+        input_cedula.setAttribute('size', '9');
+        input_cedula.setAttribute('placeholder', 123456789);
+    } else if (cedula == 'Juridica') {
+        input_cedula.setAttribute('minlength', '1');
+        input_cedula.setAttribute('maxlength', '10');
+        input_cedula.setAttribute('size', '10');
+        input_cedula.setAttribute('placeholder', 123456789);
+    };
 
-    // tipo_de_cedula = cedula;
-    // return tipo_de_cedula;
+    tipo_de_cedula = cedula;
+    return tipo_de_cedula;
 };
 
 //e equivale a event para escuchar el evento de cambio que se produce en el DOM
@@ -198,7 +192,7 @@ const agregar_telefono_lista = () => {
     if (!validar_telefono(telefono)) {
         Swal.fire({
             icon: 'warning',
-            title: 'Ingrese un teléfono validó',
+            title: 'Ingrese un teléfono valido',
             confirmButtonText: 'Entendido',
             onAfterClose: () => {
                 input_agregar_telefono.focus();
@@ -237,7 +231,7 @@ const obtener_datos = () => {
     let tipo_cedula = cedula;
     let cedula_empresa = input_cedula.value.trim();
     let nombre_comercial = input_nombre_comercial.value.trim();
-    let annos_experiencia = input_annos_experiencia.value.trim();
+    let annos_experiencia = Number(input_annos_experiencia.value.trim());
     let provincia = slc_provincia.options[slc_provincia.selectedIndex].text;
     let canton = slc_canton.options[slc_canton.selectedIndex].text;
     let distrito = slc_distrito.options[slc_distrito.selectedIndex].text;
@@ -249,23 +243,29 @@ const obtener_datos = () => {
     let aTelefonos = telefonos;
     
 
-    if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_de_nacimiento, edad, genero_respuesta)) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Algunos de los campos se encuentran con valores incorrectos',
-            text: 'Por favor revise los campos en rojo',
-            confirmButtonText: 'Entendido'
-        });
-    } else if ( canton == undefined || distrito == undefined ){
+    if (canton == undefined || distrito == undefined) {
         Swal.fire({
             icon: 'warning',
             title: 'Recuerde que debe de verificar que todos los campos esten completos',
             text: 'Por favor revise los campos en rojo',
             confirmButtonText: 'Entendido'
         });
+    } else if (edad < 18) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Tiene que ser mayor de edad para registrarse, favor verificar la fecha de nacimiento',
+            text: 'Por favor revise los campos en rojo',
+            confirmButtonText: 'Entendido'
+        });
+    } else if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_de_nacimiento, edad, genero_respuesta)) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Algunos de los campos se encuentran con valores incorrectos o en blanco',
+            text: 'Por favor revise los campos en rojo',
+            confirmButtonText: 'Entendido'
+        });
     } else {
-
-        if( genero_respuesta == 'Otro' ){
+        if (genero_respuesta == 'Otro') {
             genero_respuesta = input_otro_respuesta.value;
         };
 

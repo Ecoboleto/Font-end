@@ -12,7 +12,7 @@ const getEdad = (fecha_nacimiento) => {
     return edad;
 }
 
-let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_nacimiento, genero_respuesta, aTelefonos) => {
+let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_nacimiento, genero_respuesta, aTelefonos) => {    
     await axios(
         {
             method: 'post',

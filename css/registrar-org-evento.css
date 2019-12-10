@@ -127,6 +127,7 @@ select option {
 
 .img-holder>img {
     width: 100%;
+    margin-top: 20px;
 }
 
 main figure {
