@@ -57,77 +57,77 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
     input_otro_respuesta.classList.remove('input--error');
     genero_contenedor.classList.remove('input--error');
 
-    // if (!validar_letras(pNombre_empresa)) {
-    //     error = false;
-    //     input_nombre_empresa.classList.add('input--error');
-    // }
+    if (!validar_letras(pNombre_empresa)) {
+        error = false;
+        input_nombre_empresa.classList.add('input--error');
+    }
 
-    // if (pLogo === '../imgs/image-solid.svg') {
-    //     error = false;
-    //     input_logo.classList.add('input--error');
-    // }
+    if (pLogo === '../imgs/image-solid.svg') {
+        error = false;
+        input_logo.classList.add('input--error');
+    }
 
-    // if (!validar_numeros(pCedula_empresa)) {
-    //     error = false;
-    //     input_cedula.classList.add('input--error');
-    // }
+    if (!validar_numeros(pCedula_empresa)) {
+        error = false;
+        input_cedula.classList.add('input--error');
+    }
 
-    // if (!validar_vacio_null(pNombre_comercial)) {
-    //     error = false;
-    //     input_nombre_comercial.classList.add('input--error');
-    // }
+    if (!validar_vacio_null(pNombre_comercial)) {
+        error = false;
+        input_nombre_comercial.classList.add('input--error');
+    }
 
-    // if (pProvincia == 0) {
-    //     error = false;
-    //     slc_provincia.classList.add('input--error');
-    // }
+    if (pProvincia == 0) {
+        error = false;
+        slc_provincia.classList.add('input--error');
+    }
 
-    // if (pCanton == 0) {
-    //     error = false;
-    //     slc_canton.classList.add('input--error');
-    // }
+    if (pCanton == 0) {
+        error = false;
+        slc_canton.classList.add('input--error');
+    }
 
-    // if (pDistrito == 0) {
-    //     error = false;
-    //     slc_distrito.classList.add('input--error');
-    // }
+    if (pDistrito == 0) {
+        error = false;
+        slc_distrito.classList.add('input--error');
+    }
 
-    // if (!validar_numeros_letros(pDireccion_exacta)) {
-    //     error = false;
-    //     input_direccion_exacta.classList.add('input--error');
-    // }
+    if (!validar_numeros_letros(pDireccion_exacta)) {
+        error = false;
+        input_direccion_exacta.classList.add('input--error');
+    }
 
-    // if (!validar_letras(pNombre_completo)) {
-    //     error = false;
-    //     input_nombre_completo.classList.add('input--error');
-    // }
+    if (!validar_letras(pNombre_completo)) {
+        error = false;
+        input_nombre_completo.classList.add('input--error');
+    }
 
-    // if (!validar_correo_electronico(pCorreo_electronico)) {
-    //     error = false;
-    //     input_correoelectronico.classList.add('input--error');
-    // }
+    if (!validar_correo_electronico(pCorreo_electronico)) {
+        error = false;
+        input_correoelectronico.classList.add('input--error');
+    }
 
-    // if (!validar_edad(pEdad)) {
-    //     error = false;
-    //     input_fecha_de_nacimiento.classList.add('input--error');
-    //     output_edad.classList.add('input--error');
-    // }
+    if (!validar_edad(pEdad)) {
+        error = false;
+        input_fecha_de_nacimiento.classList.add('input--error');
+        output_edad.classList.add('input--error');
+    }
 
-    // if (!validar_vacio_null(telefonos)) {
-    //     error = false;
-    //     input_agregar_telefono.classList.add('input--error');
-    // }
+    if (!validar_vacio_null(telefonos)) {
+        error = false;
+        input_agregar_telefono.classList.add('input--error');
+    }
 
-    // if (pGenero == undefined) {
-    //     error = false;
-    //     genero_contenedor.classList.add('input--error');
-    // }
+    if (pGenero == undefined) {
+        error = false;
+        genero_contenedor.classList.add('input--error');
+    }
 
-    // if (pGenero == 'Otro') {
-    //     if (input_otro_respuesta.value == '') {
-    //         input_otro_respuesta.classList.add('input--error');
-    //     }
-    // };
+    if (pGenero == 'Otro') {
+        if (input_otro_respuesta.value == '') {
+            input_otro_respuesta.classList.add('input--error');
+        }
+    };
 
     return error;
 };
