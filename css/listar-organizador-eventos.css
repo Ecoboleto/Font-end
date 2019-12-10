@@ -1,0 +1,56 @@
+#main{
+    min-height: 383px;
+}
+
+#main section{
+    width: 90%;
+}
+
+tr{
+    border: 1px solid #2f3640;
+    width: 200px;
+    text-align: center;
+}
+
+th{
+    border: 1px solid #2f3640;
+    width: 200px;
+    text-align: center;
+    background: #2EB872;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 1px 3px 1px;
+    box-sizing: border-box;
+}
+
+tbody{
+    border: 1px solid #2f3640;
+    width: 200px;
+    text-align: center;
+}
+
+td{
+    border: 1px solid #2f3640;
+    width: 200px;
+    text-align: center;
+}
+
+.info{
+    width: 900px;
+    margin: auto;
+}
+
+.filtro{
+    width: 400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tabla{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
