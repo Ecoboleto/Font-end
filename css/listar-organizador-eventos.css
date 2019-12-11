@@ -1,56 +1,50 @@
-#main{
-    min-height: 383px;
-}
-
-#main section{
-    width: 90%;
-}
-
-tr{
-    border: 1px solid #2f3640;
-    width: 200px;
+.tabla{
+    width: 100%;
     text-align: center;
+}
+
+table{
+    width: 80%;
+    margin: 0 auto;
+}
+
+tr, tbody, td, th{
+    border: 1px solid #2f3640;
 }
 
 th{
-    border: 1px solid #2f3640;
-    width: 200px;
-    text-align: center;
     background: #2EB872;
     color: #fff;
     font-size: 16px;
-    padding: 5px 1px 3px 1px;
     box-sizing: border-box;
-}
-
-tbody{
-    border: 1px solid #2f3640;
-    width: 200px;
-    text-align: center;
+    display: table-cell;
+	vertical-align: middle;
 }
 
 td{
-    border: 1px solid #2f3640;
-    width: 200px;
-    text-align: center;
+    font-size: 14px;
+    display: table-cell;
+	vertical-align: middle;
 }
 
-.info{
-    width: 900px;
-    margin: auto;
+td, th{
+    padding: 7px;
+}
+
+tr:hover{
+    background-color: #A3DE83;
 }
 
 .filtro{
     width: 400px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin: 0 auto;
     margin-bottom: 20px;
 }
 
-.tabla{
-    flex-direction: column;
-    align-items: center;
-    display: flex;
+.logo-empresas{
+    width: 100%;
+}
+
+.verde-oscuro-a--tipografia:hover{
+    color: #FEFFE4;
 }
