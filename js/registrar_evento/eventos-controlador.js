@@ -58,7 +58,7 @@ let crearCards = async () => {
         imagen.src = lista_eventos[i]['foto_evento'];
         nombre.innerHTML = lista_eventos[i]['nombre_evento'];
         tipo.innerHTML = lista_eventos[i]['tipo_evento'];
-        fecha.innerHTML = 'fecha: ' + await fechas(lista_eventos[i]['fechas']);
+        fecha.innerHTML = 'Fecha: ' + await fechas(lista_eventos[i]['fechas']);
         hora.innerHTML = await horas(lista_eventos[i]['fechas']);
         recinto.innerHTML = lista_eventos[i]['recinto_evento'];
         precio.innerHTML = ('Precio: ₡' + lista_eventos[i]['entrada_evento']);
