@@ -1,7 +1,7 @@
 'use strict';
 
 // Variables de los input y botón de registrar
-const input_organizador_evento = document.querySelector('#txt_organizador_evento');
+//const input_organizador_evento = document.querySelector('#txt_organizador_evento');
 const input_nombre_evento = document.querySelector('#txt_nombre_evento');
 const input_tipo_evento = document.querySelector('#txt_tipo_evento');
 const input_foto_evento = document.querySelector('#imgEvento');
@@ -683,7 +683,10 @@ const resetear = () => {
 
 //Funcion de obtener datos
 const obtenerEvento = async () => {
-    /*let organizador_evento = input_organizador_evento.value;*/
+
+    let organizador = JSON.parse(localStorage.getItem('usuario_iniciado'));
+
+    let organizador_evento = organizador.correo_electronico;
     let nombre_evento = input_nombre_evento.value;
     let tipo_evento = input_tipo_evento.value;
     /*let tipo_evento_nombre = input_tipo_evento.options[input_tipo_evento.selectedIndex].text;*/
@@ -723,7 +726,7 @@ const obtenerEvento = async () => {
         });
 
     } else {
-        await registrar_evento(nombre_evento, tipo_evento, foto_evento, recinto_evento, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos);
+        await registrar_evento(organizador_evento, nombre_evento, tipo_evento, foto_evento, recinto_evento, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos);
         resetear();
     };
 
