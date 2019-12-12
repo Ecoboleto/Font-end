@@ -1,7 +1,7 @@
 'use strict';
 
 // Variables de los input y botón de registrar
-/*const input_organizador_evento = document.querySelector('#txt_organizador_evento');*/
+const input_organizador_evento = document.querySelector('#txt_organizador_evento');
 const input_nombre_evento = document.querySelector('#txt_nombre_evento');
 const input_tipo_evento = document.querySelector('#txt_tipo_evento');
 const input_foto_evento = document.querySelector('#imgEvento');
@@ -657,6 +657,8 @@ let validarLimiteEntradas = () => {
     }
     return error;
 };
+
+
 
 //Resetear formulario
 const resetear = () => {
