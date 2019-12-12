@@ -116,3 +116,19 @@ let listar_evento = async () => {
     });
     return lista_evento;
 };
+
+let obtener_evento_id = async(pid) => {
+    try {
+
+        const response = await axios({
+            method: 'get',
+            params: { _id: pid },
+            url: 'http://localhost:3000/api/obtener-evento-id',
+            responseType: 'json'
+        });
+
+        return response.data.eventos;
+    } catch (error) {
+        console.log(error);
+    }
+};
