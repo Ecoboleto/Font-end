@@ -9,7 +9,7 @@ const regex_nombre_completo = "^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉ
 
 /* Valida la edad que sea mayor de edad, retorna true si la validación es correcto */
 const validar_edad = (edad) => {
-    if( edad <= 18 ){
+    if( edad < 18 ){
         return false;
     }
     return true
