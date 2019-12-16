@@ -2,6 +2,10 @@
     margin-bottom: 50px;
 }
 
+.acomodo-c-inferior {
+    width: 85%;
+}
+
 #main form {
     width: 80%;
     margin: 0 auto;
@@ -55,3 +59,21 @@
     background-color: #fffefe;
 }
 
+#main form button {
+    width: 60%;
+    padding: 12px 0;
+    margin: 0 auto;
+}
+
+#main form div input {
+    padding: 8px 5px;
+}
+
+#main form div label {
+   margin-bottom: 10px;
+   text-align: center;
+}
+
+.botones button:first-child{
+    margin-bottom: 20px !important;
+}

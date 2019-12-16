@@ -1,13 +1,17 @@
+.acomodo-c-inferior {
+    width: 85%;
+}
+
 #main h1 {
     margin-bottom: 50px;
 }
 
 #main form {
-    width: 400px;
+    width: 40%;
     margin: 0 auto;
-
+/* 
     display: flex;
-    flex-direction: row;
+    flex-direction: row; */
 }
 
 #main form > div {
@@ -15,7 +19,7 @@
 }
 
 #main form > div .input-texto {
-    width: 250px;
+    /* width: 250px; */
 }
 
 
@@ -59,4 +63,33 @@
 
 #main form .telefonos > div{
     display: flex;
+}
+
+#main form button {
+    width: 60%;
+    padding: 12px 0;
+    margin: 0 auto;
+}
+
+#main form div input {
+    padding: 8px 5px;
+}
+
+#main form div label {
+   margin-bottom: 10px;
+   text-align: center;
+}
+
+.lista-telefonos{
+    margin-top: 50px;
+    min-height: 100px;
+}
+
+button{
+    width: 50% !important;
+}
+
+.boton-agregar{
+    width: 35% !important;
+    margin-bottom: 20px !important;
 }

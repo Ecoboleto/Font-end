@@ -1,5 +1,5 @@
 'use strict';
-const input_cerrar_sesion = document.querySelector('#cajon-superior > nav > a');
+const input_cerrar_sesion = document.querySelector('#cerrar-sesion');
 
 const cerrar_sesion = () => {
     window.localStorage.clear();

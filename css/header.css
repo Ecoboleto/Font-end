@@ -8,6 +8,7 @@ header #cajon-superior a{
 
 header #cajon-inferior{
     padding: 5px 40px;
+    box-sizing: border-box;
 }
 
 .logo{
@@ -22,7 +23,7 @@ header #cajon-inferior{
 .menu a{
     margin-right: 20px;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 20px;
 }
 
 header #cajon-inferior nav{

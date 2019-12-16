@@ -23,9 +23,7 @@
     <!-- Inicio:  Header-->
     <header>
         <div id="cajon-superior" class="bg-verde-claro--fondo">
-            <nav class="d-flow-root">
-                <a href="#" class="blanco-a--tipografia t-centro f-derecha btn--error">Cerrar sesión</a>
-            </nav>
+
         </div>
 
         <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
@@ -34,8 +32,11 @@
             </div>
 
             <div class="acomodo-c-inferior f-izquierda">
-                <nav class="d-en-linea f-izquierda menu">
-                    <a href="panel-de-control-administrador.html" class="blanco-a--tipografia">Panel de control</a>
+                <nav class="f-izquierda menu">
+                    <a href="panel-de-control-administrador.html" class="blanco-a--tipografia d-linea-bloque">Panel de control</a>
+                </nav>
+                <nav class="f-derecha">
+                    <a href="#" class="blanco-a--tipografia t-centro f-derecha d-linea-bloque" id="cerrar-sesion">Cerrar sesión</a>
                 </nav>
             </div>
         </div>
@@ -59,7 +60,7 @@
                 </div>
 
                 <div>
-                    
+
                     <label for="txt_fecha_nacimiento">Fecha de nacimiento</label>
                     <p id="p-edad" for="txt_fecha_nacimiento">Edad:</p>
                     <input type="date" id="txt_fecha_nacimiento" class="input-texto">
@@ -89,22 +90,23 @@
                     </div>
                 </div>
 
+                <div>
+                    <div class="telefonos">
+                        <p for="txt_fecha_expiracion">Agregar teléfono</p>
+                        <input id="text-agregar-telefono" type="text" placeholder="0000-0000" class="input-texto mb-2">
+                        <button id="btn-agregar-telefono" type="button"
+                            class="btn btn--inactivo crema-a--tipografia boton-agregar">Agregar</button>
+                    </div>
+    
+                    <div class="lista-telefonos">
+                        <p class="bg-verde-claro--fondo t-centrado">Lista de teléfono</p>
+                        <ul class="lista-telefono" id="ul-lista-telefono"> </ul>
+                    </div>
+                </div>
+
                 <button id="btn_registrar" type="button"
                     class="btn btn--accion btn--positivo blanco--tipografia">Registrar</button>
 
-            </div>
-            <div>
-                <div class="telefonos">
-                    <p for="txt_fecha_expiracion">Agregar teléfono</p>
-                    <input id="text-agregar-telefono" type="text" placeholder="0000-0000" class="input-texto">
-                    <button id="btn-agregar-telefono" type="button"
-                        class="btn-agregar blanco--tipografia  bg-verde-claro--fondo">Agregar</button>
-                </div>
-
-                <div>
-                    <p class="bg-verde-claro--fondo t-centrado">Lista de teléfono</p>
-                    <ul class="lista-telefono" id="ul-lista-telefono"> </ul>
-                </div>
             </div>
         </form>
     </main>
