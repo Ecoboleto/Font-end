@@ -2,8 +2,12 @@ let map;
 let geocoder;
 let crLat = 9.6301892;
 let crLng = -84.2541843;
+let geolocalizacion;
+const sl_provincia = document.querySelector('#provincias');
+const sl_canton = document.querySelector('#cantones');
+const sl_distrito = document.querySelector('#distritos');
 
-function initMap()  {
+function initMap() {
     geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: crLat, lng: crLng },
@@ -34,10 +38,11 @@ const codigo_direccion = (address) => {
 }
 
 const maker_mover = (marker) => {
-    const input_coordenada = document.querySelector('#coordenadas');
-    input_coordenada.innerHTML = marker.getPosition().toString().replace('(', '').replace(')', '');
+    console.log(marker.getPosition());
+    //const input_coordenada = document.querySelector('#coordenadas');
+    //input_coordenada.innerHTML = marker.getPosition().toString().replace('(', '').replace(')', '');
+    geolocalizacion = marker.getPosition().toString().replace('(', '').replace(')', '');
 }
-
 
 const buscar_datos = async (url) => {
     let resuldados;
@@ -45,8 +50,8 @@ const buscar_datos = async (url) => {
     return resuldados.data;
 };
 
-const Crear_Opciones = (datos) => {
-    var html = '<option value="0">Seleccione una opción</option>';
+const Crear_Opciones = (datos, msg) => {
+    let html = `<option value="0" hidden>${msg}</option>`;
     for (key in datos) {
         html += `<option value="${key}">${datos[key]}</option>`;
     }
@@ -55,73 +60,54 @@ const Crear_Opciones = (datos) => {
 
 const obtener_provincias = async () => {
     let json;
-    const sl_provincia = document.querySelector('#provincias');
     const url = "https://ubicaciones.paginasweb.cr/provincias.json";
 
     await buscar_datos(url).then(res => { json = res });
-    sl_provincia.innerHTML = Crear_Opciones(json);
+    sl_provincia.innerHTML = Crear_Opciones(json, "Seleccione la provincia");
+
+    sl_canton.innerHTML = Crear_Opciones(gg = [], "Seleccione el cantón");
+    sl_distrito.innerHTML = Crear_Opciones(gg = [], "Seleccione el distrito");
+    sl_canton.disabled = true;
+    sl_distrito.disabled = true;
 }
 
 const obtener_cantones = async (id_provincia) => {
-    if(id_provincia == 0){
-        document.querySelector('#cantones').innerHTML = "";
-        document.querySelector('#distritos').innerHTML = "";
-        map.setZoom(9);
-        return;
-    }
-
     let json;
-    const sl_cantones = document.querySelector('#cantones');
-    const sl_provincia = document.querySelector('#provincias');
     const url = `https://ubicaciones.paginasweb.cr/provincia/${id_provincia}/cantones.json`;
 
     await buscar_datos(url).then(res => { json = res });
-    sl_cantones.innerHTML = Crear_Opciones(json);
+    sl_canton.innerHTML = Crear_Opciones(json, "Seleccione el cantón");
 
     const provincia = sl_provincia.options[sl_provincia.selectedIndex].text;
 
     map.setZoom(9);
     codigo_direccion(`Costa Rica, ${provincia}`);
 
-    document.querySelector('#distritos').innerHTML = "";
+    sl_canton.disabled = false;
+    sl_distrito.innerHTML = Crear_Opciones(gg = [], "Seleccione el distrito");
+    sl_distrito.disabled = true;
 };
 
 const obtener_distritos = async (id_cantones) => {
-    if(id_cantones == 0){
-        map.setZoom(9);
-        document.querySelector('#distritos').innerHTML = "";
-        return;
-    }
-
     let json;
-    const sl_distritos = document.querySelector('#distritos');
-    const sl_provincia = document.querySelector('#provincias');
-    const sl_canton = document.querySelector('#cantones');
     const url = `https://ubicaciones.paginasweb.cr/provincia/${sl_provincia.value}/canton/${id_cantones}/distritos.json`;
 
     await buscar_datos(url).then(res => { json = res });
-    sl_distritos.innerHTML = Crear_Opciones(json);
+    sl_distrito.innerHTML = Crear_Opciones(json, "Seleccione el distrito");
 
     const provincia = sl_provincia.options[sl_provincia.selectedIndex].text;
     const canton = sl_canton.options[sl_canton.selectedIndex].text;
     map.setZoom(12);
     codigo_direccion(`Costa Rica, ${provincia}, ${canton}`);
+
+    sl_distrito.disabled = false;
 };
 
 
-const distritos_seleccionado = (id_distrito) => {   
-    if(id_distrito == 0){
-        map.setZoom(9);
-        return;
-    }
-
-    const sl_provincia = document.querySelector('#provincias');
-    const sl_canton = document.querySelector('#cantones');    
-    const sl_distritos = document.querySelector('#distritos');
-
-    const distrito = sl_distritos.options[sl_distritos.selectedIndex].text; 
+const distritos_seleccionado = (id_distrito) => {
+    const distrito = sl_distrito.options[sl_distrito.selectedIndex].text;
     const provincia = sl_provincia.options[sl_provincia.selectedIndex].text;
-    const canton = sl_canton.options[sl_canton.selectedIndex].text;    
+    const canton = sl_canton.options[sl_canton.selectedIndex].text;
 
     map.setZoom(16);
     codigo_direccion(`Costa Rica, ${provincia}, ${canton}, ${distrito}`);

@@ -17,4 +17,20 @@ const listar_encargados_recinto = async () => {
     return resuldados.data;
 };
 
+const listar_recinto = async () => {
+    let resuldados;
+    resuldados = await axios.get(`${url_base}/listar-recinto`);
+    return resuldados.data;
+};
+
+const obtener_recinto = async (id) => {
+    let resuldados;
+    resuldados = await axios.get(`${url_base}/obtener-recinto`, {
+        params: {
+            id
+        }
+    });
+    return resuldados.data;
+};
+
 

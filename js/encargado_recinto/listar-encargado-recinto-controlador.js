@@ -31,6 +31,22 @@ const listar_sin_filtro = async () => {
             fila.insertCell().innerHTML = encargados.edad;
             fila.insertCell().innerHTML = encargados.telefonos;
             fila.insertCell().innerHTML = encargados.genero == "Sin especificar" ? "" : encargados.genero;
+
+            const btn_editar = document.createElement('button');
+            btn_editar.type = 'button';
+            btn_editar.innerHTML = '<i class="fas fa-edit"></i> Editar';
+            btn_editar.dataset._id = encargados._id;
+            btn_editar.addEventListener("click",function(){
+                window.localStorage.setItem('encargado_recinto_editar',this.dataset._id);
+
+                if(window.localStorage.getItem('tipo_usuario') == 'administrador'){
+                    window.location = "modificar-encargado-recinto-admin.html";
+                }else {
+                    window.location = "modificar-encargado-recinto-encargado-recinto.html";
+                } 
+            });
+
+            fila.insertCell().appendChild(btn_editar);
         });
     } else {
         Swal.fire({
@@ -72,6 +88,20 @@ let listar_con_filtro = async () => {
                 fila.insertCell().innerHTML = encargados.edad;
                 fila.insertCell().innerHTML = encargados.telefonos;
                 fila.insertCell().innerHTML = encargados.genero == "Sin especificar" ? "" : encargados.genero;
+
+
+                const btn_editar = document.createElement('button');
+                btn_editar.type = 'button';
+                btn_editar.innerText = 'Editar';
+                btn_editar.dataset._id = encargados._id;
+                btn_editar.addEventListener("click",function(){
+                    window.localStorage.setItem('encargado_recinto_editar',this.dataset._id);
+                    window.location = "panel-de-control-encargado-recinto.html";
+                });
+
+                fila.insertCell().appendChild(btn_editar);
+
+                //<i class="fas fa-edit"></i>
             }
         });
     } else {

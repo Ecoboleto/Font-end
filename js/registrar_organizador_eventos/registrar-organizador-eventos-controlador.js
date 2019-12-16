@@ -271,12 +271,6 @@ const obtener_datos = () => {
 
         registrar_organizador_eventos(nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_de_nacimiento, genero_respuesta, aTelefonos);
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Registro exitoso',
-            text: 'El organizador de eventos se ha registrado con exito',
-            confirmButtonText: 'Entendido'
-        });
     }
 };
 

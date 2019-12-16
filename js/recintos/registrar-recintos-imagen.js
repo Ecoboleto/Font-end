@@ -1,13 +1,14 @@
 'use strict';
 
-var Widget = cloudinary.createUploadWidget({
+var myWidget1 = cloudinary.createUploadWidget({
     cloudName: 'dyssoftware',
     uploadPreset: 'recintos',
     clientAllowedFormats: [
         "png",
         "gif",
         "jpeg"
-    ]
+    ],
+    uploadPreset: 'organizadorEventos'
 }, (error, result) => {
     if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);
@@ -16,5 +17,5 @@ var Widget = cloudinary.createUploadWidget({
 })
 
 document.getElementById("btn-guardarImagen").addEventListener("click", function () {
-    Widget.open();
+    myWidget1.open();
 }, false);

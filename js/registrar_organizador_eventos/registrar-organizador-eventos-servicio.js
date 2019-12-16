@@ -44,7 +44,7 @@ let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, ce
                 text: 'El organizador de eventos ha sido almacenado',
                 confirmButtonText: 'Entendido',
                 onAfterClose: () => {
-                    window.location.href = "index.html";
+                    window.location.href = "/index.html";
                 }
             });
         } else {

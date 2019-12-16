@@ -40,28 +40,28 @@ const inicio_sesion = async () => {
                         window.localStorage.setItem('usuario_iniciado', JSON.stringify(resultado.datos));
                         window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
                         window.localStorage.setItem('usuario_id', resultado.datos._id);
-                        window.location = "http://127.0.0.1:5500/vistas/panel-de-control-encargado-recinto.html";
+                        window.location = "/vistas/panel-de-control-encargado-recinto.html";
                         break;
                     case 'organizador_evento':
                         window.localStorage.setItem('usuario_iniciado', JSON.stringify(resultado.datos));
                         window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
                         window.localStorage.setItem('usuario_id', resultado.datos._id);
-                        window.location = "http://127.0.0.1:5500/vistas/panel-de-control-organizador-eventos.html";
+                        window.location = "/vistas/panel-de-control-organizador-eventos.html";
                         break;
                     case 'usuario_final':
                         window.localStorage.setItem('usuario_iniciado', JSON.stringify(resultado.datos));
                         window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
                         window.localStorage.setItem('usuario_id', resultado.datos._id);
-                        window.location = "http://127.0.0.1:5500/vistas/usuario-final-inicio.html";
+                        window.location = "/vistas/usuario-final-inicio.html";
                         break;
                     case 'administrador':
                         window.localStorage.setItem('usuario_iniciado', JSON.stringify(resultado.datos));
                         window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
                         window.localStorage.setItem('usuario_id', resultado.datos._id);
-                        window.location = "http://127.0.0.1:5500/vistas/panel-de-control-administrador.html";
+                        window.location = "/vistas/panel-de-control-administrador.html";
                         break;
                     default:
-                        window.location = "http://127.0.0.1:5500";
+                        window.location = "/";
                         break;
                 }
             } else {
