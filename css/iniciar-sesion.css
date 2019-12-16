@@ -1,36 +1,32 @@
-.section-iniciar-sesion{
+.section-iniciar-sesion {
     margin-left: 33%;
 }
 
-.btn-div{
+.btn-div {
     display: flow-root;
     margin-top: 30%;
-    
 }
 
-.section-iniciar-sesion .div-inicio-sesion{
+.section-iniciar-sesion .div-inicio-sesion {
     width: 50%;
     height: 450px;
     background-color: #FEFFE4;
-    
     box-shadow: 1px 1px 3px 4px #ced6e0;
 }
 
-.div-inicio-sesion{
+.div-inicio-sesion {
     border-radius: 7px;
 }
-.div-inicio-sesion h1{
+
+.div-inicio-sesion h1 {
     color: #2EB872;
     text-align: center;
     font-size: 35px;
     margin-bottom: 25px;
     padding-top: 20px;
-    
-   
-    
 }
 
-.div-inicio-sesion form .input{
+.div-inicio-sesion form .input {
     margin-left: 22%;
     margin-top: 27px;
     padding: 15px;
@@ -38,22 +34,18 @@
     margin-bottom: 5px;
 }
 
-
-.btn-div .btn-iniciar-sesion{
-   
+.btn-div .btn-iniciar-sesion {
     margin-top: -25%;
     padding: 15px 4px 15px 4px;
-    margin-left: 39% ;
+    margin-left: 39%;
     font-size: 15px;
     background-color: #2EB872;
     border: 1px solid #2EB872;
     border-radius: 4px;
     color: #FFF;
-    
-    
 }
 
-.btn-div .btn-iniciar-facebook{
+.btn-div .btn-iniciar-facebook {
     padding: 12px 6px 12px 6px;
     margin-top: 6%;
     margin-left: 28%;
@@ -63,25 +55,21 @@
     border: 1px solid #4267b2;
     color: #FFF;
     border-radius: 4px;
-  
 }
 
-
-.btn-div .a-registrarse{
-    margin-left: 38%;
-  font-size: 18px;
-  color: #2EB872;
+.btn-div .a-registrarse {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    color: #2EB872;
 }
 
-.recuperar-contrasenna{
-   
+.recuperar-contrasenna {
     margin-left: 100px;
     color: #A3DE83;
 }
 
-.recuperar-contrasenna:hover{
+.recuperar-contrasenna:hover {
     text-decoration: underline;
     color: #2EB872;
-
 }
-

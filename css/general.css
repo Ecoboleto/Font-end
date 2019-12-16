@@ -221,6 +221,10 @@
         VERDE OSCURO: #2EB872
     *************************/
 
+    tr:hover{
+        background-color: #A3DE83;
+    }
+
     /* Inicio: Colores tipografía */
 
         .blanco--tipografia{
