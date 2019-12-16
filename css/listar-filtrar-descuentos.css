@@ -27,6 +27,7 @@ td{
         border: 1px solid #2f3640;
         width: 200px;
         text-align: center;
+        width: 200px;
 }
 
 h1{
@@ -35,6 +36,7 @@ h1{
 
 #tbl_descuentos tbody td{
     padding: 10px 15px;
+    width: 50px !important;
 }
 .info{
     margin: 0 auto;
@@ -57,4 +59,44 @@ h1{
 }
 #tbl_descuentos{
     width: 100%;
+}
+i{
+    color:#309662;
+}
+#id-form{
+    display: flex;
+    padding: 21px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    border:1px solid #2EB872;
+}
+.class-inpt-porcentaje{
+    border:1px solid red;
+}
+.class-inpt-nombre{
+    border:1px solid red;
+}
+#id-form label{
+    display: inline-block;
+    margin: 11px 0px;
+    width: 200px;
+
+}
+#id-form input{
+    margin: 11px 0px;
+    width: 250px;
+}
+#id-form button{
+    margin-top: 5px;
+    background:#a3de83 ;
+    border:'none';
+    border-radius: 25px;
+    color: white;
+}
+#id-form button:hover{
+    color: white;
+    background: #2EB872;
+
 }

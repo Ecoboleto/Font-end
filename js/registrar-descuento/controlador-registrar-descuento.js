@@ -2,9 +2,9 @@
 
 let btnRegistrarImpuesto = document.querySelector("#btn-registrar");
 let banderaDefinitiva = true;
+let lista_descuentos =  listar_descuentos();
 
-
-let enviarAValidarParaEnviarARegistro = () => {
+let enviarAValidarParaEnviarARegistro = async() => {
     let banderaError = false;
     let inptNombre = document.querySelector("#inpt-nombre").value;
     let inptPorcentaje = document.querySelector("#inpt-monto").value;
@@ -42,10 +42,58 @@ let enviarAValidarParaEnviarARegistro = () => {
 
     if (banderaError != true) {
         let estado = 'activo';
-        consultar_ultimo_codigo(inptNombre, inptPorcentaje, estado);
+        consultar_dato_repetido_y_registrar(inptNombre,lista_descuentos,inptPorcentaje,estado);
     }
 };
 
 
+let consultar_dato_repetido_y_registrar = async (inptNombre,lista_descuentos,inptPorcentaje,estado) => {
+    let ultimo_numero;
+    let banderaErrorDatoRepetido = false;
+    let varNombreRepetido = document.querySelector("#inpt-nombre").value;
+
+    for (let i = 0; i < lista_descuentos.length; i++) {
+        if (varNombreRepetido == lista_descuentos[i]['nombre'] || inptNombre.toLowerCase() == lista_descuentos[i]['nombre']) {
+            banderaErrorDatoRepetido = true;
+            Swal.fire({
+                title: 'Ha ocurrido un pequeño error(dato repetido).',
+                text: 'Existe un mismo nombre dentro del sistema.',
+                icon: 'error',
+                confirmButtonText: 'ok!'
+            })
+        }
+    }
+    if (lista_descuentos.length != 0) {
+        if (banderaErrorDatoRepetido != true) {
+            await registrarDatosDeLosDescuentos(inptNombre, Number(inptPorcentaje), estado);
+            Swal.fire({
+                title: 'Datos registrados',
+                text: 'en el sistema',
+                icon: 'success',
+                confirmButtonText: 'ok!'
+            })
+            document.getElementById('inpt-nombre').value='';
+            document.getElementById('inpt-monto').value='';
+        }
+    }else if (lista_descuentos.length == 0) {
+
+            await registrarDatosDeLosDescuentos(inptNombre, Number(inptPorcentaje), estado);
+            Swal.fire({
+                title: 'Datos registrados',
+                text: 'en el sistema',
+                icon: 'success',
+                confirmButtonText: 'ok!'
+            })
+            document.getElementById('inpt-nombre').value='';
+            document.getElementById('inpt-monto').value='';
+    }else{
+        Swal.fire({
+            title: 'Ha ocurrido un pequeño error.',
+            text: 'No se pudo realizar el registro.',
+            icon: 'error',
+            confirmButtonText: 'ok!'
+        })
+    }
+};
 
 btnRegistrarImpuesto.addEventListener('click', enviarAValidarParaEnviarARegistro);

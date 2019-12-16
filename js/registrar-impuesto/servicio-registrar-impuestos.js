@@ -6,7 +6,7 @@ let registrarDatosDeLosImpuestos = async (nombre, porcentaje, estado) => {
     nombre = nombre.toLowerCase();
     await axios({
         method: 'post',
-        url: 'http:localhost:3000/api/registrar-impuesto',
+        url: 'http://localhost:3000/api/registrar-impuesto',
         //body
         data: {
             nombre: nombre,
@@ -25,6 +25,21 @@ let registrarDatosDeLosImpuestos = async (nombre, porcentaje, estado) => {
 };
 
 
+let listar_impuestos = async () => {
+    let lista_impuestos;
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar-descuentos',
+        responseType: 'json',
+    })
+        .then(function (res) {
+            lista_impuestos = res.data.descuentos;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    return lista_impuestos;
+};
 
 
 
@@ -37,7 +52,7 @@ let consultar_nombre_repetido = async (inptNombre, inptPorcentaje,estado) => {
 
     await axios({
         method: 'get',
-        url: 'http:localhost:3000/api/registrar-impuesto',
+        url: 'http://localhost:3000/api/registrar-impuesto',
         responseType: 'json'
     })
         .then(function (res) {
@@ -70,6 +85,9 @@ let consultar_nombre_repetido = async (inptNombre, inptPorcentaje,estado) => {
                         icon: 'success',
                         confirmButtonText: 'ok!'
                     })
+                    document.getElementById('inpt-nombre').value='';
+                    document.getElementById('inpt-monto').value='';
+
                 }
             }
             if (lista_impuestos.length == 0) {
@@ -82,6 +100,8 @@ let consultar_nombre_repetido = async (inptNombre, inptPorcentaje,estado) => {
                         icon: 'success',
                         confirmButtonText: 'ok!'
                     })
+                    document.getElementById('inpt-nombre').value='';
+                    document.getElementById('inpt-monto').value='';
                 }
             }
         })

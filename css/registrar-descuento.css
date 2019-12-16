@@ -9,6 +9,14 @@
     width: 400px;
     margin: 0 auto;
 }
+.activar-clase{
+    position:relative;
+    left:28.5%;
+}
+.desactivar-clase{
+    position:relative;
+    left:41%;
+}
 .class-inpt-nombre{
     border: 1px solid red;
 }
