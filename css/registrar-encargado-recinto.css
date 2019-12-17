@@ -9,20 +9,11 @@
 #main form {
     width: 40%;
     margin: 0 auto;
-/* 
-    display: flex;
-    flex-direction: row; */
 }
 
 #main form > div {
     margin: 10px;
 }
-
-#main form > div .input-texto {
-    /* width: 250px; */
-}
-
-
 
 #main form > div > div{
     display: flex;
