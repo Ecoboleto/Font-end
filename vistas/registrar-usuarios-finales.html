@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,7 +33,7 @@
     </header>
 
     <main>
-        <h1 class="verde-oscuro--tipografia t-centrado"> Registrar cliente</h1>
+        <h1 class="verde-oscuro--tipografia t-centrado"> Registrarse</h1>
 
         <form class="formulario">
             <div class="img-cloudinary">
@@ -43,23 +43,23 @@
                 <button type="button" id="btn-guardarImagen">Subir imagen</button>
             </div>
             <div>
-                <label for="correo" class="correo">Correo Electronico</label>
+                <label for="correo" class="correo">Correo electrónico</label>
                 <input type="text" name="" id="txt_correo">
             </div>
             <div>
-                <label for="primer-nombre" class="primer-nombre">Primer Nombre</label>
+                <label for="primer-nombre" class="primer-nombre">Primer nombre</label>
                 <input type="text" id="txt_primer-nombre">
             </div>
             <div>
-                <label for="segundo-nombre" class="segundo-nombre">Segundo Nombre</label>
+                <label for="segundo-nombre" class="segundo-nombre">Segundo nombre</label>
                 <input type="text" id="txt_segundo-nombre">
             </div>
             <div>
-                <label for="primer-apellido" class="primer-apellido">Primer Apellido</label>
+                <label for="primer-apellido" class="primer-apellido">Primer apellido</label>
                 <input type="text" id="txt_primer-apellido">
             </div>
             <div>
-                <label for="segundo-apellido" class="segundo-apellido">Segundo Apellido</label>
+                <label for="segundo-apellido" class="segundo-apellido">Segundo apellido</label>
                 <input type="text" id="txt_segundo-apellido">
             </div>
             <div>
@@ -94,6 +94,17 @@
                             <select id="distritos" name="distrito" onchange="distritoSelected();">
                             </select>
                         </div>
+                    </div>
+                    <div>
+                        <label for="txt_tipo_evento">Tipo del evento</label>
+                        <select name="tipoevento" id="txt_tipo_evento"></select>
+                        <button id="btn_tipoevento" type="button"
+                        class="btn btn--accion btn--positivo blanco--tipografia">Agregar interéses</button>
+                </div>
+                <div>
+                    <p>Lista de interéses agregados</p>
+                    <div class="tipo-evento" id="tipo-evento"></div>
+                </div>
                     </div>
                     <div>
                         <label for="genero">Genero</label>
@@ -159,6 +170,7 @@
     <script src="../js/validaciones.js"></script>
 
     <script src="../js/registrar_usuario_final/usuario-servicio.js"></script>
+    <script src="../js/registrar_tipo_evento/tipo-evento-servicio.js"></script>
     <script src="../js/registrar_usuario_final/registrar-usuarios-finales-controlador.js"></script>
 
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDFdc3wI-6hc1r1BNVE_XKwq25d1sXdLtk"></script>

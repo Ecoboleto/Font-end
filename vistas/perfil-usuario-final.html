@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil usuarios finales</title>
+
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/perfil-usuario-final.css">
+</head>
+
+<body>
+        <header>
+                <div id="cajon-superior" class="bg-verde-claro--fondo">
+                    <nav class="d-flow-root">
+                        <a href="#" class="blanco-a--tipografia t-centro f-derecha btn--error">Cerrar sesión</a>
+                    </nav>
+                </div>
+        
+                <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
+                    <div class="logo d-linea-bloque f-izquierda">
+                        <img src="../imgs/logo.svg" alt="Logo">
+                    </div>
+        
+                    <div class="acomodo-c-inferior f-derecha">
+                        <nav class="d-en-linea f-izquierda menu">
+                            <a href="usuario-final-inicio.html" class="blanco-a--tipografia">Inicio</a>
+                            <a href="eventos.html" class="blanco-a--tipografia">Eventos</a>
+                        </nav>
+        
+                        <form class="f-izquierda">
+                            <div>
+                                <input type="search">
+                                <button class="btn gris-oscuro-a--tipografia">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+        
+                        <div id="carrito">
+                            <a href="#carrito" class="blanco-a--tipografia">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+    
+            <main>
+
+                <div class="card-usuario">
+
+                    <div class="card-hijo">
+
+                        <figure class="img-holder">
+                            <img src="../imgs/avatar.jpg" alt="" id="imgAvatar">
+                        </figure>
+                        <button type="button" id="btn-guardarImagen">Subir imagen</button>
+
+                    </div>
+
+                    <div class="info-usuario">
+
+                        <div>
+                            <label for="correo" class="correo">Correo electrónico</label>
+                            <input type="text" name="" id="txt_correo">
+                        </div>
+                        <div>
+                            <label for="primer-nombre" class="primer-nombre">Primer nombre</label>
+                            <input type="text" id="txt_primer-nombre">
+                        </div>
+                        <div>
+                            <label for="segundo-nombre" class="segundo-nombre">Segundo nombre</label>
+                            <input type="text" id="txt_segundo-nombre">
+                        </div>
+                        <div>
+                            <label for="primer-apellido" class="primer-apellido">Primer apellido</label>
+                            <input type="text" id="txt_primer-apellido">
+                        </div>
+                        <div>
+                            <label for="segundo-apellido" class="segundo-apellido">Segundo apellido</label>
+                            <input type="text" id="txt_segundo-apellido">
+                        </div>
+                        <div>
+                            <label for="fecha-nacimiento" class="fecha-nacimiento">Fecha de nacimiento</label>
+                            <input type="date" id="txt_fecha-nacimiento">
+                        </div>
+                        <form id="ubicationForm" onsubmit="return sendData();">
+                            <div class="data-container">
+                                <div class="form-row">
+                                    <div class="form-desc">
+                                        Provincia:
+                                    </div>
+                                    <div class="form-val">
+                                        <select id="provincias" name="provincia" onchange="getCantones(this.value);">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row canton">
+                                    <div class="form-desc">
+                                        Cantón:
+                                    </div>
+                                    <div class="form-val">
+                                        <select id="cantones" name="canton" onchange="getDistritos(this.value);">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row distrito">
+                                    <div class="form-desc">
+                                        Distrito:
+                                    </div>
+                                    <div class="form-val">
+                                        <select id="distritos" name="distrito" onchange="distritoSelected();">
+                                        </select>
+                                    </div>
+                                </div>
+                        
+
+                    </div>
+
+
+                </div>
+            </main>
+
+
+
+    <footer>
+        <div id="footer_superior" class="bg-verde-claro--fondo d-flow-root">
+            <div class="f-izquierda menu-izquierda">
+                <nav class="t-centrado">
+                    <!-- <a href="#" class="crema-a--tipografia">Nosotros</a>
+                    <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a> -->
+                    <a href="registrar-organizador-eventos.html" class="crema-a--tipografia">¿Organizas eventos? Registrate</a>
+                </nav>
+            </div>
+
+            <div class="f-izquierda crema--tipografia">
+                <h6 class="t-centrado">Contáctenos</h6>
+                <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@gmail.com">ecoboleto@gmail.com</a></p>
+                <p>Teléfono: <a class="crema-a--tipografia" href="tel:1234-5678">1234-5678</a></p>
+                <p>Dirección: Las oficinas están ubicadas en el oficentro momentum pinares.</p>
+            </div>
+
+            <div id="ubicacion" class="f-derecha">               
+                <div id="mapa"></div>
+            </div>
+        </div>
+
+        <div id="footer_inferior" class="bg-verde-oscuro--fondo">
+            <p class="blanco--tipografia t-centrado">
+                <small>
+                    <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
+                </small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/cloudinary.all.js"></script>
+    <script src="../js/registrar_usuario_final/imagen-servicio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script src="../js/jquery-2.2.0.js" type="text/javascript"></script>
+    <script src="../js/localidades/localidades.js"></script>
+
+    <script src="../js/axios.js"></script>
+    <script src="../js/validaciones.js"></script>
+</body>
+
+
+</html>

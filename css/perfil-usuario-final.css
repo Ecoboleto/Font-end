@@ -1,0 +1,12 @@
+.card-usuario{
+    height: 460px; 
+    width: 70%; 
+    background-color: #A3DE83;
+    margin-left: 15%;
+    box-shadow: 1px 1px 5px 5px #b2bec3;
+    display: flow-root;
+}
+
+.card-usuario .card-hijo{
+    float: left;
+}

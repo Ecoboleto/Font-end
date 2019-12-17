@@ -38,8 +38,30 @@ let registrar_usuario_final = async (correo, primer_nombre, segundo_nombre, prim
         }
     }
     ).then(function (res) {
-        console.log(res.data);
+        if (res.data.resultado) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Registro realizado con éxito',
+                text: 'La información ha sido almacenada',
+                confirmButtonText: 'Entendido'
+            }).then(function(){
+                window.location.href = '../index.html';
+            });
+
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'No se pudo registrar el correo electrónico ya existe',
+                confirmButtonText: 'Entendido'
+            });
+        }
     }).catch(function (error) {
+        
+        Swal.fire({
+            icon: 'warning',
+            title: 'No se puede conectar con el servidor',
+            confirmButtonText: 'Entendido'
+        });
         console.log(error);
     });
 };

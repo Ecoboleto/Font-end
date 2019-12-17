@@ -13,9 +13,60 @@ const input_distrito = document.querySelector('#distritos');
 const input_genero = document.querySelector('.txt_genero');
 const btn_guardar = document.querySelector('#btn-guardar');
 const avatar_usuario = document.querySelector('#imgAvatar');
+const input_tipo_evento =  document.querySelector('#txt_tipo_evento');
+const btn_tipo_evento = document.querySelector('#btn_tipoevento');
 let edad;
 
+const llenarTipoEvento = async () => {
+    let lista_tipos_eventos = await listar_tipo_evento();
+    const select = document.querySelector('#txt_tipo_evento');
+    let opt = document.createElement('option');
+    opt.innerHTML = '--';
+    opt.value = '--';
+    select.appendChild(opt);
 
+    for (let i = 0; i < lista_tipos_eventos.length; i++) {
+        opt = document.createElement('option');
+        opt.value = lista_tipos_eventos[i]['tipo_evento'];
+        opt.setAttribute('dato_id', lista_tipos_eventos[i]['_id']);
+        opt.innerHTML = lista_tipos_eventos[i]['tipo_evento'];
+        select.appendChild(opt);
+    };
+}
+
+    
+//agregar los tipos de eventos
+const agregarTiposEventos = () => {
+    const sel = document.querySelector('#txt_tipo_evento')
+    const label = document.querySelector('#tipo-evento');
+    let lab = document.createElement('output');
+    let evento;
+    let tipo = input_tipo_evento.value;
+    evento = (tipo);
+    let evento_obt = obtenerTipoEvento();
+    let validarevento = evento_obt.join().includes(evento);
+    if (!validarevento && sel.value != '--') {
+        lab.setAttribute('tipo_evento',evento);
+        lab.value = evento;
+        lab.innerHTML = sel.options[sel.selectedIndex].text;
+        lab.classList.add('listatipos');
+        lab.classList.add('d-bloque');
+        label.appendChild(lab);
+        sel.selectedIndex = 0;
+    }
+};
+
+const obtenerTipoEvento = () => {
+    let lista_tipos_evento = document.querySelectorAll('.listatipos');
+    let tipos = [];
+    
+    for (let i = 0; i < 5; i++) {
+        tipos.push(lista_tipos_evento[i].getAttribute('tipo_evento'));
+    } 
+
+    return tipos;
+  }
+  
 
 const validar_datos = (correo, primer_nombre, primer_apellido, fecha_nacimiento,
     provincia, canton, distrito) => {
@@ -106,28 +157,14 @@ let registrar_usuarios_finales = () => {
             registrar_usuario_final(correo, primer_nombre, segundo_nombre, primer_apellido,
                 segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar);
 
-                window.location = "http://127.0.0.1:5500";
-
-            Swal.fire({
-                icon: 'success',
-                title: 'Registro realizado con exito',
-                text: 'El usuario ha sido almacenado',
-                confirmButtonText: 'Entendido',
-                onAfterClose: () => {
-                    window.location = "http://127.0.0.1:5500";
-                }
-            })
-
         } catch (error) {
 
-            Swal.fire({
-                icon: 'warning',
-                title: 'Error en el registro',
-                text: 'El usuario ya se encuentra registrado',
-                confirmButtonText: 'Entendido'
-            })
+          
+        
         }
     }
 };
 
 btn_guardar.addEventListener('click', registrar_usuarios_finales);
+btn_tipo_evento.addEventListener('click', agregarTiposEventos);
+llenarTipoEvento();
