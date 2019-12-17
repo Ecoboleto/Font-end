@@ -50,3 +50,7 @@ h1{
     align-items: center;
     display: flex;
 }
+
+.acomodo-c-inferior {
+    width: 85%;
+}
