@@ -36,9 +36,16 @@ tr:hover{
 }
 
 .filtro{
-    width: 400px;
+    width: 360px;
     margin: 0 auto;
-    margin-bottom: 20px;
+}
+
+.filtro label{
+    margin-right: 25px;
+}
+
+.filtro input{
+    margin-right: 20px;
 }
 
 .logo-empresas{
@@ -51,4 +58,25 @@ tr:hover{
 
 .acomodo-c-inferior {
     width: 85%;
+}
+
+.filtros{
+    width: 58%;
+    margin: 0 auto 40px auto;
+}
+
+.filtros input[type="radio"]{
+    margin-right: 4px;
+}
+
+.filtro button {
+    padding: 6px 10px;
+    margin-top: -5px;
+}
+
+.modificar{
+    border: none;
+    background-color: transparent;
+    margin: 0 auto;
+    cursor: pointer;
 }
