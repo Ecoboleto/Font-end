@@ -50,7 +50,7 @@ let registrar_organizador_eventos = async (nombre_empresa, logo, tipo_cedula, ce
         } else {
             Swal.fire({
                 icon: 'warning',
-                title: 'No se pudo registrar el organizador de eventos, el correo electrónico ya existe',
+                title: res.data.msg,
                 confirmButtonText: 'Entendido'
             });
         }

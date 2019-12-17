@@ -22,8 +22,12 @@ let llenarTabla = async () => {
 
 
         modificar.classList.add('modificar');
-        modificar.setAttribute('data-id', lista_organizadores[i]['_id']);
+        modificar.dataset._id = lista_organizadores[i]['_id'];
         modificar.innerHTML = icono_modificar;
+        modificar.addEventListener('click', function(){
+            localStorage.setItem('_idorganizador', this.dataset._id);
+            window.location.href = 'modificar-organizador-eventos.html';
+        });
 
         // console.log(modificar);
 

@@ -31,7 +31,6 @@ const genero_contenedor = document.querySelector('#genero_contenedor');
 let telefonos = [];
 let genero,
     cedula,
-    tipo_de_cedula,
     edad;
 
 const btn_registrar = document.querySelector('#btn_registrar');
@@ -138,22 +137,28 @@ const validar_genero = (e) => {
 };
 
 const validar_cedula_empresa = (e) => {
-    cedula = e.srcElement.value;
+    let tipo_cedula;
+    cedula = e.srcElement.id;
 
-    if (cedula == 'Fisica') {
+    input_cedula.removeAttribute('minlength');
+    input_cedula.removeAttribute('maxlength');
+    input_cedula.removeAttribute('size');
+    input_cedula.removeAttribute('placeholder');
+
+    if (cedula === 'txt_fisica') {
         input_cedula.setAttribute('minlength', '1');
         input_cedula.setAttribute('maxlength', '9');
         input_cedula.setAttribute('size', '9');
         input_cedula.setAttribute('placeholder', 123456789);
-    } else if (cedula == 'Juridica') {
+    } else if (cedula === 'txt_juridica') {
         input_cedula.setAttribute('minlength', '1');
         input_cedula.setAttribute('maxlength', '10');
         input_cedula.setAttribute('size', '10');
-        input_cedula.setAttribute('placeholder', 123456789);
+        input_cedula.setAttribute('placeholder', 1234567890);
     };
 
-    tipo_de_cedula = cedula;
-    return tipo_de_cedula;
+    tipo_cedula = cedula;
+    return tipo_cedula;
 };
 
 //e equivale a event para escuchar el evento de cambio que se produce en el DOM
@@ -228,7 +233,17 @@ const obtener_datos = () => {
     obtener_telefonos();
     let nombre_empresa = input_nombre_empresa.value.trim();
     let logo = input_logo.src;
-    let tipo_cedula = cedula;
+    let tipo_cedula;
+
+    if(validar_cedula_empresa == 'txt_fisica'){
+        tipo_cedula = 'Física';
+    } else {
+        tipo_cedula = 'Jurídica';
+    }
+
+    console.log(tipo_cedula);
+    
+
     let cedula_empresa = input_cedula.value.trim();
     let nombre_comercial = input_nombre_comercial.value.trim();
     let annos_experiencia = Number(input_annos_experiencia.value.trim());
