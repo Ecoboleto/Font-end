@@ -677,7 +677,7 @@ const resetear = () => {
     input_inicio_evento_m.value = "mm";
     input_final_evento_h.value = "hh";
     input_final_evento_m.value = "mm";
-    input_foto_evento.src = "../imgs/evento.jpg";
+    input_foto_evento.src = "../imgs/image-solid.svg";
 }
 
 
