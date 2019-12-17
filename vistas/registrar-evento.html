@@ -28,10 +28,12 @@
 
             <div class="acomodo-c-inferior f-izquierda">
                 <nav class="f-izquierda menu">
-                    <a href="panel-de-control-organizador-eventos.html" class="blanco-a--tipografia d-linea-bloque">Panel de control</a>
+                    <a href="panel-de-control-organizador-eventos.html"
+                        class="blanco-a--tipografia d-linea-bloque">Panel de control</a>
                 </nav>
                 <nav class="f-derecha">
-                    <a href="#" class="blanco-a--tipografia t-centro f-derecha d-linea-bloque" id="cerrar-sesion">Cerrar sesión</a>
+                    <a href="#" class="blanco-a--tipografia t-centro f-derecha d-linea-bloque" id="cerrar-sesion">Cerrar
+                        sesión</a>
                 </nav>
             </div>
         </div>
@@ -56,17 +58,21 @@
                 <select name="tipoevento" id="txt_tipo_evento"></select>
             </div>
             <div class="img-cloudinary">
-                <label for="txt_foto">Foto evento</label>
-                <figure class="img-holder">
-                    <img src="../imgs/evento.jpg" alt="" id="imgEvento">
-                </figure>
+                
+                    <label for="txt_foto">Foto del evento</label>
+                
+                <div>
+                    <figure class="img-holder">
+                        <img src="../imgs/evento.jpg" alt="" id="imgEvento">
+                    </figure>
+                </div>
 
                 <button type="button" id="btn_foto" class="btn btn--accion btn--positivo blanco--tipografia">Subir
                     imagen</button>
 
             </div>
             <div>
-                <label for="txt_recinto_evento">Recinto</label>
+                <label for="txt_recinto_evento">Recinto del evento</label>
                 <select name="recintoevento" id="txt_recinto_evento"></select>
             </div>
             <div>
@@ -88,13 +94,13 @@
                             class="btn btn--accion btn--positivo blanco--tipografia">Agregar fecha a la lista</button>
                     </div>
                     <div>
-                        <p>Lista de fechas agregadas (MM-DD-YYYY::Ih:Im::Fh:Fm)</p>
+                        <p class="titulofechas">Lista de fechas agregadas (MM-DD-YYYY::Ih:Im::Fh:Fm)</p>
                         <div class="fechas" id="fechas"></div>
                     </div>
                 </div>
             </div>
             <div>
-                <label for="txt_descripcion_evento">Descripcion</label>
+                <label for="txt_descripcion_evento">Descripción del evento</label>
                 <textarea id="txt_descripcion_evento"></textarea>
             </div>
             <div>
@@ -102,11 +108,11 @@
                 <input type="number" id="txt_entrada_evento">
             </div>
             <div>
-                <label for="txt_asistentes_evento">Cantidad de asistentes esperados</label>
+                <label for="txt_asistentes_evento">Asistentes esperados</label>
                 <input type="number" id="txt_asistentes_evento">
             </div>
             <div>
-                <label for="txt_limite_evento">Entradas limite por cliente</label>
+                <label for="txt_limite_evento">Limite por cliente</label>
                 <input type="number" id="txt_limite_evento">
             </div>
             <div>
@@ -117,7 +123,7 @@
                         class="btn btn--accion btn--positivo blanco--tipografia">Agregar impuesto a la lista</button>
                 </div>
                 <div>
-                    <p>Lista de impuestos agregados</p>
+                    <p class="tituloimpuestos">Lista de impuestos agregados</p>
                     <div class="impuestos" id="impuestos"></div>
                 </div>
             </div>
@@ -130,7 +136,7 @@
                         class="btn btn--accion btn--positivo blanco--tipografia">Agregar descuento a la lista</button>
                 </div>
                 <div>
-                    <p>Lista de descuentos agregados</p>
+                    <p class="titulodescuentos">Lista de descuentos agregados</p>
                     <div class="descuentos" id="descuentos"></div>
                 </div>
             </div>

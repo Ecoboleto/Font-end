@@ -19,21 +19,6 @@ header{
     margin-bottom: 50px;
 }
 
-#main form div input{
-    margin-left: 50px;
-    padding: 8px 5px;
-}
-
-
-
-#main form div select{
-    margin-left: 50px;
-    padding: 8px 5px;
-    width: 200px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
 #main form button{
     width: 40%;
     padding: 12px 0;
@@ -54,13 +39,119 @@ form div figure{
 }
 
 #imgEvento {
-    width: 170px;
-    height: 170px;
-    margin-left: 9%;
-    margin-top: -14%;
-    margin-bottom: 28px;
+    width: 700px;
+    height: 300px;
+    margin-left: -220px;
 }
 
 .acomodo-c-inferior {
     width: 85%;
+}
+
+#txt_nombre_evento{
+    margin-left: 60px;
+    padding: 8px 5px;
+    width: 240px;
+}
+
+#txt_tipo_evento{
+    margin-left: 87px;
+    padding: 8px 5px;
+    width: 250px;
+}
+
+#txt_recinto_evento{
+    margin-left: 55px;
+    padding: 8px 5px;
+    width: 263px;
+}
+
+#txt_fecha_evento{
+    margin-left: 82px;
+    padding: 8px 5px;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+#txt_inicio_evento_h{
+    margin-left: 110px;
+    padding: 8px 5px;
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+#txt_inicio_evento_m{
+    margin-left: 17px;
+    padding: 8px 5px;
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+#txt_final_evento_h{
+    margin-left: 113px;
+    padding: 8px 5px;
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+#txt_final_evento_m{
+    margin-left: 17px;
+    padding: 8px 5px;
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.titulofechas{
+    margin-top: -20px;
+}
+
+output{
+    border: none;
+}
+
+#txt_descripcion_evento{
+    margin-left: 25px;
+    padding: 5px 5px;
+    width: 250px;
+    margin-top: 15px;
+}
+
+#txt_entrada_evento{
+    margin-left: 87px;
+    padding: 5px 5px;
+    width: 100px;
+}
+
+#txt_asistentes_evento{
+    margin-left: 33px;
+    padding: 5px 5px;
+    width: 100px;
+}
+
+#txt_limite_evento{
+    margin-left: 65px;
+    padding: 5px 5px;
+    width: 100px;
+}
+
+#txt_impuestos_evento{
+    margin-left: 112px;
+    padding: 8px 5px;
+    width: 260px;
+    margin-bottom: 17px;
+}
+
+.tituloimpuestos{
+    margin-top: -20px;
+}
+
+#txt_descuentos_evento{
+    margin-left: 102px;
+    padding: 8px 5px;
+    width: 260px;
+    margin-bottom: 17px;
+}
+
+.titulodescuentos{
+    margin-top: -20px;
 }

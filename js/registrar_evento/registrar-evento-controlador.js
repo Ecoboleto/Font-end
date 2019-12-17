@@ -264,7 +264,7 @@ const agregarFechaLista = () => {
         Swal.fire({
             icon: 'warning',
             title: 'Error de fechas u horas',
-            text: 'Por favor revise la informacion: Seleccionar todos los campos de horas y minutos. No ingresar fechas anteriores a hoy. Hora final no puede ser menor a la hora de inicio. No se permiten eventos el mismo dia en horarios ya reservados y en horas consecutivas.',
+            text: 'Por favor revise la información: Seleccionar todos los campos de horas y minutos. No ingresar fechas anteriores a hoy. Hora final no puede ser menor a la hora de inicio. No se permiten eventos el mismo día en horarios ya reservados y en horas consecutivas.',
             confirmButtonText: 'Entendido'
         });
     }
