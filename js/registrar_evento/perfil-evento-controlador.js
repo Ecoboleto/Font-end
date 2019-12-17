@@ -10,6 +10,18 @@ let escogerEntradas = async (limite) => {
 
 };
 
+let fechasi = async (fechas_obt) => {
+    let fechatest = [];
+    let fech;
+    for (let i = 0; i < fechas_obt.length; i++) {
+
+        fech = fechas_obt[i].slice(0, 10);
+        fechatest.push(fech);
+
+    }
+    return fechatest;
+};
+
 let crearInfo = async () => {
     //lista_eventos = await listar_evento();
     //idevento = localStorage.getItem('evento_id');
@@ -36,18 +48,18 @@ let crearInfo = async () => {
 
 
     imagen.src = evento['foto_evento'];
-    nombre.innerHTML = ('Nombre de evento: ' + evento['nombre_evento']);
-    tipo.innerHTML = ('Tipo de evento: ' + evento['tipo_evento']);
-    recinto.innerHTML = ('Recinto de evento: ' + evento['recinto_evento']);
-    fechas.innerHTML = ('Fechas de evento: ' + evento['fechas']);
-    descripcion.innerHTML = ('Descripcion de evento: ' + evento['descripcion_evento']);
+    nombre.innerHTML = (evento['nombre_evento']);
+    tipo.innerHTML = (evento['tipo_evento']);
+    recinto.innerHTML = (evento['recinto_evento']);
+    fechas.innerHTML = ('Fechas de evento: ' + await fechasi(evento['fechas']));
+    descripcion.innerHTML = ('Descripción de evento: ' + evento['descripcion_evento']);
     precio.innerHTML = ('Precio de entrada: ₡' + evento['entrada_evento']);
-    limite.innerHTML = ('Limite de entradas: ' + evento['limite_evento']);
+    limite.innerHTML = ('Límite de entradas: ' + evento['limite_evento']);
     sel_entradas.innerHTML = ('Seleccione la cantidad de entradas: ');
     opt_entradas.innerHTML = ('---');
     carrito.innerHTML = ('Agregar al carrito')
     comprar.innerHTML = ('Comprar')
-    
+
 
     cont_evento.classList.add('evento');
     cont_img.classList.add('cont_img');
@@ -59,6 +71,20 @@ let crearInfo = async () => {
     descripcion.classList.add('descripcion');
     precio.classList.add('precio');
     limite.classList.add('limite');
+    sel_entradas.classList.add('lab');
+    cant_entradas.classList.add('sel');
+
+    carrito.classList.add('btn');
+    carrito.classList.add('btn--accion');
+    carrito.classList.add('btn--positivo');
+    carrito.classList.add('blanco--tipografia');
+
+    comprar.classList.add('btn');
+    comprar.classList.add('btn--accion');
+    comprar.classList.add('btn--positivo');
+    comprar.classList.add('blanco--tipografia');
+
+
 
     contenedor.appendChild(cont_evento);
     cont_evento.appendChild(cont_img);

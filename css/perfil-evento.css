@@ -1,0 +1,91 @@
+#evento{
+    width: 70%;
+    padding: 50px 15%;
+}
+
+.cont_img{
+    width: 80%;
+    padding: 0 10%;
+    height: 400px;
+    margin-bottom: 50px;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.nombre{
+    text-align: center;
+    font-size: 70px;
+    line-height: 56px;
+    font-weight: bold;
+    color: #2EB872;
+    margin-bottom: 35px;
+}
+
+.tipo{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2EB872;
+    font-size: 20px;
+}
+
+.recinto{
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2EB872;
+    font-size: 20px;
+}
+
+.fechas{
+    text-align: center;
+    color: #333;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.descripcion{
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.precio{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.limite{
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+.lab{
+    margin-left: 380px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2EB872;
+    font-size: 20px;
+}
+
+.sel{
+    margin-left: 20px;
+    padding: 8px 5px;
+    width: 70px;
+    margin-bottom: 25px;
+}
+
+.btn{
+    margin-bottom: 25px;
+    width: 170px;
+}
