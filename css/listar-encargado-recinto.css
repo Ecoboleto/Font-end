@@ -39,7 +39,6 @@
 
 #main form #tbl-lista td,
 #main form #tbl-lista th {
-    border: 1px solid #fffefe;
     padding: 8px;
 }
 
@@ -76,4 +75,16 @@
 
 .botones button:first-child{
     margin-bottom: 20px !important;
+}
+
+#main form div select {
+    padding: 8px 5px;
+}
+
+#form-recinto{
+    margin-left: 100px !important;
+}
+
+tr, td, th{
+    border:  1px solid #000 !important;
 }
