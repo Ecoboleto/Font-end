@@ -52,3 +52,15 @@
     margin-top: -14%;
     margin-bottom: 28px;
 }
+
+select{
+    padding: 10px 20px;
+}
+
+.tipo-evento{
+    min-height: 50px;
+}
+
+#txt_tipo_evento{
+    margin-right: 50px;
+}

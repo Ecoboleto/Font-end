@@ -10,3 +10,7 @@
 .card-usuario .card-hijo{
     float: left;
 }
+
+#carrito{
+    margin-right: 20px;
+}

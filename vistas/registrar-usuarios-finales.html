@@ -74,6 +74,7 @@
                         </div>
                         <div class="form-val">
                             <select id="provincias" name="provincia" onchange="getCantones(this.value);">
+                                <option>Seleccione una opción</option>
                             </select>
                         </div>
                     </div>
@@ -83,6 +84,7 @@
                         </div>
                         <div class="form-val">
                             <select id="cantones" name="canton" onchange="getDistritos(this.value);">
+                                <option>Seleccione una opción</option>
                             </select>
                         </div>
                     </div>
@@ -92,14 +94,16 @@
                         </div>
                         <div class="form-val">
                             <select id="distritos" name="distrito" onchange="distritoSelected();">
+                                <option>Seleccione una opción</option>
                             </select>
                         </div>
                     </div>
                     <div>
-                        <label for="txt_tipo_evento">Tipo del evento</label>
-                        <select name="tipoevento" id="txt_tipo_evento"></select>
-                        <button id="btn_tipoevento" type="button"
-                        class="btn btn--accion btn--positivo blanco--tipografia">Agregar interéses</button>
+                        <label for="txt_tipo_evento">Seleccione el tipo de evento de su preferencia</label>
+                        <div class="d-flow-root">
+                            <select name="tipoevento" class="f-izquierda" id="txt_tipo_evento"></select>
+                            <button id="btn_tipoevento" type="button" class="btn btn--accion f-izquierda btn--positivo blanco--tipografia">Agregar interéses</button>
+                        </div>
                 </div>
                 <div>
                     <p>Lista de interéses agregados</p>
@@ -127,14 +131,6 @@
 
     <footer>
         <div id="footer_superior" class="bg-verde-claro--fondo d-flow-root">
-            <div class="f-izquierda menu-izquierda">
-                <nav class="t-centrado">
-                    <!-- <a href="#" class="crema-a--tipografia">Nosotros</a>
-                    <a href="#" class="crema-a--tipografia">¿Compra y retiro?</a> -->
-                    <a href="registrar-organizador-eventos.html" class="crema-a--tipografia">¿Organizas eventos? Registrate</a>
-                </nav>
-            </div>
-
             <div class="f-izquierda crema--tipografia">
                 <h6 class="t-centrado">Contáctenos</h6>
                 <p>Correo: <a class="crema-a--tipografia" href="mailto:ecoboleto@gmail.com">ecoboleto@gmail.com</a></p>
