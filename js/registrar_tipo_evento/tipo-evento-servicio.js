@@ -73,7 +73,7 @@ let obtener_tipo_evento_id = async(pid) => {
     }
 };
 
-let modificar_tipo_evento = async (idtp, tipo_evento) => {
+let modificar_tipo_evento = async (idtp, tipo_evento, estado) => {
     await axios(
         {
             method: 'post',
@@ -82,6 +82,7 @@ let modificar_tipo_evento = async (idtp, tipo_evento) => {
             data: {
                 _id: idtp,
                 tipo_evento: tipo_evento,
+                estado: estado,
             }
 
         }
@@ -90,9 +91,12 @@ let modificar_tipo_evento = async (idtp, tipo_evento) => {
             if (res.data.resultado) {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Registro realizado con éxito',
+                    title: 'Cambio realizado con éxito',
                     text: 'El tipo de evento ha sido almacenado',
-                    confirmButtonText: 'Entendido'
+                    confirmButtonText: 'Entendido',
+                    onClose: function(){
+                        location.href = 'listar-tipo-evento.html';
+                    }
                 });
 
             } else {

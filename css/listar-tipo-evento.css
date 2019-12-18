@@ -54,3 +54,10 @@ h1{
 .acomodo-c-inferior {
     width: 85%;
 }
+
+.modificar{
+    border: none;
+    background-color: transparent;
+    margin: 0 auto;
+    cursor: pointer;
+}
