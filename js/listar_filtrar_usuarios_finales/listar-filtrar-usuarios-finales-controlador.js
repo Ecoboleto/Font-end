@@ -38,19 +38,18 @@ let llenar_tabla = async() => {
             
             let celdaImagen = fila.insertCell();
 
+            
+
             let btn_habilitar = document.createElement('button');
             btn_habilitar.innerHTML = '<i class="fas fa-eye"></i>';
             btn_habilitar.dataset._id = lista_usuarios_finales[i]['_id'];
 
             btn_habilitar.addEventListener('click', function(){
-                localStorage.setItem('usuario_id', this.dataset._id)
-
-                habilitar_usuario_final();
+                const id_cliente = localStorage.setItem('usuario_id', this.dataset._id)
+                habilitar_usuario_final(id_cliente);
             });
 
             fila.insertCell().appendChild(btn_habilitar);
-
-
 
             let btn_deshabilitar = document.createElement('button'); 
             btn_deshabilitar.innerHTML = '<i class="fas fa-eye-slash"></i>';
@@ -58,8 +57,8 @@ let llenar_tabla = async() => {
 
             btn_deshabilitar.addEventListener('click', function(){
                 localStorage.setItem('usuario_id', this.dataset._id)
-
-                deshabilitar_usuario_final();
+                const id_cliente = localStorage.setItem('usuario_id', this.dataset._id)
+                deshabilitar_usuario_final(id_cliente);
             });
               fila.insertCell().appendChild(btn_deshabilitar);
 
