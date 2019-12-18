@@ -54,3 +54,11 @@ select option{
     margin-top: 40px;
     margin-left: -50px;
 }
+
+#foto_tarjeta{
+    border: none;
+}
+
+#carrito{
+    margin-right: 20px;
+}

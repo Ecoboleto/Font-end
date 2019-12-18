@@ -1,0 +1,9 @@
+.boton-registrar-tarjeta {
+    width: 160px;
+    margin: 0 auto;
+}
+
+.boton-registrar-tarjeta a {
+    box-sizing: border-box;
+    padding: 10px 20px;
+}

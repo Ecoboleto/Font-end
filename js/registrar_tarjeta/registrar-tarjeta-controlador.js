@@ -7,11 +7,12 @@ const input_mes = document.querySelector('#txt_mes');
 const input_anno = document.querySelector('#txt_anno');
 const input_codigo = document.querySelector('#txt_codigo');
 const btn_registrar = document.querySelector('#btn_registrar');
+let _idusuario = localStorage.getItem('usuario_id');
 
 const validar = (pNombre, pNumero, pCodigo, pMes, pAnno, pFecha) => {
     let error = false;
 
-    let regex_solo_letras = /^[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]+$/;
+    let regex_solo_letras = /[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ]/;
     let regex_solo_numeros = /^[0-9]+$/;
     let regex_letras_numeros = /^[A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ0-9]+$/;
 
@@ -57,7 +58,7 @@ const obtener_datos = () => {
     let mes = input_mes.value;
     let anno = input_anno.value;
     let fecha = [new Date().getMonth(), new Date().getFullYear()];
-
+   
     if (validar(nombre, numero, codigo, mes, anno, fecha)) {
         Swal.fire({
             icon: 'warning',
@@ -67,7 +68,7 @@ const obtener_datos = () => {
         });
     } else {
 
-        registrar_tarjeta(nombre, numero, codigo, mes, anno);
+        registrar_tarjeta(_idusuario, nombre, numero, codigo, mes, anno);
         
         Swal.fire({
             icon: 'success',
