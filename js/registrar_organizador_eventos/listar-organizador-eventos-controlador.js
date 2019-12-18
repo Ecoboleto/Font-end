@@ -89,14 +89,16 @@ let llenarTabla = async () => {
 const cambiar_estado_organizador = async (_id) => {
     let organizador = await obtener_organizador_id(_id);
     let estado_cambiar = organizador.estado;
+    let estado_nuevo;
+    console.log(estado_cambiar);
     
-    if(estado_cambiar){
-        estado_cambiar = false;
+    if(estado_cambiar == true){
+        estado_nuevo = false;
     } else {
-        estado_cambiar = true;
+        estado_nuevo = true;
     }
 
-    modificar_organizador_eventos_estado(estado_cambiar);
+    await modificar_organizador_eventos_estado(organizador, estado_nuevo);
 }
 
 const activar_desactivar = async () => {
@@ -105,8 +107,8 @@ const activar_desactivar = async () => {
     let _id = localStorage.getItem('_idorganizador');
 
     if (_id) {
-        cambiar_estado_organizador(_id);
-        llenarTabla();
+        await cambiar_estado_organizador(_id);
+        await llenarTabla();
     } else {
         console.log('Seleccione un usuario para modificar');
     }

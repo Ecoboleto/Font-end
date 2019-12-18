@@ -29,8 +29,8 @@ const rbt_otro = document.querySelector('#txt_otro');
 const input_otro_respuesta = document.querySelector('#txt_otro_respuesta');
 const genero_contenedor = document.querySelector('#genero_contenedor');
 let ul_lista_telefono = document.querySelector('#ul-lista-telefono');
-const ul_telefonos = document.querySelectorAll('#ul-lista-telefono li');
-let telefonos = [];
+// const ul_telefonos = document.querySelectorAll('#ul-lista-telefono li');
+let telefonos_registrar = [];
 let genero_registrar,
     cedula,
     edad;
@@ -127,8 +127,9 @@ const eliminar_telefono = () => {
 //Obtien los telefonos de la etiqueta "#ul-lista-telefono>li" del atributo dato-telefono y 
 //los retorna en un array
 const obtener_telefonos = () => {
-    telefonos = [];
-    ul_telefonos.forEach(li => telefonos.push(li.getAttribute('dato-telefono')));
+    const ul_telefonos = document.querySelectorAll('#ul-lista-telefono li');
+    telefonos_registrar = [];
+    ul_telefonos.forEach(li => telefonos_registrar.push(li.getAttribute('dato-telefono')));
 };
 
 //Agraga un nuevo teléfono a la lista
@@ -149,7 +150,8 @@ const agregar_telefono_lista = () => {
     } else {
         obtener_telefonos();
         //busca si el teléfono ya se agrego a la lista
-        const resultado = telefonos.includes(telefono);
+        const resultado = telefonos_registrar.includes(telefono);
+
         if (resultado) {
             Swal.fire({
                 icon: 'warning',
@@ -161,8 +163,8 @@ const agregar_telefono_lista = () => {
             });
         } else {
             const li = document.createElement("li");
-            li.innerHTML = `${telefono}<span class="close" onclick="eliminar_telefono(this)">×</span>`;
-            li.setAttribute("dato-telefono", telefono);
+            li.innerHTML = `${telefono}<span class="close" onclick="eliminar_telefono(this)">×</span>`;;
+            li.setAttribute("dato-telefono", telefono)
             ul_lista_telefono.appendChild(li);
 
             //limpiemos el el elemento text-agregar-telefono
@@ -184,13 +186,14 @@ const llenarFormulario = async () => {
     let organizador = await obtener_organizador_id(_idorganizador);
     // console.log(organizador);
 
-    let telefonos = organizador['telefonos'];
+    let telefonos = '';
+    
     let genero = organizador['genero'];
     let tipo_cedula = organizador['tipo_cedula'];
 
     input_nombre_empresa.value = organizador['nombre_empresa'];
     input_logo.src = organizador['log'];
-    if(tipo_cedula == 'Física'){
+    if (tipo_cedula == 'Física') {
         rbt_fisica.checked = true;
     } else {
         rbt_juridica.checked = true;
@@ -204,21 +207,23 @@ const llenarFormulario = async () => {
     input_direccion_exacta.value = organizador['direccion_exacta'];
     input_nombre_completo.value = organizador['nombre_completo'];
     input_correoelectronico.value = organizador['correo_electronico'];
-    input_fecha_de_nacimiento.value = organizador['fecha'].substr(0,10);
-    
-    window.onload = function(){
+    input_fecha_de_nacimiento.value = organizador['fecha'].substr(0, 10);
+
+    window.onload = function () {
         calc_edad(input_fecha_de_nacimiento.value);
     };
 
-    ul_lista_telefono.innerHTML = '<li>' + telefonos + '<span class="close" onclick="eliminar_telefono(this)">×</span></li>';
-    
-    if(genero == 'Masculino'){
+    for (let i = 0; i < telefonos.length; i++) {
+        ul_lista_telefono.innerHTML = '<li>' + telefonos[i] + '</li><span class="close" onclick="eliminar_telefono(this)">×</span>';
+    }
+
+    if (genero == 'Masculino') {
         rbt_masculino.checked = true;
         genero_registrar = 'Masculino';
-    } else if (genero == 'Femenino'){
+    } else if (genero == 'Femenino') {
         rbt_femenino.checked = true;
         genero_registrar = 'Femenino';
-    } else if (genero == 'Prefiero no especificar'){
+    } else if (genero == 'Prefiero no especificar') {
         rbt_sin_especificar.checked = true;
         genero_registrar = 'Prefiero no especificar';
     } else {
@@ -237,12 +242,10 @@ const obtener_datos = () => {
     let nombre_completo = input_nombre_completo.value.trim();
     let correo_electronico = input_correoelectronico.value.trim();
     let genero_respuesta = genero_registrar;
-    console.log(telefonos);
-    
-    let aTelefonos = telefonos;
-    
+    let aTelefonos = telefonos_registrar;
 
-    if(!validar_formulario(nombre_empresa, logo, nombre_comercial, direccion_exacta, nombre_completo, correo_electronico, genero_respuesta)) {
+
+    if (!validar_formulario(nombre_empresa, logo, nombre_comercial, direccion_exacta, nombre_completo, correo_electronico, genero_respuesta)) {
         Swal.fire({
             icon: 'warning',
             title: 'Algunos de los campos se encuentran con valores incorrectos o en blanco',
@@ -251,7 +254,11 @@ const obtener_datos = () => {
         });
     } else {
         if (genero_respuesta == 'Otro') {
-            genero_respuesta = input_otro_respuesta.value;
+            if (input_otro_respuesta == undefined || input_otro_respuesta == null) {
+                genero_respuesta = 'Otro';
+            } else {
+                genero_respuesta = input_otro_respuesta.value;
+            }
         };
 
         modificar_organizador_eventos(_idorganizador, nombre_empresa, logo, nombre_comercial, annos_experiencia, direccion_exacta, nombre_completo, correo_electronico, genero_respuesta, aTelefonos);

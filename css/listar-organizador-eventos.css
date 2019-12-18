@@ -36,8 +36,8 @@ tr:hover{
 }
 
 .filtro{
-    width: 360px;
-    margin: 0 auto;
+    width: 300px;
+    margin-top: 40px;
 }
 
 .filtro label{
@@ -79,4 +79,15 @@ tr:hover{
     background-color: transparent;
     margin: 0 auto;
     cursor: pointer;
+}
+
+#filtro{
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.datos-filtrar{
+    font-size: 15px;
+    line-height: 18px;
 }

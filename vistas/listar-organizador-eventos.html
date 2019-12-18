@@ -47,10 +47,22 @@
     <main id="main">
         <h1 class="verde-oscuro--tipografia t-centrado mb-2">Listar organizadores de eventos</h1>
         <section class="info">
-            <div class="d-flow-root filtro">
-                <div class="mb-3 f-izquierda">
-                    <label for="txt_filtro_organizador_eventos">Filtrar:</label>
-                    <input type="text" id="txt_filtro_organizador_eventos">
+            <div class="d-flow-root" id="filtro">
+                <div class="filtro f-izquierda">
+                    <div class="mb-3">
+                        <label for="txt_filtro_organizador_eventos">Filtrar:</label>
+                        <input type="text" id="txt_filtro_organizador_eventos">
+                    </div>
+                </div>
+                <div class="mb-3 f-izquierda datos-filtrar">
+                    <p class="t-centrado"><u>Puede filtrar por</u></p>
+                    <ul>
+                        <li>Nombre de empresa</li>
+                        <li>Provincia</li>
+                        <li>Nombre completo del contacto asociado</li>
+                        <li>Correo electónico</li>
+                        <li>Cédula</li>
+                    </ul>
                 </div>
             </div>
 
@@ -101,7 +113,7 @@
 
     <!-- SweetAlet -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    
+
     <!-- Axios \\ Peticiones del front end al backend -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
