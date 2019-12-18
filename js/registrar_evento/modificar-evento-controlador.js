@@ -750,20 +750,11 @@ let llenarFormulario = async () => {
     input_entrada_evento.value = tipop['entrada_evento'];
     input_asistentes_evento.value = tipop['asistentes_evento'];
     input_limite_evento.value = tipop['limite_evento'];
+    input_tipo_evento.value = tipop['tipo_evento'];
 
 };
 
 
-if (idtp) {
-    llenarFormulario();
-} else {
-    Swal.fire({
-        icon: 'warning',
-        title: 'No se puede modificar',
-        text: 'Seleccione un tipo de evento antes de modificar',
-        confirmButtonText: 'Entendido'
-    });
-};
 
 
 
@@ -782,3 +773,14 @@ llenarInicioH();
 llenarInicioM();
 llenarFinalH();
 llenarFinalM();
+
+if (idtp) {
+    llenarFormulario();
+} else {
+    Swal.fire({
+        icon: 'warning',
+        title: 'No se puede modificar',
+        text: 'Seleccione un tipo de evento antes de modificar',
+        confirmButtonText: 'Entendido'
+    });
+};
