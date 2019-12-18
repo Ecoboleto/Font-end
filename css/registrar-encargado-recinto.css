@@ -25,6 +25,9 @@
     margin: 5px;
 }
 
+#main form .lista-telefonos p{
+    padding: 10px 0;
+}
 
 #main form .lista-telefono li {
     cursor: pointer;
