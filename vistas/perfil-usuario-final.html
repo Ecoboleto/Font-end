@@ -97,11 +97,15 @@
                         <label for="fecha-nacimiento" class="fecha-nacimiento">Fecha de nacimiento</label>
                         <input type="date" id="txt_fecha-nacimiento">
                     </div>
+                    <div>
+                       <p id="txt_edad"></p>
+                    </div>
                     <form id="ubicationForm" onsubmit="return sendData();">
                         <div class="data-container">
                             <div class="form-row">
                                 <div class="form-desc">
                                     Provincia:
+                                   
                                 </div>
                                 <div class="form-val">
                                     <select id="provincias" name="provincia" onchange="getCantones(this.value);">
@@ -134,15 +138,15 @@
                             <div>
                                 <label for="genero">Género</label>
                                 <div>
-                                    <input type="radio" name="genero" class="txt_genero" value="Mujer"> <label
+                                    <input type="radio" name="genero" class="txt_genero" value="Mujer" id="txt_mujer"> <label
                                         for="mujer">Mujer</label>
                                 </div>
                                 <div>
-                                    <input type="radio" name="genero" class="txt_genero" value="Hombre"><label
+                                    <input type="radio" name="genero" class="txt_genero" value="Hombre" id="txt_hombre"><label
                                         for="hombre">Hombre</label>
                                 </div>
                                 <div>
-                                    <input type="radio" name="genero" class="txt_genero" value="Otro"> <label
+                                    <input type="radio" name="genero" class="txt_genero" value="Otro" id="txt_otro"> <label
                                         for="otro">Otro</label>
                                 </div>
                                 <button type="button" id="btn-editar">Actualizar información</button>
@@ -197,6 +201,8 @@
 
     <script src="../js/registrar_usuario_final/usuario-servicio.js"></script>
     <script src="../js/perfil-usuario-final/perfil-usuario-final-controlador.js"></script>
+    
+
     
     <!-- Mapa -->
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDFdc3wI-6hc1r1BNVE_XKwq25d1sXdLtk"></script>

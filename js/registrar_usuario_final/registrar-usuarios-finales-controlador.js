@@ -152,6 +152,15 @@ let registrar_usuarios_finales = () => {
             confirmButtonText: 'Entendido'
         })
     } else {
+
+        if(validar_edad(edad)){
+            Swal.fire({
+                icon: 'warning',
+                title: 'Datos incorrectos',
+                text: 'Un menor de edad no puede ingresar dentro de la plataforma',
+                confirmButtonText: 'Entendido'
+            })
+        }else{
         try {
 
             registrar_usuario_final(correo, primer_nombre, segundo_nombre, primer_apellido,
@@ -162,6 +171,7 @@ let registrar_usuarios_finales = () => {
           
         
         }
+    }
     }
 };
 
