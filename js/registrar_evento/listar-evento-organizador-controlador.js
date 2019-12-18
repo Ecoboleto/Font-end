@@ -75,21 +75,31 @@ let llenarTabla = async () => {
     }
 };
 
-/*let cambiarEstado = async (id) => {
-    let tipo = await obtener_evento_id(id);
-    let idte = tipo['_id'];
-    let tipo_evento = tipo['tipo_evento'];
-    let estado = tipo['estado'];
+let cambiarEstado = async (id) => {
+    let evento= await obtener_evento_id(id);
+    let idtp = evento['_id'];
+    let tipo_evento = evento['tipo_evento'];
+    let foto_evento = evento['foto_evento'];
+    let recinto_evento = evento['recinto_evento'];
+    let descripcion_evento = evento['descripcion_evento'];
+    let entrada_evento = evento['entrada_evento'];
+    let asistentes_evento = evento['asistentes_evento'];
+    let limite_evento = evento['limite_evento'];
+    let fechas = evento['fechas'];
+    let impuestos = evento['impuestos'];
+    let descuentos = evento['descuentos'];
+    let estado = evento['estado'];
+
     if (estado == 'Activo') {
         estado = 'Inactivo';
-        await modificar_evento(idte, tipo_evento, estado);
+        await modificar_evento(idtp, tipo_evento, foto_evento, recinto_evento, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos, estado);
         llenarTabla();
     } else {
         estado = 'Activo';
-        await modificar_evento(idte, tipo_evento, estado);
+        await modificar_evento(idtp, tipo_evento, foto_evento, recinto_evento, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos, estado);
         llenarTabla();
     }
-};*/
+};
 
 
 
