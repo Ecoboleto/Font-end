@@ -118,19 +118,18 @@ let modificar_organizador_eventos = async (id, nombre_empresa, logo, nombre_come
     })
 };
 
-let modificar_organizador_eventos_estado = async (estado_cambiar) => {
+let modificar_organizador_eventos_estado = async (id, estado) => {  
     await axios(
         {
             method: 'post',
             url: 'http://localhost:3000/api/modificar-organizador-evento-estado',
             responseType: 'json',
             data: {
-                estado: estado_cambiar
+                _id: id,
+                estado
             }
         }
     ).then(function (res) {
-        // console.log(res.data.resultado);
-        
         if (res.data.resultado) {
             Swal.fire({
                 icon: 'success',
