@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 let getEdad = (fecha_nacimiento) => {
 
     let hoy = new Date();
@@ -103,7 +101,7 @@ let obtener_cliente_id = async(_id) => {
     }
 };
 
-let modificar_usuario_final = async (primer_nombre, segundo_nombre, primer_apellido,
+let modificar_usuario_final = async (idusuariofinal,primer_nombre, segundo_nombre, primer_apellido,
     segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar) => {
 
     await axios({
@@ -147,7 +145,7 @@ let modificar_usuario_final = async (primer_nombre, segundo_nombre, primer_apell
     });
 };
 
-let habilitar_usuario_final = async () => {
+let habilitar_usuario_final = async (idusuariofinal) => {
 
     await axios({
         method: 'post',
@@ -178,7 +176,7 @@ let habilitar_usuario_final = async () => {
     });
 };
 
-let deshabilitar_usuario_final = async () => {
+let deshabilitar_usuario_final = async (idusuariofinal) => {
 
     await axios({
         method: 'post',
