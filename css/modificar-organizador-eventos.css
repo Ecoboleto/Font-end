@@ -1,0 +1,21 @@
+#ul-lista-telefono{
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+.close{
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.close:hover{
+    color: #FA4659;
+}
+
+#provincia{
+    margin-left: 146px !important;
+}
+
+#canton, #distrito{
+    margin-left: 162px !important;
+}
