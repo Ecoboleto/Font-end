@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modificar evento</title>
+
+    <!-- Fontawesome local -->
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/registrar-evento.css">
+</head>
+
+<body>
+    <!-- Inicio:  Header-->
+    <header>
+        <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
+            <div class="logo d-linea-bloque f-izquierda">
+                <img src="../imgs/logo.svg" alt="Logo">
+            </div>
+
+            <div class="acomodo-c-inferior f-izquierda">
+                <nav class="f-izquierda menu">
+                    <a href="panel-de-control-organizador-eventos.html"
+                        class="blanco-a--tipografia d-linea-bloque">Panel de control</a>
+                </nav>
+                <nav class="f-derecha">
+                    <a href="#" class="blanco-a--tipografia t-centro f-derecha d-linea-bloque" id="cerrar-sesion">Cerrar
+                        sesión</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Fin:  Header-->
+
+    <!-- Inicio:  Main-->
+    <main id="main">
+        <h1 class="verde-oscuro--tipografia t-centrado">Modificar evento</h1>
+
+        <form>
+            <!--<div>
+                <label for="txt_organizador_evento">Organizador de evento</label>
+                <input type="text" id="txt_organizador_evento">
+            </div>-->
+            <div>
+                <label for="txt_nombre_evento">Nombre del evento</label>
+                <input type="text" id="txt_nombre_evento">
+            </div>
+            <div>
+                <label for="txt_tipo_evento">Tipo del evento</label>
+                <select name="tipoevento" id="txt_tipo_evento"></select>
+            </div>
+            <div class="img-cloudinary">
+                
+                    <label for="txt_foto">Foto del evento</label>
+                
+                <div>
+                    <figure class="img-holder">
+                        <img src="../imgs/image-solid.svg" alt="" id="imgEvento">
+                    </figure>
+                </div>
+
+                <button type="button" id="btn_foto" class="btn btn--accion btn--positivo blanco--tipografia">Subir
+                    imagen</button>
+
+            </div>
+            <div>
+                <label for="txt_recinto_evento">Recinto del evento</label>
+                <select name="recintoevento" id="txt_recinto_evento"></select>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <label for="txt_fecha_evento">Agregar Fecha</label>
+                        <input id="txt_fecha_evento" type="date">
+                        <br>
+
+                        <label for="txt_fecha_evento">Hora Inicio</label>
+                        <select name="horainicio" id="txt_inicio_evento_h"></select>
+                        <select name="minutosinicio" id="txt_inicio_evento_m"></select>
+                        <br>
+                        <label for="txt_fecha_evento">Hora Final</label>
+                        <select name="horafinal" id="txt_final_evento_h"></select>
+                        <select name="minutosfinal" id="txt_final_evento_m"></select>
+
+                        <button id="btn_fecha" type="button"
+                            class="btn btn--accion btn--positivo blanco--tipografia">Agregar fecha a la lista</button>
+                    </div>
+                    <div>
+                        <p class="titulofechas">Lista de fechas agregadas (MM-DD-YYYY::Ih:Im::Fh:Fm)</p>
+                        <div class="fechas" id="fechas"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="txt_descripcion_evento">Descripción del evento</label>
+                <textarea id="txt_descripcion_evento"></textarea>
+            </div>
+            <div>
+                <label for="txt_entrada_evento">Costo entrada</label>
+                <input type="number" id="txt_entrada_evento">
+            </div>
+            <div>
+                <label for="txt_asistentes_evento">Asistentes esperados</label>
+                <input type="number" id="txt_asistentes_evento">
+            </div>
+            <div>
+                <label for="txt_limite_evento">Limite por cliente</label>
+                <input type="number" id="txt_limite_evento">
+            </div>
+            <div>
+                <div>
+                    <label for="txt_impuestos_evento">Impuestos</label>
+                    <select name="impuestosevento" id="txt_impuestos_evento"></select>
+                    <button id="btn_impuesto" type="button"
+                        class="btn btn--accion btn--positivo blanco--tipografia">Agregar impuesto a la lista</button>
+                </div>
+                <div>
+                    <p class="tituloimpuestos">Lista de impuestos agregados</p>
+                    <div class="impuestos" id="impuestos"></div>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <label for="txt_descuentos_evento">Descuentos</label>
+                    <select name="descuentosevento" id="txt_descuentos_evento"></select>
+                    <button id="btn_descuento" type="button"
+                        class="btn btn--accion btn--positivo blanco--tipografia">Agregar descuento a la lista</button>
+                </div>
+                <div>
+                    <p class="titulodescuentos">Lista de descuentos agregados</p>
+                    <div class="descuentos" id="descuentos"></div>
+                </div>
+            </div>
+
+            <button id="btn_modificar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Modificar
+                Evento</button>
+        </form>
+    </main>
+    <!-- Fin:  Main-->
+
+    <!-- Inicio:  Footer-->
+    <footer>
+        <div id="footer_inferior" class="bg-verde-oscuro--fondo">
+            <p class="blanco--tipografia t-centrado">
+                <small>
+                    <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
+                </small>
+            </p>
+        </div>
+    </footer>
+    <!-- Fin:  Footer-->
+
+    <!-- SweetAlet -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- Axios \\ Peticiones del front end al backend -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Ajustes generales -->
+    <script src="../js/ajustes.js"></script>
+
+
+    <!-- Cloudinary -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
+    <!-- Registrar -->
+    <script src="../js/validaciones.js"></script>
+    <script src="../js/registrar_evento/servicio-imagen.js"></script>
+    <script src="../js/registrar_evento/evento-servicio.js"></script>
+    <script src="../js/registrar_tipo_evento/tipo-evento-servicio.js"></script>
+    <script src="../js/registrar_evento/modificar-evento-controlador.js"></script>
+
+    <!-- cerrar sesion -->
+    <script src="../js/cerrar-sesion.js"></script>
+
+</body>
+
+</html>

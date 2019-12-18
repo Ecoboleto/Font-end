@@ -133,3 +133,59 @@ let obtener_evento_id = async(pid) => {
         console.log(error);
     }
 };
+
+
+let modificar_evento = async (idtp, tipo_evento, foto_evento, recinto_evento, descripcion_evento, entrada_evento, asistentes_evento, limite_evento, fechas, impuestos, descuentos, estado) => {
+    await axios(
+        {
+            method: 'post',
+            url: 'http://localhost:3000/api/modificar-evento',
+            responseType: 'json',
+            data: {
+                _id: idtp,
+                tipo_evento,
+                foto_evento,
+                recinto_evento,
+                descripcion_evento,
+                entrada_evento,
+                asistentes_evento,
+                limite_evento,
+                fechas,
+                impuestos,
+                descuentos,
+                estado: estado,
+            }
+
+        }
+    )
+        .then(function (res) {
+            if (res.data.resultado) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Cambio realizado con éxito',
+                    text: 'El tipo de evento ha sido almacenado',
+                    confirmButtonText: 'Entendido',
+                    onClose: function(){
+                        location.href = 'listar-eventos.html';
+                    }
+                });
+
+            } else {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'No se pudo registrar el tipo de evento, el nombre ya existe',
+                    confirmButtonText: 'Entendido'
+                });
+            }
+        })
+        .catch(function (error) {
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'No se puede conectar con el servidor',
+                confirmButtonText: 'Entendido'
+            });
+            console.log(error);
+
+        })
+};
