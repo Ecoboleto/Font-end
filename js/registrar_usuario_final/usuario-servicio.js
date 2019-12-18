@@ -84,3 +84,21 @@ let listar_usuarios_finales = async () => {
 
     return lista_usuarios_finales;
 };
+
+
+
+let obtener_cliente_id = async(_id) => {
+    try {
+ 
+        const response = await axios({
+            method: 'get',
+            params: { _id: _id },
+            url: `http://localhost:3000/api/listar-usuario-final-id`,
+            responseType: 'json'
+        });
+ 
+        return response.data.cliente;
+    } catch (error) {
+        console.log(error);
+    }
+};

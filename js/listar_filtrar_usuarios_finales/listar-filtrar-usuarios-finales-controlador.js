@@ -3,6 +3,7 @@
 
 const tbody = document.querySelector('#tbl-usuarios-finales tbody');
 const input_filtro = document.querySelector('#filtro');
+const a_info_usuario = document.querySelector('#perfil-usuario-final'); 
 
 
 
@@ -49,6 +50,11 @@ let llenar_tabla = async() => {
             celdaImagen.appendChild(avatar);
         
 
+            a_info_usuario.dataset._id = lista_usuarios_finales[i]['_id'];
+            a_info_usuario.addEventListener('click', function(){
+                sessionStorage.setItem('_idusuariofinal', this.dataset._id)
+                window.location.href = 'perfil-usuario-final.html'
+            })
         }
     };
 

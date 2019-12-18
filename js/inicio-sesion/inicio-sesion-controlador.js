@@ -52,7 +52,7 @@ const inicio_sesion = async () => {
                         window.localStorage.setItem('usuario_iniciado', JSON.stringify(resultado.datos));
                         window.localStorage.setItem('tipo_usuario', resultado.datos.tipo_usuario);
                         window.localStorage.setItem('usuario_id', resultado.datos._id);
-                        window.location = "/vistas/usuario-final-inicio.html";
+                        window.location.href = 'usuario-final-inicio.html';
                         break;
                     case 'administrador':
                         window.localStorage.setItem('usuario_iniciado', JSON.stringify(resultado.datos));

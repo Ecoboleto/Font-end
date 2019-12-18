@@ -72,61 +72,83 @@
 
             <div class="info-usuario">
 
-                <div>
-                    <label for="correo" class="correo">Correo electrónico</label>
-                    <input type="text" name="" id="txt_correo">
-                </div>
-                <div>
-                    <label for="primer-nombre" class="primer-nombre">Primer nombre</label>
-                    <input type="text" id="txt_primer-nombre">
-                </div>
-                <div>
-                    <label for="segundo-nombre" class="segundo-nombre">Segundo nombre</label>
-                    <input type="text" id="txt_segundo-nombre">
-                </div>
-                <div>
-                    <label for="primer-apellido" class="primer-apellido">Primer apellido</label>
-                    <input type="text" id="txt_primer-apellido">
-                </div>
-                <div>
-                    <label for="segundo-apellido" class="segundo-apellido">Segundo apellido</label>
-                    <input type="text" id="txt_segundo-apellido">
-                </div>
-                <div>
-                    <label for="fecha-nacimiento" class="fecha-nacimiento">Fecha de nacimiento</label>
-                    <input type="date" id="txt_fecha-nacimiento">
-                </div>
-                <form id="ubicationForm" onsubmit="return sendData();">
-                    <div class="data-container">
-                        <div class="form-row">
-                            <div class="form-desc">
-                                Provincia:
+                <form class="formulario">
+                    <div>
+                        <label for="correo" class="correo">Correo electrónico</label>
+                        <input type="text" name="" id="txt_correo">
+                    </div>
+                    <div>
+                        <label for="primer-nombre" class="primer-nombre">Primer nombre</label>
+                        <input type="text" id="txt_primer-nombre">
+                    </div>
+                    <div>
+                        <label for="segundo-nombre" class="segundo-nombre">Segundo nombre</label>
+                        <input type="text" id="txt_segundo-nombre">
+                    </div>
+                    <div>
+                        <label for="primer-apellido" class="primer-apellido">Primer apellido</label>
+                        <input type="text" id="txt_primer-apellido">
+                    </div>
+                    <div>
+                        <label for="segundo-apellido" class="segundo-apellido">Segundo apellido</label>
+                        <input type="text" id="txt_segundo-apellido">
+                    </div>
+                    <div>
+                        <label for="fecha-nacimiento" class="fecha-nacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="txt_fecha-nacimiento">
+                    </div>
+                    <form id="ubicationForm" onsubmit="return sendData();">
+                        <div class="data-container">
+                            <div class="form-row">
+                                <div class="form-desc">
+                                    Provincia:
+                                </div>
+                                <div class="form-val">
+                                    <select id="provincias" name="provincia" onchange="getCantones(this.value);">
+                                        <option>Seleccione una opción</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-val">
-                                <select id="provincias" name="provincia" onchange="getCantones(this.value);">
-                                </select>
+                            <div class="form-row canton">
+                                <div class="form-desc">
+                                    Cantón:
+                                </div>
+                                <div class="form-val">
+                                    <select id="cantones" name="canton" onchange="getDistritos(this.value);">
+                                        <option>Seleccione una opción</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row canton">
-                            <div class="form-desc">
-                                Cantón:
+                            <div class="form-row distrito">
+                                <div class="form-desc">
+                                    Distrito:
+                                </div>
+                                <div class="form-val">
+                                    <select id="distritos" name="distrito" onchange="distritoSelected();">
+                                        <option>Seleccione una opción</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-val">
-                                <select id="cantones" name="canton" onchange="getDistritos(this.value);">
-                                </select>
+                            
+                         </div>
+                            <div>
+                                <label for="genero">Género</label>
+                                <div>
+                                    <input type="radio" name="genero" class="txt_genero" value="Mujer"> <label
+                                        for="mujer">Mujer</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="genero" class="txt_genero" value="Hombre"><label
+                                        for="hombre">Hombre</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="genero" class="txt_genero" value="Otro"> <label
+                                        for="otro">Otro</label>
+                                </div>
+                                <button type="button" id="btn-editar">Actualizar información</button>
                             </div>
-                        </div>
-                        <div class="form-row distrito">
-                            <div class="form-desc">
-                                Distrito:
-                            </div>
-                            <div class="form-val">
-                                <select id="distritos" name="distrito" onchange="distritoSelected();">
-                                </select>
-                            </div>
-                        </div>
-
-
+                    </form>
+        
                     </div>
 
 
@@ -173,9 +195,14 @@
     <script src="../js/axios.js"></script>
     <script src="../js/validaciones.js"></script>
 
+    <script src="../js/registrar_usuario_final/usuario-servicio.js"></script>
+    <script src="../js/perfil-usuario-final/perfil-usuario-final-controlador.js"></script>
+    
     <!-- Mapa -->
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDFdc3wI-6hc1r1BNVE_XKwq25d1sXdLtk"></script>
     <script src="../js/mapa_index_ecoboleto.js"></script>
+
+    <script src="../js/cerrar-sesion.js"></script>
 </body>
 
 
