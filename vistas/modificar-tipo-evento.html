@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modificar tipo evento</title>
+
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+
+    <!-- Fontawesome local -->
+    <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/registrar-tipo-evento.css">
+</head>
+
+<body>
+    <!-- Inicio:  Header-->
+    <header>
+        <div id="cajon-inferior" class="bg-verde-oscuro--fondo d-flow-root">
+            <div class="logo d-linea-bloque f-izquierda">
+                <img src="../imgs/logo.svg" alt="Logo">
+            </div>
+
+            <div class="acomodo-c-inferior f-izquierda">
+                <nav class="f-izquierda menu">
+                    <a href="panel-de-control-administrador.html" class="blanco-a--tipografia d-linea-bloque">Panel de control</a>
+                </nav>
+                <nav class="f-derecha">
+                    <a href="#" class="blanco-a--tipografia t-centro f-derecha d-linea-bloque" id="cerrar-sesion">Cerrar sesión</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Fin:  Header-->
+
+    <!-- Inicio:  Main-->
+    <main id="main">
+        <h1 class="verde-oscuro--tipografia t-centrado">Modificar tipo evento</h1>
+
+        <form>
+            <div>
+                <label for="txt_nombre">Nombre tipo evento</label>
+                <input type="text" id="txt_tipo_evento">
+            </div>
+
+            <button id="btn_modificar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Modificar</button>
+        </form>
+    </main>
+    <!-- Fin:  Main-->
+
+    <!-- Inicio:  Footer-->
+    <footer>
+        <div id="footer_inferior" class="bg-verde-oscuro--fondo">
+            <p class="blanco--tipografia t-centrado">
+                <small>
+                    <span id="anno_footer"></span> &#169; EcoBoleto. Todos los derechos reservados
+                </small>
+            </p>
+        </div>
+    </footer>
+    <!-- Fin:  Footer-->
+
+    <!-- SweetAlet -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <!-- Axios \\ Peticiones del front end al backend -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Ajustes generales -->
+    <script src="../js/ajustes.js"></script>
+
+    <!-- cerrar sesion -->
+    <script src="../js/cerrar-sesion.js"></script>
+
+    <!-- Registrar -->
+    <script src="../js/registrar_tipo_evento/tipo-evento-servicio.js"></script>
+    <script src="../js/registrar_tipo_evento/modificar-tipo-evento-controlador.js"></script>
+</body>
+
+</html>
