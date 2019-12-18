@@ -3,7 +3,7 @@
 const tbody = document.querySelector('#tbl_evento tbody');
 const input_filtro = document.querySelector('#txt_filtro_organizador_eventos');
 let filtro_marcado = document.getElementsByName('filtro');
-
+let activar = document.createElement('button');
 let lista_organizadores;
 
 let llenarTabla = async () => {
@@ -18,23 +18,32 @@ let llenarTabla = async () => {
         let correo_electronico = lista_organizadores[i]['correo_electronico'].toLowerCase();
         let cedula = lista_organizadores[i]['cedula'];
         let modificar = document.createElement('button');
+        activar = document.createElement('button');
         let icono_modificar = '<i title="Modificar" class="fas fa-edit verde-oscuro-a--tipografia"></i>';
-
+        let icono_activar = '<i title="Modificar" class="fas fa-eye verde-oscuro-a--tipografia"></i>';
 
         modificar.classList.add('modificar');
         modificar.dataset._id = lista_organizadores[i]['_id'];
         modificar.innerHTML = icono_modificar;
-        modificar.addEventListener('click', function(){
+        modificar.addEventListener('click', function () {
             localStorage.setItem('_idorganizador', this.dataset._id);
             window.location.href = 'modificar-organizador-eventos.html';
+        });
+
+        activar.classList.add('modificar');
+        activar.id = 'activar';
+        activar.dataset._id = lista_organizadores[i]['_id'];
+        activar.innerHTML = icono_activar;
+        activar.addEventListener('click', function () {
+            localStorage.setItem('_idorganizador', this.dataset._id);
         });
 
         // console.log(modificar);
 
         if (lista_organizadores[i].tipo_usuario == 'organizador_evento') {
-            if (nombre_empresa.includes(filtro) 
-                || provincia.includes(filtro) 
-                || nombre_completo.includes(filtro) 
+            if (nombre_empresa.includes(filtro)
+                || provincia.includes(filtro)
+                || nombre_completo.includes(filtro)
                 || correo_electronico.includes(filtro)
                 || cedula.includes(filtro)
             ) {
@@ -47,7 +56,7 @@ let llenarTabla = async () => {
 
                 let estado;
 
-                if(lista_organizadores[i]['estado']){
+                if (lista_organizadores[i]['estado']) {
                     estado = 'Activo';
                 } else {
                     estado = 'Inactivo';
@@ -69,11 +78,39 @@ let llenarTabla = async () => {
                 fila.insertCell().innerText = lista_organizadores[i]['telefonos'];
                 fila.insertCell().innerText = lista_organizadores[i]['genero'];
                 fila.insertCell().innerText = estado;
+                fila.insertCell().appendChild(activar);
                 fila.insertCell().appendChild(modificar);
+                activar.addEventListener('click', activar_desactivar);
             }
         }
     };
 }
+
+const cambiar_estado_organizador = async (_id) => {
+    let organizador = await obtener_organizador_id(_id);
+    let estado_cambiar = organizador.estado;
+    
+    if(estado_cambiar){
+        estado_cambiar = false;
+    } else {
+        estado_cambiar = true;
+    }
+
+    modificar_organizador_eventos_estado(estado_cambiar);
+}
+
+const activar_desactivar = async () => {
+    // console.log(localStorage.getItem('_idorganizador'));
+
+    let _id = localStorage.getItem('_idorganizador');
+
+    if (_id) {
+        cambiar_estado_organizador(_id);
+        llenarTabla();
+    } else {
+        console.log('Seleccione un usuario para modificar');
+    }
+};
 
 
 llenarTabla();

@@ -117,3 +117,44 @@ let modificar_organizador_eventos = async (id, nombre_empresa, logo, nombre_come
         console.log(error);
     })
 };
+
+let modificar_organizador_eventos_estado = async (estado_cambiar) => {
+    await axios(
+        {
+            method: 'post',
+            url: 'http://localhost:3000/api/modificar-organizador-evento-estado',
+            responseType: 'json',
+            data: {
+                estado: estado_cambiar
+            }
+        }
+    ).then(function (res) {
+        // console.log(res.data.resultado);
+        
+        if (res.data.resultado) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Modificación realizada con éxito',
+                text: 'El organizador de eventos ha sido modificado',
+                confirmButtonText: 'Entendido',
+                onAfterClose: () => {
+                    window.location.href = "/vistas/listar-organizador-eventos.html";
+                }
+            });
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Modificación no se ha realizado con éxito',
+                text: 'El organizador de eventos no ha sido modificado',
+                confirmButtonText: 'Entendido'
+            });
+        }
+    }).catch(function (error) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'No se puede conectar con el servidor',
+            confirmButtonText: 'Entendido'
+        });
+        console.log(error);
+    })
+}
