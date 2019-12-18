@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/registrar-org-evento.css">
+    <link rel="stylesheet" href="../css/modificar-organizador-eventos.css">
 </head>
 
 <body>
@@ -92,7 +93,8 @@
                             <p>Provincia <span class="rojo--tipografia">*</span></p>
                         </div>
                         <div class="form-val f-izquierda">
-                            <select id="provincias" name="provincia" onchange="getCantones(this.value);"></select>
+                            <!-- <select id="provincias" name="provincia"></select> -->
+                            <input type="text" id="provincia" class="gris--tipografia edad"></input>
                         </div>
                     </div>
                     <div class="form-row canton d-flow-root">
@@ -100,9 +102,10 @@
                             <p>Cantón <span class="rojo--tipografia">*</span></p>
                         </div>
                         <div class="form-val f-izquierda">
-                            <select id="cantones" name="canton" onchange="getDistritos(this.value);">
+                            <!-- <select id="cantones" name="canton">
                                 <option value="0">Seleccione una opción</option>
-                            </select>
+                            </select> -->
+                            <input type="text" id="canton" class="gris--tipografia edad"></input>
                         </div>
                     </div>
                     <div class="form-row distrito d-flow-root">
@@ -110,9 +113,10 @@
                             <p>Distrito <span class="rojo--tipografia">*</span></p>
                         </div>
                         <div class="form-val f-izquierda">
-                            <select id="distritos" name="distrito" onchange="distritoSelected();">
+                            <!-- <select id="distritos" name="distrito">
                                 <option value="0">Seleccione una opción</option>
-                            </select>
+                            </select> -->
+                            <input type="text" id="distrito" class="gris--tipografia edad"></input>
                         </div>
                     </div>
                     <div>
@@ -138,7 +142,7 @@
                 <div>
                     <label for="txt_fecha_de_nacimiento">Fecha de nacimiento <span
                             class="rojo--tipografia">*</span></label>
-                    <input id="txt_fecha_de_nacimiento" type="date" onChange="calc_edad(event)">
+                    <input id="txt_fecha_de_nacimiento" type="date">
                 </div>
                 <div>
                     <label for="txt_edad">Edad</label>
@@ -149,7 +153,7 @@
                     <input type="text" id="txt_telefono" class="txt_telefono" placeholder="1234-5678">
                     <button type="button" class="btn btn--inactivo crema--tipografia" id="agregar_telefono">Agregar
                         teléfono</button>
-                    <ul id="ul-lista-telefono"></ul>
+                    <ul id="ul-lista-telefono" class="d-flow-root"></ul>
                 </div>
                 <div id="genero_contenedor">
                     <p>Género <span class="rojo--tipografia">*</span></p>

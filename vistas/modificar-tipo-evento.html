@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listar tipo evento</title>
+    <title>Modificar tipo evento</title>
 
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/listar-tipo-evento.css">
+    <link rel="stylesheet" href="../css/registrar-tipo-evento.css">
 </head>
 
 <body>
@@ -43,32 +43,16 @@
 
     <!-- Inicio:  Main-->
     <main id="main">
-        <h1 class="verde-oscuro--tipografia t-centrado">Listar tipo evento</h1>
+        <h1 class="verde-oscuro--tipografia t-centrado">Modificar tipo evento</h1>
 
-        <section class="info">
-            <div class="filtro">
-                <label for="txt_filtro">Filtrar tipo evento por nombre:</label>
-                <input type="text" id="txt_filtro_tipo_evento">
+        <form>
+            <div>
+                <label for="txt_nombre">Nombre tipo evento</label>
+                <input type="text" id="txt_tipo_evento">
             </div>
 
-            <div class="tabla">
-                <table id="tbl_tipo_evento">
-                    <thead>
-                        <tr>
-                            <th>Nombre tipo evento</th>
-                            <th>Estado</th>
-                            <th>Editar</th>
-                            <th>Cambiar estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-
+            <button id="btn_modificar" type="button" class="btn btn--accion btn--positivo blanco--tipografia">Modificar</button>
+        </form>
     </main>
     <!-- Fin:  Main-->
 
@@ -93,11 +77,12 @@
     <!-- Ajustes generales -->
     <script src="../js/ajustes.js"></script>
 
+    <!-- cerrar sesion -->
+    <script src="../js/cerrar-sesion.js"></script>
+
     <!-- Registrar -->
     <script src="../js/registrar_tipo_evento/tipo-evento-servicio.js"></script>
-    <script src="../js/registrar_tipo_evento/listar-tipo-evento-controlador.js"></script>
-
-    
+    <script src="../js/registrar_tipo_evento/modificar-tipo-evento-controlador.js"></script>
 </body>
 
 </html>

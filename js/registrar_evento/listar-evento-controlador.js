@@ -70,6 +70,7 @@ let llenarTabla = async () => {
         if(nombre.includes(filtro)) {
         let fila = tbody.insertRow();
         
+        fila.insertCell().innerHTML = lista_eventos[i]['organizador_evento'];
         fila.insertCell().innerHTML = lista_eventos[i]['nombre_evento'];
         fila.insertCell().innerHTML = lista_eventos[i]['tipo_evento'];
         fila.insertCell().innerHTML = lista_eventos[i]['recinto_evento'];

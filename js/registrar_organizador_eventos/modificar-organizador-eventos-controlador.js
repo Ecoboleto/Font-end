@@ -10,9 +10,9 @@ const input_cedula = document.querySelector('#txt_ced');
 //Datos
 const input_nombre_comercial = document.querySelector('#txt_nombre_comercial');
 const input_annos_experiencia = document.querySelector('#txt_annos_experiencia');
-const slc_provincia = document.querySelector('#provincias');
-const slc_canton = document.querySelector('#cantones');
-const slc_distrito = document.querySelector('#distritos');
+const slc_provincia = document.querySelector('#provincia');
+const slc_canton = document.querySelector('#canton');
+const slc_distrito = document.querySelector('#distrito');
 const input_direccion_exacta = document.querySelector('#txt_direccion_exacta');
 //Contacto Asociado
 const input_nombre_completo = document.querySelector('#txt_nombre_completo');
@@ -28,6 +28,8 @@ const rbt_sin_especificar = document.querySelector('#txt_sin_especificar');
 const rbt_otro = document.querySelector('#txt_otro');
 const input_otro_respuesta = document.querySelector('#txt_otro_respuesta');
 const genero_contenedor = document.querySelector('#genero_contenedor');
+let ul_lista_telefono = document.querySelector('#ul-lista-telefono');
+const ul_telefonos = document.querySelectorAll('#ul-lista-telefono li');
 let telefonos = [];
 let genero,
     cedula,
@@ -35,23 +37,30 @@ let genero,
 
 const btn_registrar = document.querySelector('#btn_registrar');
 
-const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_comercial, pAnnos_experiencia, pProvincia, pCanton, pDistrito, pDireccion_exacta, pNombre_completo, pCorreo_electronico, pfecha_de_nacimiento, pEdad, pGenero) => {
+rbt_fisica.disabled = true;
+rbt_juridica.disabled = true;
+input_cedula.disabled = true;
+input_fecha_de_nacimiento.disabled = true;
+output_edad.disabled = true;
+slc_provincia.disabled = true;
+slc_canton.disabled = true;
+slc_distrito.disabled = true;
+
+
+let _idorganizador = localStorage.getItem('_idorganizador');
+// console.log(_idorganizador);
+
+const validar_formulario = (pNombre_empresa, pLogo, pNombre_comercial, pDireccion_exacta, pNombre_completo, pCorreo_electronico, pGenero) => {
     let error = true;
 
     //removemos la clase error  
     input_nombre_empresa.classList.remove('input--error');
     input_logo.classList.remove('input--error');
-    input_cedula.classList.remove('input--error');
     input_nombre_comercial.classList.remove('input--error');
     input_annos_experiencia.classList.remove('input--error');
-    slc_provincia.classList.remove('input--error');
-    slc_canton.classList.remove('input--error');
-    slc_distrito.classList.remove('input--error');
     input_direccion_exacta.classList.remove('input--error');
     input_nombre_completo.classList.remove('input--error');
     input_correoelectronico.classList.remove('input--error');
-    input_fecha_de_nacimiento.classList.remove('input--error');
-    output_edad.classList.remove('input--error');
     input_agregar_telefono.classList.remove('input--error');
     input_otro_respuesta.classList.remove('input--error');
     genero_contenedor.classList.remove('input--error');
@@ -66,29 +75,9 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
         input_logo.classList.add('input--error');
     }
 
-    if (!validar_numeros(pCedula_empresa)) {
-        error = false;
-        input_cedula.classList.add('input--error');
-    }
-
     if (!validar_vacio_null(pNombre_comercial)) {
         error = false;
         input_nombre_comercial.classList.add('input--error');
-    }
-
-    if (pProvincia == 0) {
-        error = false;
-        slc_provincia.classList.add('input--error');
-    }
-
-    if (pCanton == 0) {
-        error = false;
-        slc_canton.classList.add('input--error');
-    }
-
-    if (pDistrito == 0) {
-        error = false;
-        slc_distrito.classList.add('input--error');
     }
 
     if (!validar_numeros_letros(pDireccion_exacta)) {
@@ -106,16 +95,10 @@ const validar_formulario = (pNombre_empresa, pLogo, pCedula_empresa, pNombre_com
         input_correoelectronico.classList.add('input--error');
     }
 
-    if (!validar_edad(pEdad)) {
-        error = false;
-        input_fecha_de_nacimiento.classList.add('input--error');
-        output_edad.classList.add('input--error');
-    }
-
-    if (!validar_vacio_null(telefonos)) {
-        error = false;
-        input_agregar_telefono.classList.add('input--error');
-    }
+    // if (!validar_vacio_null(telefonos)) {
+    //     error = false;
+    //     input_agregar_telefono.classList.add('input--error');
+    // }
 
     if (pGenero == undefined) {
         error = false;
@@ -136,45 +119,6 @@ const validar_genero = (e) => {
     return genero;
 };
 
-const validar_cedula_empresa = (e) => {
-    let tipo_cedula;
-    cedula = e.srcElement.id;
-
-    input_cedula.removeAttribute('minlength');
-    input_cedula.removeAttribute('maxlength');
-    input_cedula.removeAttribute('size');
-    input_cedula.removeAttribute('placeholder');
-
-    if (cedula === 'txt_fisica') {
-        input_cedula.setAttribute('minlength', '1');
-        input_cedula.setAttribute('maxlength', '9');
-        input_cedula.setAttribute('size', '9');
-        input_cedula.setAttribute('placeholder', 123456789);
-    } else if (cedula === 'txt_juridica') {
-        input_cedula.setAttribute('minlength', '1');
-        input_cedula.setAttribute('maxlength', '10');
-        input_cedula.setAttribute('size', '10');
-        input_cedula.setAttribute('placeholder', 1234567890);
-    };
-
-    tipo_cedula = cedula;
-    return tipo_cedula;
-};
-
-//e equivale a event para escuchar el evento de cambio que se produce en el DOM
-//viene una acción desde el HTML en el campo de input de la fecha de nacimiento
-const calc_edad = (e) => {
-    // console.log(e);
-    // console.log(target);
-    // console.log(e.target.value);
-    edad = getEdad(e.target.value);
-    output_edad.classList.remove('gris--tipografia');
-    output_edad.classList.add('gris-oscuro--tipografia');
-    output_edad.classList.add('edad_numero'); //Esta clase está en registrar org eventos .css
-    output_edad.innerHTML = edad;
-};
-
-//Elimina un teléfono de la lista
 const eliminar_telefono = () => {
     const li = event.srcElement.parentNode;
     li.remove();
@@ -183,7 +127,6 @@ const eliminar_telefono = () => {
 //Obtien los telefonos de la etiqueta "#ul-lista-telefono>li" del atributo dato-telefono y 
 //los retorna en un array
 const obtener_telefonos = () => {
-    const ul_telefonos = document.querySelectorAll('#ul-lista-telefono li');
     telefonos = [];
     ul_telefonos.forEach(li => telefonos.push(li.getAttribute('dato-telefono')));
 };
@@ -218,8 +161,8 @@ const agregar_telefono_lista = () => {
             });
         } else {
             const li = document.createElement("li");
-            li.innerHTML = `${telefono}<span class="close" onclick="eliminar_telefono(this)">×</span>`;;
-            li.setAttribute("dato-telefono", telefono)
+            li.innerHTML = `${telefono}<span class="close" onclick="eliminar_telefono(this)">×</span>`;
+            li.setAttribute("dato-telefono", telefono);
             ul_lista_telefono.appendChild(li);
 
             //limpiemos el el elemento text-agregar-telefono
@@ -229,47 +172,73 @@ const agregar_telefono_lista = () => {
     }
 };
 
+const calc_edad = (e) => {
+    edad = getEdad(e);
+    output_edad.classList.remove('gris--tipografia');
+    output_edad.classList.add('gris-oscuro--tipografia');
+    output_edad.classList.add('edad_numero'); //Esta clase está en registrar org eventos .css
+    output_edad.innerHTML = edad;
+};
+
+const llenarFormulario = async () => {
+    let organizador = await obtener_organizador_id(_idorganizador);
+    // console.log(organizador);
+
+    let telefonos = organizador['telefonos'];
+    let genero = organizador['genero'];
+    let tipo_cedula = organizador['tipo_cedula'];
+
+    input_nombre_empresa.value = organizador['nombre_empresa'];
+    input_logo.src = organizador['log'];
+    if(tipo_cedula == 'Física'){
+        rbt_fisica.checked = true;
+    } else {
+        rbt_juridica.checked = true;
+    };
+    input_cedula.value = organizador['cedula'];
+    input_nombre_comercial.value = organizador['nombre_comercial'];
+    input_annos_experiencia.value = organizador['anos_experiencia'];
+    slc_provincia.value = organizador['provincia'];
+    slc_canton.value = organizador['canton'];
+    slc_distrito.value = organizador['distrito'];
+    input_direccion_exacta.value = organizador['direccion_exacta'];
+    input_nombre_completo.value = organizador['nombre_completo'];
+    input_correoelectronico.value = organizador['correo_electronico'];
+    input_fecha_de_nacimiento.value = organizador['fecha'].substr(0,10);
+    
+    window.onload = function(){
+        calc_edad(input_fecha_de_nacimiento.value);
+    };
+
+    ul_lista_telefono.innerHTML = '<li>' + telefonos + '<span class="close" onclick="eliminar_telefono(this)">×</span></li>';
+    if(genero == 'Masculino'){
+        rbt_masculino.checked = true;
+    } else if (genero == 'Femenino'){
+        rbt_femenino.checked = true;
+    } else if (genero == true){
+        rbt_sin_especificar.checked = true;
+    } else {
+        rbt_otro.checked = true;
+        // input_otro_respuesta.value = organizador['genero_otro'];
+    }
+};
+
 const obtener_datos = () => {
     obtener_telefonos();
     let nombre_empresa = input_nombre_empresa.value.trim();
     let logo = input_logo.src;
-    let tipo_cedula;
-
-    if(validar_cedula_empresa == 'txt_fisica'){
-        tipo_cedula = 'Física';
-    } else {
-        tipo_cedula = 'Jurídica';
-    }
-
-    let cedula_empresa = input_cedula.value.trim();
     let nombre_comercial = input_nombre_comercial.value.trim();
     let annos_experiencia = Number(input_annos_experiencia.value.trim());
-    let provincia = slc_provincia.options[slc_provincia.selectedIndex].text;
-    let canton = slc_canton.options[slc_canton.selectedIndex].text;
-    let distrito = slc_distrito.options[slc_distrito.selectedIndex].text;
     let direccion_exacta = input_direccion_exacta.value.trim();
     let nombre_completo = input_nombre_completo.value.trim();
     let correo_electronico = input_correoelectronico.value.trim();
-    let fecha_de_nacimiento = input_fecha_de_nacimiento.value;
     let genero_respuesta = genero;
+    console.log(telefonos);
+    
     let aTelefonos = telefonos;
     
 
-    if (canton == undefined || distrito == undefined) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Recuerde que debe de verificar que todos los campos esten completos',
-            text: 'Por favor revise los campos en rojo',
-            confirmButtonText: 'Entendido'
-        });
-    } else if (edad < 18) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Tiene que ser mayor de edad para registrarse, favor verificar la fecha de nacimiento',
-            text: 'Por favor revise los campos en rojo',
-            confirmButtonText: 'Entendido'
-        });
-    } else if (!validar_formulario(nombre_empresa, logo, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_de_nacimiento, edad, genero_respuesta)) {
+    if(!validar_formulario(nombre_empresa, logo, nombre_comercial, direccion_exacta, nombre_completo, correo_electronico, genero_respuesta)) {
         Swal.fire({
             icon: 'warning',
             title: 'Algunos de los campos se encuentran con valores incorrectos o en blanco',
@@ -281,17 +250,20 @@ const obtener_datos = () => {
             genero_respuesta = input_otro_respuesta.value;
         };
 
-        registrar_organizador_eventos(nombre_empresa, logo, tipo_cedula, cedula_empresa, nombre_comercial, annos_experiencia, provincia, canton, distrito, direccion_exacta, nombre_completo, correo_electronico, fecha_de_nacimiento, genero_respuesta, aTelefonos);
-
+        modificar_organizador_eventos(_idorganizador, nombre_empresa, logo, nombre_comercial, annos_experiencia, direccion_exacta, nombre_completo, correo_electronico, genero_respuesta, aTelefonos);
     }
 };
 
-//Cedula
-rbt_fisica.addEventListener('click', validar_cedula_empresa);
-rbt_juridica.addEventListener('click', validar_cedula_empresa);
+if (_idorganizador) {
+    llenarFormulario();
+} else {
+    console.log('Seleccione un usuario para modificar');
+}
 
 //Agregar Telefono
 btn_agregar_telefono.addEventListener('click', agregar_telefono_lista);
+
+btn_registrar.addEventListener('click', obtener_datos);
 
 //Genero
 rbt_masculino.addEventListener('click', validar_genero);
@@ -299,5 +271,4 @@ rbt_femenino.addEventListener('click', validar_genero);
 rbt_sin_especificar.addEventListener('click', validar_genero);
 rbt_otro.addEventListener('click', validar_genero);
 
-//Registrar
-btn_registrar.addEventListener('click', obtener_datos);
+obtener_telefonos();
