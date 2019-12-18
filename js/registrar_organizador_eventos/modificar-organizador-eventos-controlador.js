@@ -31,7 +31,7 @@ const genero_contenedor = document.querySelector('#genero_contenedor');
 let ul_lista_telefono = document.querySelector('#ul-lista-telefono');
 const ul_telefonos = document.querySelectorAll('#ul-lista-telefono li');
 let telefonos = [];
-let genero,
+let genero_registrar,
     cedula,
     edad;
 
@@ -211,15 +211,19 @@ const llenarFormulario = async () => {
     };
 
     ul_lista_telefono.innerHTML = '<li>' + telefonos + '<span class="close" onclick="eliminar_telefono(this)">×</span></li>';
+    
     if(genero == 'Masculino'){
         rbt_masculino.checked = true;
+        genero_registrar = 'Masculino';
     } else if (genero == 'Femenino'){
         rbt_femenino.checked = true;
-    } else if (genero == true){
+        genero_registrar = 'Femenino';
+    } else if (genero == 'Prefiero no especificar'){
         rbt_sin_especificar.checked = true;
+        genero_registrar = 'Prefiero no especificar';
     } else {
         rbt_otro.checked = true;
-        // input_otro_respuesta.value = organizador['genero_otro'];
+        genero_registrar = 'Otro';
     }
 };
 
@@ -232,7 +236,7 @@ const obtener_datos = () => {
     let direccion_exacta = input_direccion_exacta.value.trim();
     let nombre_completo = input_nombre_completo.value.trim();
     let correo_electronico = input_correoelectronico.value.trim();
-    let genero_respuesta = genero;
+    let genero_respuesta = genero_registrar;
     console.log(telefonos);
     
     let aTelefonos = telefonos;
