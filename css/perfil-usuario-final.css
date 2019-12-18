@@ -14,3 +14,12 @@
 #carrito{
     margin-right: 20px;
 }
+
+.misTarjetas{
+    padding: 12px 10px;
+}
+
+.mis-tarjetas--padre{
+    width: 20%;
+    text-align: center;
+}
