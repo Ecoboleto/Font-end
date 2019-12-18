@@ -4,7 +4,7 @@ const tbody = document.querySelector('#tbl_evento tbody');
 const input_filtro = document.querySelector('#txt_filtro_evento')
 let lista_eventos;
 
-let org = localStorage.getItem('correo');
+let org = localStorage.getItem('correo_usuario');
 
 console.log(org);
 
@@ -14,7 +14,7 @@ let llenarTabla = async () => {
     tbody.innerHTML = '';
     for (let i = 0; i < lista_eventos.length; i++) {
         let nombre = lista_eventos[i]['nombre_evento'].toLowerCase();
-        if(nombre.includes(filtro)) {
+        if(nombre.includes(filtro) && lista_eventos[i]['organizador_evento'] == org) {
         let fila = tbody.insertRow();
         
         fila.insertCell().innerHTML = lista_eventos[i]['organizador_evento'];
