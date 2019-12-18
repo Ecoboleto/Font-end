@@ -9,6 +9,8 @@
 
 .card-usuario .card-hijo{
     float: left;
+    margin-left: 22px;
+    margin-top: 60px;
 }
 
 #carrito{
@@ -22,4 +24,47 @@
 .mis-tarjetas--padre{
     width: 20%;
     text-align: center;
+}
+
+.formulario{
+    color: #ffffff;
+    margin-top: 3px;
+    margin-left: 40%;
+    
+}
+
+.formulario .info{
+    padding-bottom: 2%;
+}
+
+#btn-guardarImagen {
+    padding: 12px 8px 12px 8px;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #2EB872;
+    border: 1px solid #2EB872;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#btn-editar{
+    margin-top: -20%;
+    margin-left: 50%;
+    padding: 12px 8px 12px 8px;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #2EB872;
+    border: 1px solid #2EB872;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.a-tarjetas{
+    margin-top: 20%;
+    padding: 10px 8px 10px 8px;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #2EB872;
+    border: 1px solid #2EB872;
+    font-size: 16px;
 }
