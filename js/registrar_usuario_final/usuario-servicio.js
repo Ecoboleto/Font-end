@@ -112,6 +112,7 @@ let modificar_usuario_final = async (primer_nombre, segundo_nombre, primer_apell
         responseType: 'json',
         data: {
             
+            idusuariofinal: idusuariofinal,
             primer_nombre: primer_nombre,
             segundo_nombre: segundo_nombre,
             primer_apellido: primer_apellido,
@@ -122,7 +123,7 @@ let modificar_usuario_final = async (primer_nombre, segundo_nombre, primer_apell
             canton: canton,
             distrito: distrito,
             genero: genero,
-            avatar: avatar
+            avatar: avatar 
         }
     }
     ).then(function (res) {
@@ -132,6 +133,69 @@ let modificar_usuario_final = async (primer_nombre, segundo_nombre, primer_apell
                 title: 'Información actualizada con éxito',
                 text: 'La información ha sido modificada',
                 confirmButtonText: 'Entendido'
+                
+            })
+        } 
+    }).catch(function (error) {
+        
+        Swal.fire({
+            icon: 'warning',
+            title: 'No se puede conectar con el servidor',
+            confirmButtonText: 'Entendido'
+        });
+        console.log(error);
+    });
+};
+
+let habilitar_usuario_final = async () => {
+
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/habilitar-usuarios-finales',
+        responseType: 'json',
+        data: {
+              idusuariofinal: idusuariofinal
+             }
+    }
+    ).then(function (res) {
+        if (res.data.resultado) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Información actualizada con éxito',
+                text: 'La información ha sido modificada',
+                confirmButtonText: 'Entendido'
+                
+            })
+        } 
+    }).catch(function (error) {
+        
+        Swal.fire({
+            icon: 'warning',
+            title: 'No se puede conectar con el servidor',
+            confirmButtonText: 'Entendido'
+        });
+        console.log(error);
+    });
+};
+
+let deshabilitar_usuario_final = async () => {
+
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/deshabilitar-usuarios-finales',
+        responseType: 'json',
+        data: {
+              idusuariofinal: idusuariofinal
+             }
+    }
+    ).then(function (res) {
+        if (res.data.resultado) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Información actualizada con éxito',
+                text: 'La información ha sido modificada',
+                confirmButtonText: 'Entendido'
+                
             })
         } 
     }).catch(function (error) {

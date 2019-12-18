@@ -92,17 +92,11 @@ let obtener_datos = () => {
     } else {
         try {
 
-            modificar_usuario_final(primer_nombre, segundo_nombre, primer_apellido,
+            modificar_usuario_final(idusuariofinal,primer_nombre, segundo_nombre, primer_apellido,
                 segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar);
 
-                
-             window.location.reload();
-
-
-        } catch (error) {
-
-          
-        
+                window.location.reload();
+            } catch (error) {    
         }
     }
 };

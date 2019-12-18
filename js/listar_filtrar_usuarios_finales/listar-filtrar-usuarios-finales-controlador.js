@@ -3,9 +3,7 @@
 
 const tbody = document.querySelector('#tbl-usuarios-finales tbody');
 const input_filtro = document.querySelector('#filtro');
-const a_info_usuario = document.querySelector('#perfil-usuario-final'); 
-
-
+ 
 
 
 let llenar_tabla = async() => {
@@ -19,7 +17,7 @@ let llenar_tabla = async() => {
     for (let i = 0; i < lista_usuarios_finales.length; i++) {
         let nombre = lista_usuarios_finales[i]['primer_nombre'].toLowerCase();
         let correo = lista_usuarios_finales[i]['correo_electronico'].toLowerCase();
-        let tipo_usuario = lista_usuarios_finales[i]['tipo_usuario'];
+       
         if ((nombre.includes(filtro) || correo.includes(filtro))  ) {
 
             let fila = tbody.insertRow();
@@ -34,9 +32,37 @@ let llenar_tabla = async() => {
             fila.insertCell().innerHTML = lista_usuarios_finales[i]['provincia']
             fila.insertCell().innerHTML = lista_usuarios_finales[i]['canton']
             fila.insertCell().innerHTML = lista_usuarios_finales[i]['distrito']
+            fila.insertCell().innerHTML = lista_usuarios_finales[i]['estado']
             fila.insertCell().innerHTML = lista_usuarios_finales[i]['genero']
             
+            
             let celdaImagen = fila.insertCell();
+
+            let btn_habilitar = document.createElement('button');
+            btn_habilitar.innerHTML = '<i class="fas fa-eye"></i>';
+            btn_habilitar.dataset._id = lista_usuarios_finales[i]['_id'];
+
+            btn_habilitar.addEventListener('click', function(){
+                localStorage.setItem('usuario_id', this.dataset._id)
+
+                habilitar_usuario_final();
+            });
+
+            fila.insertCell().appendChild(btn_habilitar);
+
+
+
+            let btn_deshabilitar = document.createElement('button'); 
+            btn_deshabilitar.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            btn_deshabilitar.dataset._id = lista_usuarios_finales[i]['_id'];
+
+            btn_deshabilitar.addEventListener('click', function(){
+                localStorage.setItem('usuario_id', this.dataset._id)
+
+                deshabilitar_usuario_final();
+            });
+              fila.insertCell().appendChild(btn_deshabilitar);
+
 
 
             let avatar = document.createElement('img'); 
@@ -50,11 +76,12 @@ let llenar_tabla = async() => {
             celdaImagen.appendChild(avatar);
         
 
-            a_info_usuario.dataset._id = lista_usuarios_finales[i]['_id'];
-            a_info_usuario.addEventListener('click', function(){
-                sessionStorage.setItem('_idusuariofinal', this.dataset._id)
-                window.location.href = 'perfil-usuario-final.html'
-            })
+            // const btn_habilitar = document.createElement('button');
+            // btn_habilitar.type = 'button';
+            // btn_habilitar.innerHTML = '<i class="fas fa-edit"></i>';
+            // btn_habilitar.dataset._id = usuario._id;
+        
+            // fila.insertCell().appendChild(btn_habilitar);
         }
     };
 
