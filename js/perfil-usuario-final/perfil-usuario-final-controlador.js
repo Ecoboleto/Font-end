@@ -1,6 +1,7 @@
 'use strict';
 
 const input_correo = document.querySelector('#txt_correo');
+const input_contrasenna = document.querySelector('#txt_contrasenna')
 const input_primer_nombre = document.querySelector('#txt_primer-nombre');
 const input_segundo_nombre = document.querySelector('#txt_segundo-nombre');
 const input_primer_apellido = document.querySelector('#txt_primer-apellido');
@@ -36,6 +37,7 @@ let llenarinformacion = async() => {
 
 
     avatar_usuario.src = usuariofinal['avatar'];
+    input_contrasenna.value = usuariofinal['contrasenna'];
     input_correo.value = usuariofinal['correo_electronico'];
     input_primer_nombre.value = usuariofinal['primer_nombre'];
     input_segundo_nombre.value = usuariofinal['segundo_nombre'];
@@ -95,7 +97,7 @@ let obtener_datos = () => {
             modificar_usuario_final(idusuariofinal,primer_nombre, segundo_nombre, primer_apellido,
                 segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar);
 
-                window.location.reload();
+                
             } catch (error) {    
         }
     }

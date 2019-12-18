@@ -104,6 +104,8 @@ let obtener_cliente_id = async(_id) => {
 let modificar_usuario_final = async (idusuariofinal,primer_nombre, segundo_nombre, primer_apellido,
     segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar) => {
 
+        console.log(idusuariofinal,primer_nombre, segundo_nombre, primer_apellido,
+            segundo_apellido, fecha_nacimiento, edad, provincia, canton, distrito, genero, avatar);
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/modificar-usuarios-finales',
@@ -122,6 +124,7 @@ let modificar_usuario_final = async (idusuariofinal,primer_nombre, segundo_nombr
             distrito: distrito,
             genero: genero,
             avatar: avatar 
+            
         }
     }
     ).then(function (res) {
@@ -132,7 +135,9 @@ let modificar_usuario_final = async (idusuariofinal,primer_nombre, segundo_nombr
                 text: 'La información ha sido modificada',
                 confirmButtonText: 'Entendido'
                 
-            })
+            }).then(function(){
+                window.location.href = '../vistas/perfil-usuario-final.html';
+            });
         } 
     }).catch(function (error) {
         
