@@ -61,7 +61,8 @@ const obtenerTipoEvento = () => {
     let tipos = [];
     
     for (let i = 0; i < 5; i++) {
-        tipos.push(lista_tipos_evento[i].getAttribute('tipo_evento'));
+        //tipos.push(lista_tipos_evento[i].getAttribute('tipo_evento'));
+        tipos.push(lista_tipos_evento[i]);
     } 
 
     return tipos;
