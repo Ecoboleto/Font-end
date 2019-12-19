@@ -44,21 +44,22 @@ const listar_sin_filtro = async () => {
             fila.insertCell().innerHTML = recinto.capacidad;
             fila.insertCell().innerHTML = recinto.encargado_asociado_id.nombre_completo;
 
-            const btn_editar = document.createElement('button');
-            btn_editar.type = 'button';
-            btn_editar.innerHTML = '<i class="fas fa-edit"></i> Editar';
-            btn_editar.dataset._id = recinto._id;
-            btn_editar.addEventListener("click", function () {
-                window.localStorage.setItem('recinto_editar', this.dataset._id);
+            if (window.localStorage.getItem('tipo_usuario') != 'administrador') {
+                const btn_editar = document.createElement('button');
+                btn_editar.type = 'button';
+                btn_editar.innerHTML = '<i class="fas fa-edit verde-oscuro-a--tipografia"></i>';
+                btn_editar.dataset._id = recinto._id;
+                btn_editar.addEventListener("click", function () {
+                    window.localStorage.setItem('recinto_editar', this.dataset._id);
 
-                if (window.localStorage.getItem('tipo_usuario') == 'administrador') {
-                    window.location = "modificar-recinto-admin.html";
-                } else {
-                    window.location = "modificar-recinto.html";
-                }
-            });
-
-            fila.insertCell().appendChild(btn_editar);
+                    if (window.localStorage.getItem('tipo_usuario') == 'administrador') {
+                        window.location = "modificar-recinto-admin.html";
+                    } else {
+                        window.location = "modificar-recinto.html";
+                    }
+                });
+                fila.insertCell().appendChild(btn_editar);
+            }           
         });
     } else {
         Swal.fire({
@@ -122,21 +123,22 @@ let listar_con_filtro = async () => {
                 fila.insertCell().innerHTML = recinto.capacidad;
                 fila.insertCell().innerHTML = recinto.encargado_asociado_id.nombre_completo;
 
-                const btn_editar = document.createElement('button');
-                btn_editar.type = 'button';
-                btn_editar.innerHTML = '<i class="fas fa-edit"></i> Editar';
-                btn_editar.dataset._id = recinto._id;
-                btn_editar.addEventListener("click", function () {
-                    window.localStorage.setItem('recinto_editar', this.dataset._id);
+                if (window.localStorage.getItem('tipo_usuario') != 'administrador') {
+                    const btn_editar = document.createElement('button');
+                    btn_editar.type = 'button';
+                    btn_editar.innerHTML = '<i class="fas fa-edit verde-oscuro-a--tipografia"></i>';
+                    btn_editar.dataset._id = recinto._id;
+                    btn_editar.addEventListener("click", function () {
+                        window.localStorage.setItem('recinto_editar', this.dataset._id);
 
-                    if (window.localStorage.getItem('tipo_usuario') == 'administrador') {
-                        window.location = "modificar-recinto-admin.html";
-                    } else {
-                        window.location = "modificar-recinto.html";
-                    }
-                });
-
-                fila.insertCell().appendChild(btn_editar);
+                        if (window.localStorage.getItem('tipo_usuario') == 'administrador') {
+                            window.location = "modificar-recinto-admin.html";
+                        } else {
+                            window.location = "modificar-recinto.html";
+                        }
+                    });
+                    fila.insertCell().appendChild(btn_editar);
+                }                
             }
         });
     } else {
@@ -229,13 +231,13 @@ const crear_Opciones_encargado_recinto = (datos) => {
     return html;
 };
 
-const localizacion_aplicar = () =>{
-      let valor = event.srcElement.value;
-      if(valor == "1"){
+const localizacion_aplicar = () => {
+    let valor = event.srcElement.value;
+    if (valor == "1") {
         sl_provincia.disabled = false;
         sl_canton.disabled = true;
         sl_distrito.disabled = true;
-      }else{
+    } else {
         sl_canton.selectedIndex = 0;
         sl_provincia.selectedIndex = 0;
         sl_distrito.selectedIndex = 0;
@@ -243,7 +245,7 @@ const localizacion_aplicar = () =>{
         sl_provincia.disabled = true;
         sl_canton.disabled = true;
         sl_distrito.disabled = true;
-      }
+    }
 };
 
 

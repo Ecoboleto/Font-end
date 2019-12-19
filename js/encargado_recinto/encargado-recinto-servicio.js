@@ -9,7 +9,7 @@ const registrar_encargado_recinto = async (nombre_completo, correo_electronico, 
     return resuldados.data;
 };
 
-const listar__encargado_recinto = async () => {
+const listar_encargado_recinto = async () => {
     let resuldados;
     resuldados = await axios.get(`${url_base}/listar-encargados-recinto`);
     return resuldados.data;

@@ -21,7 +21,7 @@ const listar_sin_filtro = async () => {
     let resuldatos;
     tbody_table.innerHTML = '';
     //Obtenemos los datos
-    await listar__encargado_recinto().then(res => { resuldatos = res });
+    await listar_encargado_recinto().then(res => { resuldatos = res });
     if (resuldatos.estado) {
         resuldatos.datos.forEach(encargados => {
             let fila = tbody_table.insertRow();
@@ -34,7 +34,7 @@ const listar_sin_filtro = async () => {
 
             const btn_editar = document.createElement('button');
             btn_editar.type = 'button';
-            btn_editar.innerHTML = '<i class="fas fa-edit"></i> Editar';
+            btn_editar.innerHTML = '<i class="fas fa-edit verde-oscuro-a--tipografia"></i>';
             btn_editar.dataset._id = encargados._id;
             btn_editar.addEventListener("click",function(){
                 window.localStorage.setItem('encargado_recinto_editar',this.dataset._id);
@@ -69,7 +69,7 @@ let listar_con_filtro = async () => {
     tbody_table.innerHTML = '';
     //Obtenemos los datos
     //Obtenemos los datos
-    await listar__encargado_recinto().then(res => { resuldatos = res });
+    await listar_encargado_recinto().then(res => { resuldatos = res });
     if (resuldatos.estado) {
         resuldatos.datos.forEach(encargados => {
 
@@ -92,7 +92,7 @@ let listar_con_filtro = async () => {
 
                 const btn_editar = document.createElement('button');
                 btn_editar.type = 'button';
-                btn_editar.innerText = 'Editar';
+                btn_editar.innerText = '<i class="fas fa-edit verde-oscuro-a--tipografia"></i>';
                 btn_editar.dataset._id = encargados._id;
                 btn_editar.addEventListener("click",function(){
                     window.localStorage.setItem('encargado_recinto_editar',this.dataset._id);

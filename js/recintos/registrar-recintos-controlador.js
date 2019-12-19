@@ -167,7 +167,7 @@ const llenar_select = async () => {
 
 const crear_Opciones_encargado_recinto = (datos) => {
     let html = '<option value="0" hidden>Seleccione encargado de recinto</option>';
-    for (key in datos) {
+    for (let key in datos) {
         html += `<option value="${datos[key]._id}">${datos[key].nombre_completo}</option>`;
     }
     return html;
