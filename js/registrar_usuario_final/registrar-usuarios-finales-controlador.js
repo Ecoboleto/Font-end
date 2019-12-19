@@ -154,7 +154,7 @@ let registrar_usuarios_finales = () => {
         })
     } else {
 
-        if(validar_edad(edad)){
+        if(!validar_edad(edad)){
             Swal.fire({
                 icon: 'warning',
                 title: 'Datos incorrectos',
